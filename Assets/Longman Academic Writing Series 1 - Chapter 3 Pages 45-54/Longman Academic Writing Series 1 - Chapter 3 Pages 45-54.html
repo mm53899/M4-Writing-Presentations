@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Longman Academic Writing 1 — Chapter 3: Every Picture Tells a Story (pp. 45–54)</title>
+<style>
+:root{
+  --maroon:#7a1f2b;
+  --gold:#e8c25a;
+  --navy:#1d3557;
+  --purple:#5b2a86;
+  --red:#c0392b;
+  --blue:#1d4f91;
+  --paper:#fffdf8;
+  --ink:#232323;
+}
+*{box-sizing:border-box;}
+html{font-size:16px;}
+body{
+  font-family:Georgia, 'Times New Roman', serif;
+  color:var(--ink);
+  background:#eee9df;
+  width:100%; max-width:calc(50vw + 450px); margin:0 auto;
+  padding:78px 24px 80px;
+  line-height:1.5;
+}
+h1,h2,h3,h4{font-family:Arial, Helvetica, sans-serif;}
+
+/* ===== Top nav (narrow, single row, own scroll) ===== */
+#topnav{
+  position:fixed; top:0; left:0; right:0; z-index:100;
+  background:var(--maroon); color:#fff;
+  display:flex; align-items:center; gap:2px;
+  padding:5px 14px; font-family:Arial, Helvetica, sans-serif;
+  box-shadow:0 2px 6px rgba(0,0,0,.25);
+  height:32px; overflow-x:auto; overflow-y:hidden; white-space:nowrap;
+}
+#topnav .brand{font-weight:bold; margin-right:12px; font-size:12px; white-space:nowrap;}
+#topnav a.navlink{
+  color:#fff; text-decoration:none; font-size:11.5px; padding:4px 8px;
+  border-radius:4px; white-space:nowrap;
+}
+#topnav a.navlink:hover{background:rgba(255,255,255,.18);}
+#pagenav{
+  position:fixed; top:32px; left:0; right:0; z-index:99;
+  background:var(--gold); padding:5px 16px; font-family:Arial, Helvetica, sans-serif;
+  display:flex; flex-wrap:wrap; gap:6px; align-items:center;
+  box-shadow:0 2px 4px rgba(0,0,0,.15);
+}
+#pagenav span.lbl{font-size:11px; font-weight:bold; color:#5a4200; margin-right:4px;}
+#pagenav a{
+  color:#5a4200; text-decoration:none; font-size:12px; font-weight:bold;
+  border:1px solid #b9922a; border-radius:3px; padding:2px 8px; background:#fff8e8;
+}
+#pagenav a:hover{background:#5a4200; color:#fff;}
+#pagenav a.active{background:var(--maroon); color:#fff; border-color:var(--maroon); box-shadow:0 0 0 2px #fff inset;}
+
+/* ===== Zoom + vocab controls ===== */
+#leftctrl{
+  position:fixed; left:10px; top:78px; z-index:98;
+  display:flex; flex-direction:column; gap:6px; align-items:center;
+  font-family:Arial, Helvetica, sans-serif;
+}
+#leftctrl button{
+  width:40px; height:34px; border-radius:6px; border:1px solid var(--maroon);
+  background:#fff; color:var(--maroon); font-weight:bold; font-size:15px; cursor:pointer;
+}
+#leftctrl button:hover{background:var(--maroon); color:#fff;}
+#zoomlabel{font-size:10.5px; background:#fff; border:1px solid #ccc; border-radius:4px; padding:2px 4px; color:#444;}
+#vocabbtn{
+  width:40px; height:36px; border-radius:6px; border:1px solid var(--purple);
+  background:var(--purple); color:#fff; font-weight:bold; font-size:17px; cursor:pointer;
+  line-height:1; padding:4px 2px; margin-top:4px;
+}
+#vocabbtn:hover{background:#40195c;}
+
+/* ===== Highlighter / Eraser controls ===== */
+#markctl{display:flex; flex-direction:column; gap:6px; margin-top:10px; align-items:center;}
+#markctl .divider{height:1px; width:32px; background:rgba(0,0,0,.2);}
+.mark-btn{
+  width:40px; height:36px; border-radius:6px; border:1px solid #b9922a;
+  font-size:16px; font-weight:bold; cursor:pointer;
+  display:flex; align-items:center; justify-content:center;
+}
+#highlightBtn{background:#fff3a0; color:#5a4a00;}
+#highlightBtn:hover{background:#ffe066;}
+#highlightBtn.active{box-shadow:0 0 0 3px var(--maroon);}
+#eraserBtn{background:#e8e8e8; color:#444; border-color:#999;}
+#eraserBtn:hover{background:#d0d0d0;}
+#eraserBtn.active{box-shadow:0 0 0 3px var(--maroon);}
+
+mark.user-highlight{background:#fff59d; padding:0 1px; border-radius:2px;}
+body.erase-mode mark.user-highlight{cursor:pointer;}
+body.highlight-mode{cursor:text;}
+
+/* ===== Zoomable content wrapper ===== */
+#content{transform-origin: top left;}
+#doctitle{font-family:Arial, Helvetica, sans-serif; color:var(--navy); text-align:center; font-weight:bold; font-size:1.4em; line-height:1.45; margin:0 0 22px;}
+
+/* ===== Section headers matching textbook bars ===== */
+.sec-header{
+  background:linear-gradient(180deg, var(--maroon) 0%, var(--maroon) 70%, var(--gold) 70%, var(--gold) 100%);
+  color:#fff; font-family:Arial, Helvetica, sans-serif; font-weight:bold;
+  font-size:1.35em; padding:8px 14px 12px; margin:34px 0 18px; border-radius:2px;
+  clear:both;
+}
+.sub-header{
+  color:var(--maroon); font-family:Arial, Helvetica, sans-serif; font-weight:bold;
+  font-size:1.15em; border-bottom:2px solid var(--gold); padding-bottom:4px; margin:26px 0 12px;
+}
+h4.minor-header{
+  font-family:Arial, Helvetica, sans-serif; color:var(--maroon); font-size:1.02em; margin:20px 0 8px;
+  clear:both;
+}
+.page-anchor{position:relative; top:-92px; visibility:hidden; height:0;}
+.page-divider{border:none; border-top:2px dashed #b9ab7d; margin:36px 0 14px; position:relative; clear:both;}
+.page-divider span{position:absolute; top:-10px; left:50%; transform:translateX(-50%); background:#eee9df; padding:0 14px; font-family:Arial, sans-serif; font-size:11px; color:#8a6d2e; font-weight:bold; letter-spacing:.5px;}
+
+p{margin:0 0 14px;}
+.model-box{
+  border:6px solid #9aa5b1; border-top:22px solid #9aa5b1; background:#fff;
+  padding:20px 26px; margin:14px 0 18px; box-shadow:4px 6px 10px rgba(0,0,0,.18); position:relative;
+  clear:both;
+}
+.model-box::before{
+  content:"1 . . . . . 1 . . . . . 2 . . . . . 3 . . . . . 4 . . . . . 5 . . . . . 6";
+  position:absolute; top:-20px; left:6px; right:6px; font-family:monospace; font-size:11px;
+  color:#e8e2d0; letter-spacing:1px; overflow:hidden; white-space:nowrap;
+}
+.model-title{font-weight:bold; text-align:center; font-size:1.15em; margin-bottom:14px; font-family:Arial, sans-serif;}
+.model-box p{text-align:justify;}
+
+.qmodel{margin:14px 0 22px;}
+.qitem{margin:0 0 12px;}
+.qitem .num{font-weight:bold; margin-right:4px;}
+.blank-ph{display:inline-block; min-width:150px; border-bottom:1px solid #333; vertical-align:-3px; margin:0 3px;}
+.blank-ph.short{min-width:70px;}
+.blank-ph.hidden{display:none;}
+.ans-ph{display:none; color:var(--red); font-weight:bold;}
+.ans-ph.model-style{color:var(--blue);}
+.ans-ph.shown{display:inline;}
+.given-text{color:var(--blue); font-weight:bold;}
+
+.btnrow{display:flex; justify-content:flex-end; margin:6px 0 4px; clear:both;}
+.showbtn{
+  font-family:Arial, sans-serif; background:var(--navy); color:#fff; border:none;
+  padding:7px 16px; border-radius:16px; font-size:12.5px; cursor:pointer; font-weight:bold;
+}
+.showbtn:hover{background:var(--purple);}
+
+.pagephoto{max-width:340px; width:60%; display:block; margin:10px auto 16px; border-radius:2px; box-shadow:3px 4px 8px rgba(0,0,0,.25);}
+.pagephoto.right{float:right; margin:0 0 12px 18px; width:40%;}
+.pagephoto.small{width:42%;}
+.clearfix::after{content:""; display:table; clear:both;}
+.photofig{width:220px; margin:0 0 12px 18px;}
+.photofig.right{float:right;}
+.photofig img{width:100%; display:block; border-radius:2px; box-shadow:3px 4px 8px rgba(0,0,0,.25);}
+.photofig p{text-align:center; font-style:italic; font-size:.85em; margin:4px 0 0;}
+
+.practice-tag{
+  display:inline-block; background:var(--purple); color:#fff; font-family:Arial, sans-serif;
+  font-weight:bold; font-size:12px; padding:4px 10px; border-radius:2px; margin:26px 0 8px;
+}
+.practice-title{font-family:Arial, sans-serif; font-weight:bold; color:var(--purple); font-size:1.08em; margin:0 0 10px; display:inline-block; margin-left:8px;}
+.instr{font-weight:bold; margin-bottom:14px;}
+.parlabel{color:var(--maroon); font-weight:bold; font-variant:small-caps; font-size:1.05em; margin:18px 0 6px; clear:both;}
+
+.exwrap{border-left:3px solid #e4dcc4; padding-left:14px; margin:10px 0 22px;}
+.topicdiagram{
+  background:#f4f0e4; border:1px dashed #b9ab7d; padding:14px 18px; margin:10px 0 16px; font-family:Arial, sans-serif;
+}
+.td-labels{font-size:11px; color:var(--navy); font-weight:bold;}
+.td-sentence{font-size:1.05em; margin-top:4px;}
+.td-sentence .topic-part{border-bottom:2px solid var(--purple);}
+.td-sentence .ctrl-part{border-bottom:2px solid var(--maroon);}
+.sentmark.shown .topic-part{border:2px solid var(--red); border-radius:14px; padding:0 6px; color:var(--red); font-weight:bold;}
+.sentmark.shown .ctrl-part{border-bottom:2px solid var(--red); font-weight:bold; color:var(--red);}
+.given-mark .topic-part{border:2px solid var(--blue); border-radius:14px; padding:0 6px;}
+.given-mark .ctrl-part{border-bottom:2px solid var(--blue); font-weight:bold;}
+
+.option-list{margin:8px 0 4px 0; list-style:none; padding:0;}
+.option-list li{margin:4px 0;}
+.option-list .oletter{font-weight:bold; margin-right:6px;}
+.correctmark{display:none; color:var(--red); font-weight:bold; margin-left:6px;}
+.correctmark.shown{display:inline;}
+
+.tip-box{background:#f0e6d2; border:1px solid var(--maroon); margin:16px 0; clear:both;}
+.tip-box .tip-head{background:var(--maroon); color:#fff; font-weight:bold; font-family:Arial, sans-serif; padding:6px 14px; font-size:.95em;}
+.tip-box .tip-body{padding:12px 16px;}
+
+.dodont{display:flex; gap:0; margin:16px 0; border:1px solid var(--navy); font-family:Arial, sans-serif; font-size:.95em; clear:both;}
+.dodont .col{flex:1; padding:12px 16px;}
+.dodont .col.bad{background:#e9e2ce;}
+.dodont .col.good{background:#dde7f2;}
+.dodont .head{background:var(--navy); color:#fff; font-weight:bold; text-align:center; padding:6px 0; margin:-12px -16px 10px;}
+.strike{text-decoration:line-through;}
+.hand{font-family:'Brush Script MT', cursive; color:var(--blue); font-style:italic;}
+
+.compqbtn-row{display:flex; justify-content:center; margin:22px 0 8px; clear:both;}
+#compqbtn{
+  font-family:Arial, sans-serif; background:var(--red); color:#fff; border:none;
+  padding:12px 26px; border-radius:22px; font-size:14px; cursor:pointer; font-weight:bold;
+  box-shadow:2px 3px 6px rgba(0,0,0,.25);
+}
+#compqbtn:hover{background:#96271b;}
+
+/* word popup trigger */
+.wterm{color:var(--purple); font-weight:bold; cursor:pointer; border-bottom:2px dotted var(--purple);}
+.wterm:hover{background:#f1e6ff;}
+
+/* modal */
+.modal-overlay{
+  display:none; position:fixed; inset:0; background:rgba(20,15,10,.55); z-index:200;
+  align-items:center; justify-content:center; padding:20px;
+}
+.modal-overlay.open{display:flex;}
+.modal-box{
+  background:#fff; max-width:640px; width:100%; max-height:82vh; overflow-y:auto;
+  border-radius:8px; padding:26px 30px; box-shadow:0 10px 40px rgba(0,0,0,.4); position:relative;
+  font-family:Arial, Helvetica, sans-serif; font-size:30px;
+}
+.modal-box h3{color:var(--maroon); margin:0 0 10px; font-size:1.3em;}
+.modal-box .close-x{
+  position:absolute; top:14px; right:18px; cursor:pointer; font-size:26px; color:#888; font-weight:bold;
+}
+.modal-box .close-x:hover{color:var(--red);}
+.word-pos{color:#666; font-style:italic; font-size:.5em; margin-bottom:10px;}
+.word-def{margin-bottom:14px; font-size:.55em; line-height:1.5;}
+.word-example-head{font-weight:bold; color:#8a6d2e; font-size:.5em; margin:0 0 6px;}
+.word-examples{background:#f6f2ea; border-left:3px solid var(--gold); padding:10px 16px; margin-bottom:12px;}
+.word-examples ul{margin:0; padding-left:18px;}
+.word-examples li{font-style:italic; font-size:.5em; line-height:1.5; margin-bottom:6px;}
+.word-examples li:last-child{margin-bottom:0;}
+.word-phrase{background:#eee7f7; border-left:3px solid var(--purple); padding:10px 16px; font-size:.5em; line-height:1.6;}
+.word-phrase b{color:var(--purple);}
+.word-phrase .phrase-def{display:block; margin-top:2px;}
+
+#wordModal .modal-box{font-size:40px; max-width:1100px;}
+#compqModal .modal-box, #vocabModal .modal-box{font-size:16px;}
+
+.cq-list{padding:0; margin:0; list-style:none;}
+.cq-list li{margin:0 0 14px; padding-bottom:12px; border-bottom:1px solid #eee; opacity:.4;}
+.cq-list li.active-q{opacity:1;}
+.cq-num{font-weight:bold; color:var(--maroon); margin-right:4px;}
+.cq-ans{display:none; color:var(--red); margin-top:5px; font-size:.93em;}
+.cq-ans.show{display:block;}
+#cqAnsBtn{
+  margin-top:10px; font-family:Arial, sans-serif; background:var(--navy); color:#fff; border:none;
+  padding:8px 16px; border-radius:14px; font-size:12.5px; cursor:pointer; font-weight:bold;
+}
+
+#vocabgrid{display:flex; flex-wrap:wrap; gap:8px; margin-top:6px;}
+#vocabgrid .vchip{
+  display:inline-block; padding:7px 14px; background:#f6f2ea; border-radius:16px; cursor:pointer;
+  font-size:14px; color:var(--purple); font-weight:bold; border:1px solid #e2d6c2;
+}
+#vocabgrid .vchip:hover{background:var(--purple); color:#fff;}
+
+@media (max-width:640px){
+  #topnav .brand{display:none;}
+  .pagephoto.right{float:none; width:70%; margin:10px auto;}
+  .photofig.right{float:none; width:70%; margin:10px auto;}
+}
+</style>
+</head>
+<body>
+
+<div id="topnav">
+  <span class="brand">Longman Writing 1 · Ch. 3</span>
+  <a class="navlink" href="#sec-intro">Introduction</a>
+  <a class="navlink" href="#sec-models">Looking at the Models</a>
+  <a class="navlink" href="#sec-org">Organization</a>
+  <a class="navlink" href="#sec-topic">Topic Sentences</a>
+</div>
+<div id="pagenav">
+  <span class="lbl">PAGE:</span>
+  <a href="#p45" data-p="p45">45</a><a href="#p46" data-p="p46">46</a><a href="#p48" data-p="p48">48</a><a href="#p49" data-p="p49">49</a><a href="#p50" data-p="p50">50</a><a href="#p51" data-p="p51">51</a><a href="#p52" data-p="p52">52</a><a href="#p53" data-p="p53">53</a><a href="#p54" data-p="p54">54</a>
+</div>
+<div id="leftctrl">
+  <button id="zin">A+</button>
+  <span id="zoomlabel">100%</span>
+  <button id="zout">A−</button>
+  <button id="vocabbtn" onclick="openVocabList()" title="Vocabulary list">📖</button>
+  <div id="markctl">
+    <div class="divider"></div>
+    <button id="highlightBtn" class="mark-btn" title="Highlighter — select text to highlight it">🖊</button>
+    <button id="eraserBtn" class="mark-btn" title="Eraser — click a highlight to remove it">⌫</button>
+  </div>
+</div>
+
+<div id="content">
+
+<div id="doctitle">Longman Academic Writing 1<br>Chapter 3: Every Picture Tells a Story (pp. 45–54)</div>
+
+<div id="p45" class="page-anchor"></div>
+<div id="sec-intro" class="sec-header">INTRODUCTION</div>
+<p>When you look at a picture of someone new, you know some things about that person, but not everything. You can use your <span class="wterm" data-w="imagination">imagination</span> to create a story about the person's life. Your imagination is your <span class="wterm" data-w="ability">ability</span> <span class="wterm" data-w="to-form">to form</span> new <span class="wterm" data-w="idea">ideas</span> or pictures in your mind. In this chapter, you will use your imagination to write about a person in a photo.</p>
+
+<div id="sec-models" class="sec-header">LOOKING AT THE MODELS</div>
+<p>Two students used their imaginations to write about the man in the photo. They have different ideas about him, so their paragraphs tell different stories about his life.</p>
+<p><b>Work with a partner or in a small group. Read the models. Then answer the questions.</b></p>
+
+<h4 class="minor-header">✏️ Writing Model 1</h4>
+<div style="display:flex; gap:18px; align-items:flex-start; flex-wrap:wrap;">
+  <div class="model-box" style="flex:2; min-width:280px; margin:14px 0 18px;">
+    <div class="model-title">The Man in the Photo</div>
+    <p>The man in the photo is a <span class="wterm" data-w="hardworking">hardworking</span> man. His name is Ryan Murphy. He lives in Dallas, Texas. He is single. He lives with his two brothers. Ryan works in a <span class="wterm" data-w="factory">factory</span>. He works the second <span class="wterm" data-w="shift">shift</span> five days a week. He does not like this job. He wants a better job, so he goes to school. He is a <span class="wterm" data-w="part-time">part-time</span> college student. He has classes three mornings a week. His classes are not easy. He works hard in school. In his free time, Ryan goes running and <span class="wterm" data-w="work-out">works out</span>. On weekends, he plays basketball with friends. He <span class="wterm" data-w="lead">leads</span> a busy life.</p>
+  </div>
+  <img class="pagephoto small" style="flex:1; min-width:180px; margin:14px 0;" src="media/p45_basketball.png" alt="A man and a boy playing basketball">
+</div>
+
+<div class="exwrap" id="ex-model1">
+<h5 style="font-family:Arial, sans-serif; color:var(--maroon);">Questions about the Model</h5>
+<div class="qitem"><span class="num">1.</span> What is the <span class="wterm" data-w="topic">topic</span> of the paragraph?<br>
+<span class="blank-ph">&nbsp;</span><span class="ans-ph">the man in the photo, Ryan Murphy</span></div>
+<div class="qitem"><span class="num">2.</span> What is the writer's main idea about the topic? (Look back at the first sentence to find the answer.)<br>
+<span class="blank-ph">&nbsp;</span><span class="ans-ph">Ryan Murphy is <span class="wterm" data-w="hardworking">hardworking</span>.</span></div>
+<div class="qitem"><span class="num">3.</span> What information shows that Ryan is hardworking?<br>
+<span class="blank-ph">&nbsp;</span><span class="ans-ph">He has a job and he goes to school, too. His classes are not easy. He works hard in school.</span></div>
+<div class="btnrow"><button class="showbtn" onclick="stepReveal(['ex-model1'], this)">Show Answers</button></div>
+</div>
+
+<div class="page-divider"><span>PAGE 46</span></div>
+<div id="p46" class="page-anchor"></div>
+<div class="exwrap" id="ex-model1b">
+<div class="qitem"><span class="num">4.</span> What verbs did the writer use in these sentences? Fill in the blanks.
+  <div style="margin:8px 0 0 18px;">
+    <div class="qitem"><span class="num">a.</span> He <span class="blank-ph short">&nbsp;</span><span class="ans-ph">lives</span> in Dallas, Texas.</div>
+    <div class="qitem"><span class="num">b.</span> He <span class="blank-ph short">&nbsp;</span><span class="ans-ph">is</span> single.</div>
+    <div class="qitem"><span class="num">c.</span> Ryan <span class="blank-ph short">&nbsp;</span><span class="ans-ph">works</span> in a factory.</div>
+    <div class="qitem"><span class="num">d.</span> He <span class="blank-ph short">&nbsp;</span><span class="ans-ph">has</span> classes three mornings a week.</div>
+    <div class="qitem"><span class="num">e.</span> His classes <span class="blank-ph short">&nbsp;</span><span class="ans-ph">are not</span> easy.</div>
+  </div>
+</div>
+<div class="qitem"><span class="num">5.</span> Which sentences in items 4 a–e have the verb <i>be</i>?<br>
+Sentences <span class="blank-ph short">&nbsp;</span><span class="ans-ph">b</span> and <span class="blank-ph short">&nbsp;</span><span class="ans-ph">e</span>.</div>
+<div class="qitem"><span class="num">6.</span> Which sentences have other simple present verbs?<br>
+Sentences <span class="blank-ph short">&nbsp;</span><span class="ans-ph">a</span>, <span class="blank-ph short">&nbsp;</span><span class="ans-ph">c</span>, and <span class="blank-ph short">&nbsp;</span><span class="ans-ph">d</span>.</div>
+<div class="btnrow"><button class="showbtn" onclick="stepReveal(['ex-model1b'], this)">Show Answers</button></div>
+</div>
+
+<h4 class="minor-header">✏️ Writing Model 2</h4>
+<div class="model-box">
+  <div class="model-title">An <span class="wterm" data-w="exciting">Exciting</span> Life</div>
+  <p>The man in the photo has an exciting life. His name is Victor Torres. He lives in Hollywood. He is married. He and his wife do not have children. Victor works in the movie business and makes a lot of money. He drives a new Mercedes. He and his wife have a great house at the beach. It has a basketball court in the backyard. In his free time, Victor and his wife go fishing. They go to parties with famous people. They go shopping in Beverly Hills. Victor does not have any big worries. He is a lucky man.</p>
+</div>
+
+<div class="exwrap" id="ex-model2">
+<h5 style="font-family:Arial, sans-serif; color:var(--maroon);">Questions about the Model</h5>
+<div class="qitem"><span class="num">1.</span> What is the topic of the paragraph?<br>
+<span class="blank-ph">&nbsp;</span><span class="ans-ph">the man in the photo, Victor Torres</span></div>
+<div class="qitem"><span class="num">2.</span> What is the writer's main idea about the topic? (Look back at the first sentence to find the answer.)<br>
+<span class="blank-ph">&nbsp;</span><span class="ans-ph">He has an <span class="wterm" data-w="exciting">exciting</span> life.</span></div>
+<div class="qitem"><span class="num">3.</span> What information shows that Victor has an exciting life?<br>
+<span class="blank-ph">&nbsp;</span><span class="ans-ph">He works in the movie business. He makes a lot of money. He drives a new Mercedes. He has a house at the beach. He goes to parties with famous people.</span></div>
+<div class="btnrow"><button class="showbtn" onclick="stepReveal(['ex-model2'], this)">Show Answers</button></div>
+</div>
+
+<div class="page-divider"><span>PAGE 48</span></div>
+<div id="p48" class="page-anchor"></div>
+<div id="sec-org" class="sec-header">ORGANIZATION</div>
+<p>Writers need to make their paragraphs easy for readers to understand. One way to help the reader is to use a <b>topic sentence</b>.</p>
+
+<div id="sec-topic" class="sec-header">TOPIC SENTENCES</div>
+<p>A topic sentence comes at the beginning of a paragraph. The topic sentence gives the writer's main idea about the topic. A good topic sentence helps readers understand the paragraph.</p>
+
+<h4 class="minor-header">The Parts of a Topic Sentence</h4>
+<p>A topic sentence has two parts:</p>
+<ul style="margin:0 0 14px 22px;">
+  <li>a <b>topic</b>—what the paragraph is about, and</li>
+  <li>a <b><span class="wterm" data-w="controlling">controlling</span> idea</b>—what the writer is going to focus on in the paragraph.</li>
+</ul>
+<div class="topicdiagram">
+  <div class="td-labels">TOPIC&emsp;&emsp;&emsp;&emsp;CONTROLLING IDEA</div>
+  <div class="td-sentence"><span class="topic-part">David Freeman</span> <span class="ctrl-part">is a good father.</span></div>
+</div>
+<p>This topic sentence tells the reader that the paragraph will be about David Freeman. It will be about David as a father. The paragraph will not have other information about David. For example, it will not tell the reader about his education, his friends, or his future plans.</p>
+
+<p><span class="wterm" data-w="either">Either</span> the topic or the controlling idea can come first in a topic sentence. <span class="wterm" data-w="compare">Compare</span> these two topic sentences:</p>
+<div class="topicdiagram">
+  <div class="td-labels">TOPIC&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;CONTROLLING IDEA</div>
+  <div class="td-sentence"><span class="topic-part"><span class="wterm" data-w="scuba-diving">Scuba diving</span></span> <span class="ctrl-part"><span class="wterm" data-w="require">requires</span> careful preparation.</span></div>
+</div>
+<div class="topicdiagram">
+  <div class="td-labels">CONTROLLING IDEA&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;TOPIC</div>
+  <div class="td-sentence"><span class="ctrl-part">You must prepare carefully before going</span> <span class="topic-part">scuba diving.</span></div>
+</div>
+
+<p>Sometimes the topic and the controlling idea are in two sentences. In this example, the topic is the twin sisters Emma and Alyssa. The controlling idea—that they have different interests—is in the second sentence.</p>
+<div style="display:flex; gap:18px; align-items:flex-start; flex-wrap:wrap; margin:12px 0 6px;">
+  <div style="flex:1; min-width:220px; background:#fff; border:1px solid #ccc; box-shadow:3px 4px 8px rgba(0,0,0,.15); padding:16px 18px;">
+    <p class="hand" style="margin:0; font-size:1.15em; line-height:1.4;">Emma and Alyssa are twins. They look very much alike, but they have different interests. For example, Emma likes to . . .</p>
+  </div>
+  <img class="pagephoto small" style="margin:0;" src="media/p48_twins.png" alt="Two twin sisters, dressed differently">
+</div>
+
+<div class="compqbtn-row">
+  <button id="compqbtn" onclick="openCompqModal()">📋 Check Your Understanding of Page 48</button>
+</div>
+
+<div class="page-divider"><span>PAGE 49</span></div>
+<div id="p49" class="page-anchor"></div>
+<p style="margin-top:26px;">Not all paragraphs begin with a topic sentence, but topic sentences are an important part of academic writing in English. You will need good topic sentences for paragraphs that you write as a student.</p>
+
+<div class="practice-tag">PRACTICE 2</div><span class="practice-title"><span class="wterm" data-w="analyze">Analyzing</span> Topic Sentences</span>
+<p class="instr">Find the topic sentence of each paragraph. Circle the topic and underline the controlling idea.</p>
+
+<div class="exwrap" id="ex-prac2-p1">
+<div class="parlabel">Paragraph 1</div>
+<img class="pagephoto small right" src="media/p49_angryphone.png" alt="A man angrily shouting into a telephone">
+<p><span class="sentmark"><span class="topic-part">The man in the photo</span> <span class="ctrl-part">has a <span class="wterm" data-w="terrible">terrible</span> job.</span></span> His name is Bob Walker, and he works for Bigg Computers. Every day, customers call him on the phone. They are unhappy about their computers. He does not like to listen to them. Sometimes they get angry, and they yell at Bob. Then he gets angry, too. He needs a new job.</p>
+<div class="btnrow clearfix"><button class="showbtn" onclick="stepReveal(['ex-prac2-p1'], this)">Show Answer</button></div>
+</div>
+
+<div class="exwrap" id="ex-prac2-p2">
+<div class="parlabel">Paragraph 2</div>
+<p><span class="sentmark"><span class="ctrl-part">It is easy to make</span> <span class="topic-part">good chocolate chip cookies.</span></span> Just buy a bag of chocolate chips at the supermarket and look for the <span class="wterm" data-w="recipe">recipe</span> on the back. The recipe will <span class="wterm" data-w="to-list">list</span> the other <span class="wterm" data-w="ingredient">ingredients</span> you need. At home, <span class="wterm" data-w="to-measure">measure</span> the ingredients and mix them to make the cookie <span class="wterm" data-w="dough">dough</span>. Put the dough into the refrigerator and wait for 24 hours. (That is the only hard part—waiting!) Follow the instructions to bake the cookies. The last step is the easiest part of all: eating the cookies warm from the oven.</p>
+<div class="btnrow"><button class="showbtn" onclick="stepReveal(['ex-prac2-p2'], this)">Show Answer</button></div>
+</div>
+
+<div class="exwrap" id="ex-prac2-p3">
+<div class="parlabel">Paragraph 3</div>
+<img class="pagephoto small right" src="media/p49_betta.png" alt="A betta fish in a fishbowl">
+<p><span class="sentmark"><span class="topic-part">A betta</span> <span class="ctrl-part">makes a good pet for <span class="wterm" data-w="several">several</span> reasons.</span></span> First, it is a beautiful fish, especially in the sunlight. The light <span class="wterm" data-w="bring-out">brings out</span> its amazing color. Second, it is easy to take care of a betta. Just feed it every day, and give it clean water once a week. Finally, a betta is not expensive. You do not have to spend much money on the fish, its food, or its <span class="wterm" data-w="fishbowl">fishbowl</span>. I tell all my friends to get a betta.</p>
+<div class="btnrow clearfix"><button class="showbtn" onclick="stepReveal(['ex-prac2-p3'], this)">Show Answer</button></div>
+</div>
+
+<div class="page-divider"><span>PAGE 50</span></div>
+<div id="p50" class="page-anchor"></div>
+<div class="exwrap" id="ex-prac2-p4">
+<div class="parlabel">Paragraph 4</div>
+<p><span class="sentmark"><span class="topic-part">My five-year-old nephew</span> <span class="ctrl-part">is a very funny little boy.</span></span> I like to listen to him <span class="wterm" data-w="sing-along">sing along</span> with the radio. He often gets the words wrong. Sometimes he does it by mistake, and sometimes he does it <span class="wterm" data-w="on-purpose">on purpose</span>, to make me laugh. I enjoy spending time with my funny little nephew.</p>
+<div class="btnrow"><button class="showbtn" onclick="stepReveal(['ex-prac2-p4'], this)">Show Answer</button></div>
+</div>
+
+<div class="practice-tag">PRACTICE 3</div><span class="practice-title">Choosing a Topic Sentence</span>
+<p class="instr">Work alone or with a partner. Read each paragraph and the three sentences that follow it. Choose the best topic sentence for the paragraph and write it on the line.</p>
+
+<div class="exwrap" id="ex-prac3-p1">
+<div class="parlabel">Paragraph 1</div>
+<p><span class="blank-ph">&nbsp;</span><span class="ans-ph" data-pair="p1">"My friend Kai is good at sports."</span> He was the captain of two sports teams at our high school. He was our best wrestler and our best tennis player. He is also a good swimmer and a fast runner. He runs every day to stay in shape. Sometimes Kai and I play ping-pong together. Kai usually wins. He is good at ping-pong, too.</p>
+<ul class="option-list">
+  <li><span class="oletter">a.</span> Kai is a great friend.</li>
+  <li><span class="oletter">b.</span> My friend Kai and I like sports.</li>
+  <li><span class="oletter">c.</span> My friend Kai is good at sports. <span class="correctmark" data-pair="p1">✓ correct</span></li>
+</ul>
+<div class="btnrow"><button class="showbtn" onclick="stepReveal(['ex-prac3-p1'], this)">Show Answer</button></div>
+</div>
+
+<div class="exwrap" id="ex-prac3-p2">
+<div class="parlabel">Paragraph 2</div>
+<div class="photofig right">
+  <img src="media/p50_butterfly.png" alt="A monarch butterfly on yellow flowers">
+  <p>A monarch butterfly</p>
+</div>
+<p><span class="blank-ph">&nbsp;</span><span class="ans-ph" data-pair="p2">"Some butterflies are great travelers."</span> For example, butterflies called Painted Ladies fly all the way from Europe to Africa. They also fly from Australia to New Zealand. Monarch butterflies fly from Canada to Mexico. That trip can be 3,000 miles long. It is amazing how far some butterflies can fly.</p>
+<ul class="option-list clearfix">
+  <li><span class="oletter">a.</span> Butterflies are beautiful.</li>
+  <li><span class="oletter">b.</span> Some butterflies are great travelers. <span class="correctmark" data-pair="p2">✓ correct</span></li>
+  <li><span class="oletter">c.</span> Butterflies live in many parts of the world.</li>
+</ul>
+<div class="btnrow"><button class="showbtn" onclick="stepReveal(['ex-prac3-p2'], this)">Show Answer</button></div>
+</div>
+
+<div class="page-divider"><span>PAGE 51</span></div>
+<div id="p51" class="page-anchor"></div>
+<div class="exwrap" id="ex-prac3-p3">
+<div class="parlabel">Paragraph 3</div>
+<p><span class="blank-ph">&nbsp;</span><span class="ans-ph" data-pair="p3">"Photos are important to me."</span> I like to have photos of family and friends to look at. I live far away from many of them now, and I miss them. The photos <span class="wterm" data-w="remind">remind</span> me of good times together. I also have many photos of my daughters growing up. It makes me happy to look at these photos and remember when my girls were babies. My daughters like to look at their old photos, too. The photos are fun for us to talk about.</p>
+<ul class="option-list">
+  <li><span class="oletter">a.</span> Photos are important to me. <span class="correctmark" data-pair="p3">✓ correct</span></li>
+  <li><span class="oletter">b.</span> Everyone needs a good camera.</li>
+  <li><span class="oletter">c.</span> Taking pictures can be quick and easy.</li>
+</ul>
+<div class="btnrow"><button class="showbtn" onclick="stepReveal(['ex-prac3-p3'], this)">Show Answer</button></div>
+</div>
+
+<div class="exwrap" id="ex-prac3-p4">
+<div class="parlabel">Paragraph 4</div>
+<div class="photofig right">
+  <img src="media/p51_ferrera.png" alt="TV and movie star America Ferrera">
+  <p>TV and movie star America Ferrera</p>
+</div>
+<p><span class="blank-ph">&nbsp;</span><span class="ans-ph" data-pair="p4">"I <span class="wterm" data-w="admire">admire</span> America Ferrera for <span class="wterm" data-w="several">several</span> reasons."</span> First, I <span class="wterm" data-w="admire">admire</span> her because she has many talents. She is a very good actor. Second, she is also a <span class="wterm" data-w="movie-producer">movie producer</span>, so I think she is smart. Finally, she <span class="wterm" data-w="seem-like">seems like</span> a good person. She visits schools to talk to teenagers about the <span class="wterm" data-w="value">value</span> of education. She also talks about good <span class="wterm" data-w="health-care">health care</span> for all women. I respect her ideas and her work. I hope she has a great career.</p>
+<ul class="option-list clearfix">
+  <li><span class="oletter">a.</span> America Ferrera is an <span class="wterm" data-w="unusual">unusual</span> woman.</li>
+  <li><span class="oletter">b.</span> I admire America Ferrera for several reasons. <span class="correctmark" data-pair="p4">✓ correct</span></li>
+  <li><span class="oletter">c.</span> America Ferrera was in the TV series <i>Ugly Betty</i>.</li>
+</ul>
+<div class="btnrow"><button class="showbtn" onclick="stepReveal(['ex-prac3-p4'], this)">Show Answer</button></div>
+</div>
+
+<div class="page-divider"><span>PAGE 52</span></div>
+<div id="p52" class="page-anchor"></div>
+<h4 class="minor-header">Topic Sentences and Titles</h4>
+<p>Each paragraph you write for a Writing Assignment in this book should have a <span class="wterm" data-w="title">title</span>. The title and the topic sentence both help the reader understand what the paragraph will be about.</p>
+<p>A title is usually not a complete sentence, and it does not do the job of a topic sentence. The topic sentence, not the title, has the topic and the controlling idea for the paragraph.</p>
+
+<div class="tip-box">
+  <div class="tip-head">Writing Tip</div>
+  <div class="tip-body">It is a good idea to wait and write the title after you write your first draft of a paragraph. When you do that, the title does not <span class="wterm" data-w="affect">affect</span> your thinking about the topic sentence. Finish the first draft, check the topic sentence, and then add a title.</div>
+</div>
+
+<p>A topic sentence cannot <span class="wterm" data-w="refer">refer</span> back to the title, so sometimes the topic sentence must repeat words from the title. Do not begin a topic sentence with <i>He</i> or <i>She</i>, even when the person's name is in the title.</p>
+
+<div class="dodont">
+  <div class="col bad">
+    <div class="head">Do Not Do This:</div>
+    <p style="text-align:center; font-weight:bold;">Gustavo's Favorite Day</p>
+    <p style="text-align:center;"><span class="strike">He</span> likes Saturdays because he can sleep in. He . . .</p>
+  </div>
+  <div class="col good">
+    <div class="head">Do This:</div>
+    <p style="text-align:center; font-weight:bold;">Gustavo's Favorite Day</p>
+    <p style="text-align:center;">Saturday is Gustavo's favorite day of the week. He likes Saturdays because. . .</p>
+  </div>
+</div>
+
+<div class="practice-tag">PRACTICE 4</div><span class="practice-title">Topic Sentences and Titles</span>
+<p class="instr">Underline the topic sentence in each paragraph. Choose the best title for that paragraph and write it on the line.</p>
+
+<div class="exwrap" id="ex-prac4-p1">
+<div class="parlabel">Paragraph 1</div>
+<p style="text-align:center;" class="hand">Why I Like Classroom <span class="wterm" data-w="discussion">Discussions</span></p>
+<p><span class="sentmark"><span class="ctrl-part">I enjoy classroom discussions for several reasons.</span></span> For example, I like to hear my classmates talk. There are some interesting people in my class, and I like to hear their ideas and opinions. I also like to practice speaking English. Classroom discussions help me learn to speak better. They make time in class <span class="wterm" data-w="go-by">go by</span> faster, too. These are just a few of the reasons why discussions make classes more interesting.</p>
+<ul class="option-list">
+  <li><span class="oletter">a.</span> My English Class</li>
+  <li><span class="oletter">b.</span> Speaking English in Class</li>
+  <li><span class="oletter">c.</span> Why I Like Classroom Discussions <span class="correctmark">✓ correct (title already shown above)</span></li>
+</ul>
+<div class="btnrow"><button class="showbtn" onclick="stepReveal(['ex-prac4-p1'], this)">Show Answer</button></div>
+</div>
+
+<div class="page-divider"><span>PAGE 53</span></div>
+<div id="p53" class="page-anchor"></div>
+<div class="exwrap" id="ex-prac4-p2">
+<div class="parlabel">Paragraph 2</div>
+<p><span class="blank-ph">&nbsp;</span><span class="ans-ph" data-pair="p2">"Everyone in my family loves music."</span><br>
+<span class="sentmark"><span class="ctrl-part">Everyone in my family loves music.</span></span> We listen to music all the time. My parents like classical music and pop. My sisters like popular music, and they love to sing karaoke. My brother likes classic music and plays guitar in a music band. I like all these kinds of music at different times. People in my family sometimes <span class="wterm" data-w="argue">argue</span> about music, for example in the car, but we all agree on one thing. Life is better with music.</p>
+<ul class="option-list">
+  <li><span class="oletter">a.</span> Music in My Life</li>
+  <li><span class="oletter">b.</span> A Family of Music Lovers <span class="correctmark" data-pair="p2">✓ correct</span></li>
+  <li><span class="oletter">c.</span> The Importance of Music</li>
+</ul>
+<div class="btnrow"><button class="showbtn" onclick="stepReveal(['ex-prac4-p2'], this)">Show Answer</button></div>
+</div>
+
+<div class="exwrap" id="ex-prac4-p3">
+<div class="parlabel">Paragraph 3</div>
+<p><span class="blank-ph">&nbsp;</span><span class="ans-ph" data-pair="p3">"Bicycling is a smart form of transportation."</span><br>
+<span class="sentmark"><span class="ctrl-part">Bicycling is a smart form of transportation.</span></span> A <span class="wterm" data-w="bicycle">bicycle</span> is inexpensive, so everyone can afford to own and ride one. Bicycles are quiet and clean, unlike cars or buses. Also, riding a bicycle is good exercise, and most people today need more exercise. More people should try bicycling to school or work. It is the smart way to get where you are going.</p>
+<ul class="option-list">
+  <li><span class="oletter">a.</span> The Smart Way to Go <span class="correctmark" data-pair="p3">✓ correct</span></li>
+  <li><span class="oletter">b.</span> The Sport of Bicycling</li>
+  <li><span class="oletter">c.</span> Owning a Bicycle</li>
+</ul>
+<div class="btnrow"><button class="showbtn" onclick="stepReveal(['ex-prac4-p3'], this)">Show Answer</button></div>
+</div>
+
+<div class="exwrap" id="ex-prac4-p4">
+<div class="parlabel">Paragraph 4</div>
+<p><span class="blank-ph">&nbsp;</span><span class="ans-ph" data-pair="p4">"My sister Anna is a very outgoing person."</span><br>
+<span class="sentmark"><span class="ctrl-part">My sister Anna is a very outgoing person.</span></span> She loves to be with people, and she loves to talk. She has many friends, and she is on the phone with them all day long. She is happy to meet new people, too. She makes friends easily. She is never shy. She has a warm and friendly <span class="wterm" data-w="nature">nature</span>, and I am happy that she is my sister.</p>
+<ul class="option-list">
+  <li><span class="oletter">a.</span> A Very Outgoing Person</li>
+  <li><span class="oletter">b.</span> My Sociable Sister <span class="correctmark" data-pair="p4">✓ correct</span></li>
+  <li><span class="oletter">c.</span> My Sister and I</li>
+</ul>
+<div class="btnrow"><button class="showbtn" onclick="stepReveal(['ex-prac4-p4'], this)">Show Answer</button></div>
+</div>
+
+<div class="page-divider"><span>PAGE 54</span></div>
+<div id="p54" class="page-anchor"></div>
+<div class="practice-tag">TRY IT OUT!</div>
+<p class="instr">Work alone or with a partner. Circle the topic and underline the controlling idea in each topic sentence. Then write two sentences you might find in that paragraph. Write a possible title for the paragraph.</p>
+
+<div class="exwrap" id="ex-tryitout">
+<div class="qitem"><span class="num">1.</span> Topic Sentence: <span class="given-mark"><span class="topic-part">Cities</span> <span class="ctrl-part">are exciting places to live.</span></span><br>
+<span class="given-text">There are interesting things to do, like going to restaurants, movies, and clubs.</span><br>
+<span class="given-text">You can meet many new people in cities.</span><br>
+Possible Title: <span class="given-text">The <span class="wterm" data-w="benefit">Benefits</span> of City Living</span></div>
+
+<div class="qitem"><span class="num">2.</span> Topic Sentence: <span class="sentmark"><span class="topic-part">Cities</span> <span class="ctrl-part">have many problems.</span></span><br>
+<span class="blank-ph" style="min-width:400px;">&nbsp;</span><span class="ans-ph model-style">Cities usually have air pollution. They are noisy.</span><br>
+<span class="blank-ph" style="min-width:400px;">&nbsp;</span><span class="ans-ph model-style">They are expensive. There is crime.</span><br>
+Possible Title: <span class="blank-ph">&nbsp;</span><span class="ans-ph model-style">The Difficulties of City Living</span></div>
+
+<div class="qitem"><span class="num">3.</span> Topic Sentence: <span class="sentmark"><span class="topic-part">Living alone</span> <span class="ctrl-part">is good in some ways.</span></span><br>
+<span class="blank-ph" style="min-width:400px;">&nbsp;</span><span class="ans-ph model-style">You can be messy or noisy if you want.</span><br>
+<span class="blank-ph" style="min-width:400px;">&nbsp;</span><span class="ans-ph model-style">You can organize things the way you want. You do not need to share things.</span><br>
+Possible Title: <span class="blank-ph">&nbsp;</span><span class="ans-ph model-style">A Great Way to Live</span></div>
+
+<div class="qitem"><span class="num">4.</span> Topic Sentence: <span class="sentmark"><span class="topic-part">Living alone</span> <span class="ctrl-part">is hard in some ways.</span></span><br>
+<span class="blank-ph" style="min-width:400px;">&nbsp;</span><span class="ans-ph model-style">You can get lonely.</span><br>
+<span class="blank-ph" style="min-width:400px;">&nbsp;</span><span class="ans-ph model-style">You have to do all the cleaning.</span><br>
+Possible Title: <span class="blank-ph">&nbsp;</span><span class="ans-ph model-style">No Way to Live</span></div>
+
+<div class="qitem"><span class="num">5.</span> Topic Sentence: <span class="sentmark"><span class="ctrl-part">It is not easy</span> <span class="topic-part">to learn a new language.</span></span><br>
+<span class="blank-ph" style="min-width:400px;">&nbsp;</span><span class="ans-ph model-style">It is hard to pronounce a new language.</span><br>
+<span class="blank-ph" style="min-width:400px;">&nbsp;</span><span class="ans-ph model-style">It is hard to remember new words.</span><br>
+Possible Title: <span class="blank-ph">&nbsp;</span><span class="ans-ph model-style">The Challenges of Learning a New Language</span></div>
+
+<div class="qitem"><span class="num">6.</span> Topic Sentence: <span class="sentmark"><span class="ctrl-part">There are many reasons</span> <span class="topic-part">to learn a new language.</span></span><br>
+<span class="blank-ph" style="min-width:400px;">&nbsp;</span><span class="ans-ph model-style">It can be fun to learn. You can meet and talk to new people.</span><br>
+<span class="blank-ph" style="min-width:400px;">&nbsp;</span><span class="ans-ph model-style">Knowing another language can help you get a good job.</span><br>
+Possible Title: <span class="blank-ph">&nbsp;</span><span class="ans-ph model-style">The <span class="wterm" data-w="benefit">Benefits</span> of Learning a New Language</span></div>
+
+<div class="btnrow"><button class="showbtn" onclick="stepReveal(['ex-tryitout'], this)">Show Model Answers</button></div>
+</div>
+
+</div><!-- /#content -->
+
+<!-- ============ Comprehension Questions Modal (Page 48) ============ -->
+<div class="modal-overlay" id="compqModal" onclick="if(event.target===this) closeModal('compqModal')">
+  <div class="modal-box">
+    <span class="close-x" onclick="closeModal('compqModal')">✕</span>
+    <h3>Check Your Understanding — Page 48</h3>
+    <p style="font-size:.85em; color:#777; margin-top:0;">Read page 48 on your own first. Then try to answer each question before revealing it.</p>
+    <ol class="cq-list" id="cqList">
+      <li class="active-q"><span class="cq-num">1.</span> What are the two parts of a topic sentence?
+        <div class="cq-ans">A <span class="wterm" data-w="topic">topic</span> (what the paragraph is about) and a <span class="wterm" data-w="controlling">controlling</span> <span class="wterm" data-w="idea">idea</span> (what the writer will focus on).</div>
+      </li>
+      <li><span class="cq-num">2.</span> Where in a paragraph does the topic sentence usually come?
+        <div class="cq-ans">At the beginning of the paragraph.</div>
+      </li>
+      <li><span class="cq-num">3.</span> In the sentence "David Freeman is a good father," what is the topic and what is the controlling idea?
+        <div class="cq-ans"><span class="wterm" data-w="topic">Topic</span>: David Freeman. <span class="wterm" data-w="controlling">Controlling</span> <span class="wterm" data-w="idea">idea</span>: is a good father.</div>
+      </li>
+      <li><span class="cq-num">4.</span> Does the topic always have to come before the controlling idea? Use an example from the page to explain your answer.
+        <div class="cq-ans">No. <span class="wterm" data-w="either">Either</span> part can come first — for example, "<span class="wterm" data-w="scuba-diving">Scuba diving</span> <span class="wterm" data-w="require">requires</span> careful preparation" (<span class="wterm" data-w="topic">topic</span> first) versus "You must prepare carefully before going scuba diving" (<span class="wterm" data-w="controlling">controlling</span> <span class="wterm" data-w="idea">idea</span> first).</div>
+      </li>
+      <li><span class="cq-num">5.</span> In the Emma and Alyssa example, is the controlling idea in the same sentence as the topic? Explain.
+        <div class="cq-ans">No. The <span class="wterm" data-w="topic">topic</span> (Emma and Alyssa) is in the first sentence, and the <span class="wterm" data-w="controlling">controlling</span> <span class="wterm" data-w="idea">idea</span> (that they have different interests) is in the second sentence — sometimes the two parts are split across two sentences.</div>
+      </li>
+      <li><span class="cq-num">6.</span> Why does a good topic sentence help the reader?
+        <div class="cq-ans">It tells the reader what the paragraph is about and what the writer will focus on, so the paragraph is easier to understand.</div>
+      </li>
+    </ol>
+    <div class="btnrow"><button id="cqAnsBtn" onclick="revealNextCQ()">Show Answer</button></div>
+  </div>
+</div>
+
+<!-- ============ Word Definition Modal ============ -->
+<div class="modal-overlay" id="wordModal" onclick="if(event.target===this) closeModal('wordModal')">
+  <div class="modal-box">
+    <span class="close-x" onclick="closeModal('wordModal')">✕</span>
+    <h3 id="wTitle">word</h3>
+    <div class="word-pos" id="wPos"></div>
+    <div class="word-def" id="wDef"></div>
+    <div class="word-example-head">Examples:</div>
+    <div class="word-examples" id="wExample"></div>
+    <div class="word-phrase" id="wPhrase" style="display:none;"></div>
+  </div>
+</div>
+
+<!-- ============ Vocabulary List Modal ============ -->
+<div class="modal-overlay" id="vocabModal" onclick="if(event.target===this) closeModal('vocabModal')">
+  <div class="modal-box" style="max-width:560px;">
+    <span class="close-x" onclick="closeModal('vocabModal')">✕</span>
+    <h3>Vocabulary — Chapter 3 (pp. 45–54)</h3>
+    <p style="font-size:.85em; color:#777; margin-top:0;">Click any word to see its definition and example.</p>
+    <div id="vocabgrid"></div>
+  </div>
+</div>
+
+<script>
+/* ===== Reveal answers one at a time; last click hides all and resets ===== */
+const revealState = {};
+function stepReveal(ids, btn){
+  const key = ids.join(',');
+  const rawUnits = [];
+  ids.forEach(id=>{
+    const el = document.getElementById(id);
+    if(el) rawUnits.push(...el.querySelectorAll('.ans-ph, .correctmark, .sentmark'));
+  });
+  // group elements that share a data-pair value into one reveal step
+  const steps = [];
+  const pairIndex = {};
+  rawUnits.forEach(u=>{
+    const pair = u.getAttribute('data-pair');
+    if(pair){
+      if(pairIndex[pair] === undefined){ pairIndex[pair] = steps.length; steps.push([u]); }
+      else { steps[pairIndex[pair]].push(u); }
+    } else {
+      steps.push([u]);
+    }
+  });
+  function toggleUnit(u, on){
+    u.classList.toggle('shown', on);
+    if(u.classList.contains('ans-ph')){
+      const prev = u.previousElementSibling;
+      if(prev && prev.classList.contains('blank-ph')) prev.classList.toggle('hidden', on);
+    }
+  }
+  let count = revealState[key] || 0;
+  if(count < steps.length){
+    steps[count].forEach(u=>toggleUnit(u, true));
+    count++;
+    revealState[key] = count;
+    btn.textContent = (count < steps.length) ? btn.dataset.label + ' (' + count + '/' + steps.length + ')' : 'Hide Answers';
+  } else {
+    steps.forEach(group=>group.forEach(u=>toggleUnit(u, false)));
+    revealState[key] = 0;
+    btn.textContent = btn.dataset.label;
+  }
+}
+document.querySelectorAll('.showbtn').forEach(b=>{ b.dataset.label = b.textContent; });
+
+/* ===== Modals ===== */
+function openModal(id){ document.getElementById(id).classList.add('open'); }
+function closeModal(id){ document.getElementById(id).classList.remove('open'); }
+document.addEventListener('keydown', e=>{
+  if(e.key==='Escape'){ document.querySelectorAll('.modal-overlay.open').forEach(m=>m.classList.remove('open')); }
+});
+
+/* ===== Comprehension questions: reveal one at a time ===== */
+let cqRevealed = 0;
+const cqItems = ()=>document.querySelectorAll('#cqList li');
+function openCompqModal(){
+  cqRevealed = 0;
+  cqItems().forEach((li,i)=>{
+    li.classList.toggle('active-q', i===0);
+    li.querySelector('.cq-ans').classList.remove('show');
+  });
+  document.getElementById('cqAnsBtn').textContent = 'Show Answer';
+  openModal('compqModal');
+}
+function revealNextCQ(){
+  const items = cqItems();
+  if(cqRevealed < items.length){
+    items[cqRevealed].querySelector('.cq-ans').classList.add('show');
+    cqRevealed++;
+    if(cqRevealed < items.length){
+      items[cqRevealed].classList.add('active-q');
+      document.getElementById('cqAnsBtn').textContent = 'Show Answer';
+    } else {
+      document.getElementById('cqAnsBtn').textContent = 'Restart';
+    }
+  } else {
+    openCompqModal();
+  }
+}
+
+/* ===== Zoom control ===== */
+const BASE_ZOOM = 1.2;
+let relScale = 1.0;
+const content = document.getElementById('content');
+function applyZoom(){
+  content.style.transform = 'scale(' + (relScale*BASE_ZOOM) + ')';
+  content.style.width = (100/(relScale*BASE_ZOOM)) + '%';
+  document.getElementById('zoomlabel').textContent = Math.round(relScale*100) + '%';
+}
+document.getElementById('zin').onclick = ()=>{ relScale = Math.min(relScale+0.1, 1.8); applyZoom(); };
+document.getElementById('zout').onclick = ()=>{ relScale = Math.max(relScale-0.1, 0.6); applyZoom(); };
+applyZoom();
+
+/* ===== Active page-nav highlighting ===== */
+const pageAnchors = ['p45','p46','p48','p49','p50','p51','p52','p53','p54'].map(id=>document.getElementById(id)).filter(Boolean);
+const pagenavLinks = {};
+document.querySelectorAll('#pagenav a').forEach(a=> pagenavLinks[a.getAttribute('data-p')] = a);
+function updateActivePage(){
+  let current = pageAnchors[0];
+  const refY = 100;
+  for(const a of pageAnchors){
+    const rect = a.getBoundingClientRect();
+    if(rect.top - refY <= 0) current = a; else break;
+  }
+  Object.values(pagenavLinks).forEach(a=>a.classList.remove('active'));
+  if(current && pagenavLinks[current.id]) pagenavLinks[current.id].classList.add('active');
+}
+window.addEventListener('scroll', updateActivePage, {passive:true});
+window.addEventListener('resize', updateActivePage);
+setTimeout(updateActivePage, 300);
+
+/* ===== Word definitions (deduplicated: one entry per word) ===== */
+const WORD_DEFS = {
+  "topic": {title:"topic", pos:"noun", def:"A topic is one specific thing that a person is talking, writing, or thinking about.", examples:["What is the topic of your essay?","We talked about many topics at the meeting.","Climate change is a popular topic in the news.","Please stay on topic during the discussion.","The teacher assigned a new topic for our next presentation.","“What is the topic of the paragraph?” (page 45)"]},
+  "imagination": {title:"imagination", pos:"noun", def:"Your imagination is your ability to form pictures or ideas in your mind about things that are not really there.", examples:["Children often have a very active imagination.","Use your imagination to picture the scene.","The artist's imagination created a whole new world.","It takes imagination to write good fiction.","“You can use your imagination to create a story about the person's life.” (page 45)"]},
+  "ability": {title:"ability", pos:"noun", def:"An ability is the power or skill to do something.", examples:["She has the ability to speak three languages.","Practice improves your ability to write well.","He lost his ability to walk after the accident.","Everyone has different abilities.","“Your imagination is your ability to form new ideas or pictures in your mind.” (page 45)"]},
+  "to-form": {title:"form", pos:"verb", def:"To form something means to create it or make it take shape.", examples:["Clouds form when warm air rises.","The teacher asked students to form small groups.","Ice forms when water gets very cold.","New habits form slowly over time.","“...your ability to form new ideas or pictures in your mind.” (page 45)"]},
+  "idea": {title:"idea", pos:"noun", def:"An idea is a thought, plan, or picture in your mind.", examples:["I have an idea for our next project.","What's the main idea of this article?","She shared her idea with the class.","It's a good idea to save some money.","“...your ability to form new ideas or pictures in your mind.” (page 45)"], phrase:"<b>main idea</b><span class=\"phrase-def\">The most important point a writer makes about the topic. Example: “What is the writer's main idea about the topic?”</span>"},
+  "hardworking": {title:"hardworking", pos:"adjective", def:"Someone who is hardworking works hard and puts a lot of effort into their job or tasks.", examples:["My hardworking classmate always finishes her homework early.","Hardworking employees often get promoted.","He is hardworking, so he rarely misses a deadline.","Farmers are usually very hardworking people.","“The man in the photo is a hardworking man.” (page 45)"]},
+  "factory": {title:"factory", pos:"noun", def:"A factory is a building where products are made, usually with machines.", examples:["My uncle works in a car factory.","The factory produces thousands of shoes every day.","Factories can be noisy and busy places.","She got a job at a clothing factory.","“Ryan works in a factory.” (page 45)"]},
+  "shift": {title:"shift", pos:"noun", def:"A shift is a set period of time that a person works.", examples:["I work the night shift this week.","Nurses often work in 12-hour shifts.","Can you switch shifts with me on Friday?","The morning shift starts at 6 a.m.","“He works the second shift five days a week.” (page 45)"]},
+  "part-time": {title:"part-time", pos:"adjective", def:"Part-time means working or studying for only some of the usual hours, not the full amount.", examples:["She has a part-time job at a café.","He studies part-time while working.","Part-time workers usually work fewer hours than full-time workers.","I'm looking for part-time work this summer.","“He is a part-time college student.” (page 45)"], phrase:"<b>part-time</b> vs. <b>full-time</b><span class=\"phrase-def\">Describes how many hours someone works or studies — part-time is fewer hours, full-time is the standard full number.</span>"},
+  "work-out": {title:"work out", pos:"phrasal verb", def:"To work out means to exercise, especially to get physically stronger or fitter.", examples:["I work out at the gym three times a week.","She works out every morning before school.","Working out regularly keeps you healthy.","He likes to work out with a friend.","“In his free time, Ryan goes running and works out.” (page 45)"]},
+  "lead": {title:"lead", pos:"verb", def:"To lead a certain kind of life means to have or live that kind of life.", examples:["She leads a simple life in the countryside.","He leads a healthy lifestyle.","They lead a quiet life on the farm.","Doctors often lead very stressful lives.","“He leads a busy life.” (page 45)"], phrase:"<b>lead a busy/quiet/simple life</b><span class=\"phrase-def\">To have that kind of life. “Lead” is used this way only with a small set of words like “life” or “lifestyle.”</span>"},
+  "exciting": {title:"exciting", pos:"adjective", def:"Something exciting causes strong feelings of interest or energy.", examples:["We had an exciting trip to the mountains.","This is an exciting time for the company.","The movie had an exciting ending.","Starting a new job can be exciting.","“The man in the photo has an exciting life.” (page 46)"]},
+  "controlling": {title:"controlling", pos:"adjective", def:"Controlling describes someone or something that directs, decides, or has power over what happens.", examples:["Her boss is very controlling and checks everything she does.","He has a controlling personality.","Price was the controlling factor in our choice.","She felt her parents were too controlling.","The controlling company owns most of the shares."]},
+  "compare": {title:"compare", pos:"verb", def:"To compare two things means to look at them together to see how they are similar or different.", examples:["Compare these two sentences and choose the better one.","Let's compare prices before we buy.","She compared her essay to her classmate's.","It's useful to compare different opinions.","“Compare these two topic sentences:” (page 48)"]},
+  "either": {title:"either", pos:"determiner/conjunction", def:"Either is used to show that there are two possible choices.", examples:["You can choose either the red one or the blue one.","Either answer is correct.","I don't like either option.","Either you or your partner can present first.","“Either the topic or the controlling idea can come first...” (page 48)"], phrase:"<b>either ... or ...</b><span class=\"phrase-def\">Used to show two possible choices, and both are acceptable.</span>"},
+  "scuba-diving": {title:"scuba diving", pos:"noun (fixed expression)", def:"Scuba diving is the sport of swimming underwater using a tank of air on your back to breathe.", examples:["We went scuba diving on our vacation.","Scuba diving lets you explore the ocean up close.","You need special training before scuba diving.","He took scuba diving lessons last summer.","“Scuba diving requires careful preparation.” (page 48)"]},
+  "require": {title:"require", pos:"verb", def:"To require something means to need it, or to say officially that it is necessary.", examples:["This job requires good communication skills.","The recipe requires three eggs.","Learning a language requires a lot of practice.","The form requires your signature.","“Scuba diving requires careful preparation.” (page 48)"]},
+  "analyze": {title:"analyze", pos:"verb", def:"To analyze something means to study it carefully in order to understand it.", examples:["Analyze the data before you draw a conclusion.","Scientists analyze samples in the lab.","We analyzed the poem line by line.","Analyzing your mistakes helps you improve.","“Analyzing Topic Sentences” (page 49, exercise title)"]},
+  "terrible": {title:"terrible", pos:"adjective", def:"Terrible means very bad.", examples:["I had a terrible headache yesterday.","The weather was terrible during our trip.","That was a terrible mistake.","He felt terrible about being late.","“The man in the photo has a terrible job.” (page 49)"]},
+  "recipe": {title:"recipe", pos:"noun", def:"A recipe is a set of instructions for cooking or making a particular food.", examples:["This recipe needs flour, sugar, and butter.","She found a new recipe online.","Follow the recipe exactly for best results.","My grandmother's recipe is my favorite.","“...look for the recipe on the back.” (page 49)"]},
+  "to-list": {title:"list", pos:"verb", def:"To list things means to write or say them one after another as a series of items.", examples:["Please list your three favorite hobbies.","The menu lists all the dishes and prices.","She listed the reasons for her decision.","Can you list the ingredients you need?","“The recipe will list the other ingredients you need.” (page 49)"]},
+  "to-measure": {title:"measure", pos:"verb", def:"To measure something means to find its exact size or amount.", examples:["Measure the flour carefully before you bake.","He measured the room before buying furniture.","Use a ruler to measure the line.","Measure twice, cut once.","“At home, measure the ingredients and mix them...” (page 49)"]},
+  "ingredient": {title:"ingredient", pos:"noun", def:"An ingredient is one of the foods or items used together to make a dish.", examples:["Sugar is the main ingredient in this cake.","Check that you have all the ingredients.","Fresh ingredients make the dish taste better.","What ingredients do we need for the soup?","“The recipe will list the other ingredients you need.” (page 49)"]},
+  "dough": {title:"dough", pos:"noun", def:"Dough is a soft, thick mixture of flour and liquid used to make bread, cookies, etc.", examples:["Knead the dough for five minutes.","The dough needs to rest before baking.","Pizza dough is made from flour, water, and yeast.","She rolled out the dough for the pie.","“...mix them to make the cookie dough.” (page 49)"]},
+  "several": {title:"several", pos:"determiner", def:"Several means more than two or three, but not a very large number.", examples:["I've read several books by that author.","She has visited several countries in Europe.","There are several reasons to be careful.","He called several times yesterday.","“A betta makes a good pet for several reasons.” (page 49)"]},
+  "bring-out": {title:"bring out", pos:"phrasal verb", def:"To bring out a quality means to make it more noticeable.", examples:["The sunlight brings out the color of the leaves.","Good lighting brings out the details in a photo.","This spice brings out the flavor of the soup.","Her new haircut really brings out her eyes.","“The light brings out its amazing color.” (page 49)"]},
+  "fishbowl": {title:"fishbowl", pos:"noun", def:"A fishbowl is a round glass container used to keep a pet fish.", examples:["The goldfish swam around its fishbowl.","We bought a small fishbowl for the classroom pet.","Clean the fishbowl once a week.","A fishbowl is smaller than an aquarium.","“...its food, or its fishbowl.” (page 49)"]},
+  "sing-along": {title:"sing along", pos:"phrasal verb (fixed expression)", def:"To sing along means to sing at the same time as a song that is playing or as someone else.", examples:["The kids love to sing along with their favorite songs.","He sang along to the radio in the car.","Everyone sang along during the concert.","She likes to sing along while cooking.","“I like to listen to him sing along with the radio.” (page 50)"]},
+  "on-purpose": {title:"on purpose", pos:"fixed expression", def:"If you do something on purpose, you do it intentionally, not by accident.", examples:["He broke the vase on purpose.","I don't think she did it on purpose.","Did you leave the door open on purpose?","She made the mistake on purpose to test us.","“...sometimes he does it on purpose, to make me laugh.” (page 50)"], phrase:"<b>on purpose</b> ↔ <b>by mistake</b><span class=\"phrase-def\">Opposite pair: intentionally vs. accidentally.</span>"},
+  "remind": {title:"remind", pos:"verb", def:"To remind someone of something means to make them think of or remember it.", examples:["This song reminds me of my childhood.","Please remind me to call her later.","The smell reminded him of his grandmother's kitchen.","Can you remind me of the meeting time?","“The photos remind me of good times together.” (page 51)"], phrase:"<b>remind someone of something</b><span class=\"phrase-def\">To make someone think of or remember something.</span>"},
+  "admire": {title:"admire", pos:"verb", def:"To admire someone means to respect and think highly of them.", examples:["I admire her courage and honesty.","Students admire teachers who are patient.","We admired the view from the mountain.","He is admired by his coworkers.","“First, I admire her because she has many talents.” (page 51)"]},
+  "movie-producer": {title:"movie producer", pos:"noun (fixed expression)", def:"A movie producer is a person whose job is to organize and manage the making of a movie.", examples:["The movie producer raised money to make the film.","She wants to become a movie producer someday.","The producer chose the actors for the film.","A good producer manages the whole movie project.","“Second, she is also a movie producer, so I think she is smart.” (page 51)"]},
+  "seem-like": {title:"seem like", pos:"fixed expression", def:"To seem like something means to give the impression of being that thing.", examples:["This seems like a great idea.","He seems like a nice person.","It seems like it might rain today.","That seems like a lot of work.","“Finally, she seems like a good person.” (page 51)"], phrase:"<b>seem like + noun</b><span class=\"phrase-def\">Compare: seem + adjective, e.g. “she seems nice.”</span>"},
+  "value": {title:"value", pos:"noun", def:"The value of something is how important, useful, or worthwhile it is.", examples:["Education has great value in life.","The value of the house increased.","She talked about the value of hard work.","I appreciate the value of good friends.","“...talk to teenagers about the value of education.” (page 51)"]},
+  "health-care": {title:"health care", pos:"noun (fixed compound)", def:"Health care refers to the services and treatment people receive to stay healthy or treat illness.", examples:["Good health care is important for everyone.","She works in the health care industry.","Many countries offer free health care.","Health care costs are rising.","“She also talks about good health care for all women.” (page 51)"]},
+  "unusual": {title:"unusual", pos:"adjective", def:"Unusual means not common or not typical.", examples:["It's unusual for him to be late.","They have an unusual house shape.","The weather has been unusual this year.","She has an unusual talent for languages.","“America Ferrera is an unusual woman.” (page 51)"]},
+  "title": {title:"title", pos:"noun", def:"A title is the name given to a piece of writing, such as a paragraph, essay, or book.", examples:["What is the title of your favorite book?","Choose a title that fits your essay.","The movie's title was hard to translate.","Every article needs a clear title.","“Each paragraph you write...should have a title.” (page 52)"]},
+  "refer": {title:"refer", pos:"verb", def:"To refer back to something means to mention it again or point back to it.", examples:["Please refer to page 10 for more details.","The report refers back to earlier data.","She referred to her notes during the speech.","Don't refer back to the title in your topic sentence.","“A topic sentence cannot refer back to the title...” (page 52)"], phrase:"<b>refer back to something</b><span class=\"phrase-def\">To mention or point back to something already said.</span>"},
+  "affect": {title:"affect", pos:"verb", def:"To affect something means to have an influence on it or cause a change in it.", examples:["The weather can affect your mood.","Stress can affect your health.","Her decision will affect the whole team.","Sleep affects how well you concentrate.","“...the title does not affect your thinking about the topic sentence.” (page 52)"]},
+  "discussion": {title:"discussion", pos:"noun", def:"A discussion is a conversation in which people talk about a topic and share ideas or opinions.", examples:["We had a long discussion about the project.","Class discussions help students share ideas.","The discussion focused on climate change.","Let's open the floor for discussion.","“I enjoy classroom discussions for several reasons.” (page 52)"]},
+  "go-by": {title:"go by", pos:"phrasal verb", def:"When time goes by, it passes.", examples:["Time goes by so quickly during vacation.","The years go by faster as you get older.","We chatted while the hours went by.","Summer always seems to go by too fast.","“They make time in class go by faster, too.” (page 52)"], phrase:"<b>time goes by</b><span class=\"phrase-def\">Time passes.</span>"},
+  "argue": {title:"argue", pos:"verb", def:"To argue means to talk with someone in an angry way because you disagree, or to give reasons for an opinion.", examples:["My brothers often argue about small things.","She argued that the plan was too risky.","Let's not argue in front of the guests.","They argued for hours about the movie.","“People in my family sometimes argue about music, for example in the car.” (page 53)"]},
+  "bicycle": {title:"bicycle", pos:"noun", def:"A bicycle is a two-wheeled vehicle that you ride by pushing pedals with your feet.", examples:["I ride my bicycle to school every day.","She bought a new bicycle for her birthday.","Bicycles are a cheap way to travel short distances.","He fixed the flat tire on his bicycle.","“A bicycle is inexpensive, so everyone can afford to own and ride one.” (page 53)"]},
+  "nature": {title:"nature", pos:"noun", def:"A person's nature is their character — the qualities that make up who they are.", examples:["She has a kind and gentle nature.","It's just human nature to make mistakes.","He has a curious nature.","Her calm nature helps her stay relaxed under pressure.","“She has a warm and friendly nature.” (page 53)"]},
+  "benefit": {title:"benefit", pos:"noun & verb", def:"As a noun, a benefit is a good or helpful result that something gives you. As a verb, to benefit (from something) means to get something good or useful from it.", examples:["Regular exercise has many benefits for your health. (noun)","One benefit of living in a city is easy access to public transportation. (noun)","Both companies will benefit from this partnership. (verb)","She benefited a lot from her teacher's advice. (verb)","“The Benefits of City Living” (page 54)"]}
+};
+
+function showWordDef(key){
+  const d = WORD_DEFS[key];
+  if(!d) return;
+  document.getElementById('wTitle').textContent = d.title;
+  document.getElementById('wPos').textContent = d.pos || '';
+  document.getElementById('wDef').textContent = d.def || '';
+  const ex = document.getElementById('wExample');
+  if(d.examples && d.examples.length){
+    ex.innerHTML = '<ul>' + d.examples.map(s=>'<li>'+s+'</li>').join('') + '</ul>';
+    ex.style.display='block';
+  } else { ex.style.display='none'; }
+  const ph = document.getElementById('wPhrase');
+  if(d.phrase){ ph.innerHTML = d.phrase; ph.style.display='block'; } else { ph.style.display='none'; }
+  openModal('wordModal');
+}
+document.querySelectorAll('.wterm').forEach(el=>{
+  el.addEventListener('click', ()=> showWordDef(el.getAttribute('data-w')) );
+});
+
+/* ===== Vocabulary list modal ===== */
+function openVocabList(){
+  const grid = document.getElementById('vocabgrid');
+  grid.innerHTML = '';
+  Object.keys(WORD_DEFS).forEach(key=>{
+    const chip = document.createElement('span');
+    chip.className = 'vchip';
+    chip.textContent = WORD_DEFS[key].title;
+    chip.addEventListener('click', ()=>{ closeModal('vocabModal'); showWordDef(key); });
+    grid.appendChild(chip);
+  });
+  openModal('vocabModal');
+}
+
+/* ===== Highlighter / Eraser ===== */
+let highlightMode = false;
+let eraseMode = false;
+const highlightBtn = document.getElementById('highlightBtn');
+const eraserBtn = document.getElementById('eraserBtn');
+
+function setHighlightMode(on){
+  highlightMode = on;
+  if(on) eraseMode = false;
+  highlightBtn.classList.toggle('active', highlightMode);
+  eraserBtn.classList.toggle('active', eraseMode);
+  document.body.classList.toggle('highlight-mode', highlightMode);
+  document.body.classList.toggle('erase-mode', eraseMode);
+}
+function setEraseMode(on){
+  eraseMode = on;
+  if(on) highlightMode = false;
+  eraserBtn.classList.toggle('active', eraseMode);
+  highlightBtn.classList.toggle('active', highlightMode);
+  document.body.classList.toggle('erase-mode', eraseMode);
+  document.body.classList.toggle('highlight-mode', highlightMode);
+}
+highlightBtn.addEventListener('click', ()=> setHighlightMode(!highlightMode));
+eraserBtn.addEventListener('click', ()=> setEraseMode(!eraseMode));
+
+function wrapRangeInHighlight(range){
+  const mark = document.createElement('mark');
+  mark.className = 'user-highlight';
+  try{
+    range.surroundContents(mark);
+  }catch(e){
+    const contents = range.extractContents();
+    mark.appendChild(contents);
+    range.insertNode(mark);
+  }
+}
+
+document.addEventListener('mouseup', ()=>{
+  if(!highlightMode) return;
+  const sel = window.getSelection();
+  if(!sel || sel.rangeCount === 0 || sel.isCollapsed) return;
+  const anchorEl = sel.anchorNode && sel.anchorNode.nodeType === 1 ? sel.anchorNode : sel.anchorNode.parentElement;
+  if(anchorEl && (anchorEl.closest('#topnav') || anchorEl.closest('#pagenav') || anchorEl.closest('#leftctrl') || anchorEl.closest('.modal-overlay'))) return;
+  const range = sel.getRangeAt(0);
+  if(range.collapsed) return;
+  wrapRangeInHighlight(range);
+  sel.removeAllRanges();
+});
+
+document.addEventListener('click', (e)=>{
+  if(!eraseMode) return;
+  const mark = e.target.closest('mark.user-highlight');
+  if(!mark) return;
+  const parent = mark.parentNode;
+  while(mark.firstChild) parent.insertBefore(mark.firstChild, mark);
+  parent.removeChild(mark);
+  parent.normalize();
+});
+</script>
+
+</body>
+</html>
