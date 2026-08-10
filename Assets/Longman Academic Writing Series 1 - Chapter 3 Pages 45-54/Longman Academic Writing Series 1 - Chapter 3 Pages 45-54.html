@@ -147,6 +147,20 @@ p{margin:0 0 14px;}
   padding:7px 16px; border-radius:16px; font-size:12.5px; cursor:pointer; font-weight:bold;
 }
 .showbtn:hover{background:var(--purple);}
+.showbtn.locked{background:#8a8a8a;}
+.showbtn.locked::after{content:" \1F512";}
+
+/* ===== Answer-lock popup ===== */
+#lockInput{
+  font-family:Arial, sans-serif; font-size:16px; padding:8px 12px; flex:1;
+  border:1px solid #bbb; border-radius:8px;
+}
+#lockModal .lock-go{
+  font-family:Arial, sans-serif; background:var(--navy); color:#fff; border:none;
+  padding:9px 18px; border-radius:16px; font-size:14px; cursor:pointer; font-weight:bold;
+}
+#lockModal .lock-go:hover{background:var(--purple);}
+#lockMsg{color:var(--red); font-size:.9em; min-height:1.2em; margin:8px 0 0;}
 
 .pagephoto{max-width:340px; width:60%; display:block; margin:10px auto 16px; border-radius:2px; box-shadow:3px 4px 8px rgba(0,0,0,.25);}
 .pagephoto.right{float:right; margin:0 0 12px 18px; width:40%;}
@@ -236,7 +250,7 @@ p{margin:0 0 14px;}
 .word-phrase .phrase-def{display:block; margin-top:2px;}
 
 #wordModal .modal-box{font-size:40px; max-width:1100px;}
-#compqModal .modal-box, #vocabModal .modal-box{font-size:16px;}
+#compqModal .modal-box, #vocabModal .modal-box, #lockModal .modal-box{font-size:16px;}
 
 .cq-list{padding:0; margin:0; list-style:none;}
 .cq-list li{margin:0 0 14px; padding-bottom:12px; border-bottom:1px solid #eee; opacity:.4;}
@@ -409,20 +423,20 @@ Sentences <span class="blank-ph short">&nbsp;</span><span class="ans-ph">a</span
 <div class="parlabel">Paragraph 1</div>
 <img class="pagephoto small right" src="media/p49_angryphone.png" alt="A man angrily shouting into a telephone">
 <p><span class="sentmark"><span class="topic-part">The man in the photo</span> <span class="ctrl-part">has a <span class="wterm" data-w="terrible">terrible</span> job.</span></span> His name is Bob Walker, and he works for Bigg Computers. Every day, customers call him on the phone. They are unhappy about their computers. He does not like to listen to them. Sometimes they get angry, and they yell at Bob. Then he gets angry, too. He needs a new job.</p>
-<div class="btnrow clearfix"><button class="showbtn" onclick="stepReveal(['ex-prac2-p1'], this)">Show Answer</button></div>
+<div class="btnrow clearfix"><button class="showbtn" data-group="p49" onclick="stepReveal(['ex-prac2-p1'], this, 'p49')">Show Answer</button></div>
 </div>
 
 <div class="exwrap" id="ex-prac2-p2">
 <div class="parlabel">Paragraph 2</div>
 <p><span class="sentmark"><span class="ctrl-part">It is easy to make</span> <span class="topic-part">good chocolate chip cookies.</span></span> Just buy a bag of chocolate chips at the supermarket and look for the <span class="wterm" data-w="recipe">recipe</span> on the back. The recipe will <span class="wterm" data-w="to-list">list</span> the other <span class="wterm" data-w="ingredient">ingredients</span> you need. At home, <span class="wterm" data-w="to-measure">measure</span> the ingredients and mix them to make the cookie <span class="wterm" data-w="dough">dough</span>. Put the dough into the refrigerator and wait for 24 hours. (That is the only hard part—waiting!) Follow the instructions to bake the cookies. The last step is the easiest part of all: eating the cookies warm from the oven.</p>
-<div class="btnrow"><button class="showbtn" onclick="stepReveal(['ex-prac2-p2'], this)">Show Answer</button></div>
+<div class="btnrow"><button class="showbtn" data-group="p49" onclick="stepReveal(['ex-prac2-p2'], this, 'p49')">Show Answer</button></div>
 </div>
 
 <div class="exwrap" id="ex-prac2-p3">
 <div class="parlabel">Paragraph 3</div>
 <img class="pagephoto small right" src="media/p49_betta.png" alt="A betta fish in a fishbowl">
 <p><span class="sentmark"><span class="topic-part">A betta</span> <span class="ctrl-part">makes a good pet for <span class="wterm" data-w="several">several</span> reasons.</span></span> First, it is a beautiful fish, especially in the sunlight. The light <span class="wterm" data-w="bring-out">brings out</span> its amazing color. Second, it is easy to take care of a betta. Just feed it every day, and give it clean water once a week. Finally, a betta is not expensive. You do not have to spend much money on the fish, its food, or its <span class="wterm" data-w="fishbowl">fishbowl</span>. I tell all my friends to get a betta.</p>
-<div class="btnrow clearfix"><button class="showbtn" onclick="stepReveal(['ex-prac2-p3'], this)">Show Answer</button></div>
+<div class="btnrow clearfix"><button class="showbtn" data-group="p49" onclick="stepReveal(['ex-prac2-p3'], this, 'p49')">Show Answer</button></div>
 </div>
 
 <div class="page-divider"><span>PAGE 50</span></div>
@@ -430,7 +444,7 @@ Sentences <span class="blank-ph short">&nbsp;</span><span class="ans-ph">a</span
 <div class="exwrap" id="ex-prac2-p4">
 <div class="parlabel">Paragraph 4</div>
 <p><span class="sentmark"><span class="topic-part">My five-year-old nephew</span> <span class="ctrl-part">is a very funny little boy.</span></span> I like to listen to him <span class="wterm" data-w="sing-along">sing along</span> with the radio. He often gets the words wrong. Sometimes he does it by mistake, and sometimes he does it <span class="wterm" data-w="on-purpose">on purpose</span>, to make me laugh. I enjoy spending time with my funny little nephew.</p>
-<div class="btnrow"><button class="showbtn" onclick="stepReveal(['ex-prac2-p4'], this)">Show Answer</button></div>
+<div class="btnrow"><button class="showbtn" data-group="p50" onclick="stepReveal(['ex-prac2-p4'], this, 'p50')">Show Answer</button></div>
 </div>
 
 <div class="practice-tag">PRACTICE 3</div><span class="practice-title">Choosing a Topic Sentence</span>
@@ -444,7 +458,7 @@ Sentences <span class="blank-ph short">&nbsp;</span><span class="ans-ph">a</span
   <li><span class="oletter">b.</span> My friend Kai and I like sports.</li>
   <li><span class="oletter">c.</span> My friend Kai is good at sports. <span class="correctmark" data-pair="p1">✓ correct</span></li>
 </ul>
-<div class="btnrow"><button class="showbtn" onclick="stepReveal(['ex-prac3-p1'], this)">Show Answer</button></div>
+<div class="btnrow"><button class="showbtn" data-group="p50" onclick="stepReveal(['ex-prac3-p1'], this, 'p50')">Show Answer</button></div>
 </div>
 
 <div class="exwrap" id="ex-prac3-p2">
@@ -459,7 +473,7 @@ Sentences <span class="blank-ph short">&nbsp;</span><span class="ans-ph">a</span
   <li><span class="oletter">b.</span> Some butterflies are great travelers. <span class="correctmark" data-pair="p2">✓ correct</span></li>
   <li><span class="oletter">c.</span> Butterflies live in many parts of the world.</li>
 </ul>
-<div class="btnrow"><button class="showbtn" onclick="stepReveal(['ex-prac3-p2'], this)">Show Answer</button></div>
+<div class="btnrow"><button class="showbtn" data-group="p50" onclick="stepReveal(['ex-prac3-p2'], this, 'p50')">Show Answer</button></div>
 </div>
 
 <div class="page-divider"><span>PAGE 51</span></div>
@@ -472,7 +486,7 @@ Sentences <span class="blank-ph short">&nbsp;</span><span class="ans-ph">a</span
   <li><span class="oletter">b.</span> Everyone needs a good camera.</li>
   <li><span class="oletter">c.</span> Taking pictures can be quick and easy.</li>
 </ul>
-<div class="btnrow"><button class="showbtn" onclick="stepReveal(['ex-prac3-p3'], this)">Show Answer</button></div>
+<div class="btnrow"><button class="showbtn" data-group="p51" onclick="stepReveal(['ex-prac3-p3'], this, 'p51')">Show Answer</button></div>
 </div>
 
 <div class="exwrap" id="ex-prac3-p4">
@@ -487,7 +501,7 @@ Sentences <span class="blank-ph short">&nbsp;</span><span class="ans-ph">a</span
   <li><span class="oletter">b.</span> I admire America Ferrera for several reasons. <span class="correctmark" data-pair="p4">✓ correct</span></li>
   <li><span class="oletter">c.</span> America Ferrera was in the TV series <i>Ugly Betty</i>.</li>
 </ul>
-<div class="btnrow"><button class="showbtn" onclick="stepReveal(['ex-prac3-p4'], this)">Show Answer</button></div>
+<div class="btnrow"><button class="showbtn" data-group="p51" onclick="stepReveal(['ex-prac3-p4'], this, 'p51')">Show Answer</button></div>
 </div>
 
 <div class="page-divider"><span>PAGE 52</span></div>
@@ -528,45 +542,45 @@ Sentences <span class="blank-ph short">&nbsp;</span><span class="ans-ph">a</span
   <li><span class="oletter">b.</span> Speaking English in Class</li>
   <li><span class="oletter">c.</span> Why I Like Classroom Discussions <span class="correctmark">✓ correct (title already shown above)</span></li>
 </ul>
-<div class="btnrow"><button class="showbtn" onclick="stepReveal(['ex-prac4-p1'], this)">Show Answer</button></div>
+<div class="btnrow"><button class="showbtn" data-group="p52" onclick="stepReveal(['ex-prac4-p1'], this, 'p52')">Show Answer</button></div>
 </div>
 
 <div class="page-divider"><span>PAGE 53</span></div>
 <div id="p53" class="page-anchor"></div>
 <div class="exwrap" id="ex-prac4-p2">
 <div class="parlabel">Paragraph 2</div>
-<p><span class="blank-ph">&nbsp;</span><span class="ans-ph" data-pair="p2">"Everyone in my family loves music."</span><br>
-<span class="sentmark"><span class="ctrl-part">Everyone in my family loves music.</span></span> We listen to music all the time. My parents like classical music and pop. My sisters like popular music, and they love to sing karaoke. My brother likes classic music and plays guitar in a music band. I like all these kinds of music at different times. People in my family sometimes <span class="wterm" data-w="argue">argue</span> about music, for example in the car, but we all agree on one thing. Life is better with music.</p>
+<div style="text-align:center; margin-bottom:8px;"><span class="blank-ph" style="min-width:280px;">&nbsp;</span><span class="ans-ph" data-pair="p2" data-step="2">A Family of Music Lovers</span></div>
+<p><span class="sentmark" data-step="1"><span class="ctrl-part">Everyone in my family loves music.</span></span> We listen to music all the time. My parents like classical music and pop. My sisters like popular music, and they love to sing karaoke. My brother likes classic music and plays guitar in a music band. I like all these kinds of music at different times. People in my family sometimes <span class="wterm" data-w="argue">argue</span> about music, for example in the car, but we all agree on one thing. Life is better with music.</p>
 <ul class="option-list">
   <li><span class="oletter">a.</span> Music in My Life</li>
   <li><span class="oletter">b.</span> A Family of Music Lovers <span class="correctmark" data-pair="p2">✓ correct</span></li>
   <li><span class="oletter">c.</span> The Importance of Music</li>
 </ul>
-<div class="btnrow"><button class="showbtn" onclick="stepReveal(['ex-prac4-p2'], this)">Show Answer</button></div>
+<div class="btnrow"><button class="showbtn" data-group="p53" onclick="stepReveal(['ex-prac4-p2'], this, 'p53')">Show Answer</button></div>
 </div>
 
 <div class="exwrap" id="ex-prac4-p3">
 <div class="parlabel">Paragraph 3</div>
-<p><span class="blank-ph">&nbsp;</span><span class="ans-ph" data-pair="p3">"Bicycling is a smart form of transportation."</span><br>
-<span class="sentmark"><span class="ctrl-part">Bicycling is a smart form of transportation.</span></span> A <span class="wterm" data-w="bicycle">bicycle</span> is inexpensive, so everyone can afford to own and ride one. Bicycles are quiet and clean, unlike cars or buses. Also, riding a bicycle is good exercise, and most people today need more exercise. More people should try bicycling to school or work. It is the smart way to get where you are going.</p>
+<div style="text-align:center; margin-bottom:8px;"><span class="blank-ph" style="min-width:280px;">&nbsp;</span><span class="ans-ph" data-pair="p3" data-step="2">The Smart Way to Go</span></div>
+<p><span class="sentmark" data-step="1"><span class="ctrl-part">Bicycling is a smart form of transportation.</span></span> A <span class="wterm" data-w="bicycle">bicycle</span> is inexpensive, so everyone can <span class="wterm" data-w="afford">afford</span> <span class="wterm" data-w="to-own">to own</span> and ride one. Bicycles are quiet and clean, <span class="wterm" data-w="unlike">unlike</span> cars or buses. Also, riding a bicycle is good exercise, and most people today need more exercise. More people should try bicycling to school or work. It is the smart way to get where you are going.</p>
 <ul class="option-list">
   <li><span class="oletter">a.</span> The Smart Way to Go <span class="correctmark" data-pair="p3">✓ correct</span></li>
   <li><span class="oletter">b.</span> The Sport of Bicycling</li>
   <li><span class="oletter">c.</span> Owning a Bicycle</li>
 </ul>
-<div class="btnrow"><button class="showbtn" onclick="stepReveal(['ex-prac4-p3'], this)">Show Answer</button></div>
+<div class="btnrow"><button class="showbtn" data-group="p53" onclick="stepReveal(['ex-prac4-p3'], this, 'p53')">Show Answer</button></div>
 </div>
 
 <div class="exwrap" id="ex-prac4-p4">
 <div class="parlabel">Paragraph 4</div>
-<p><span class="blank-ph">&nbsp;</span><span class="ans-ph" data-pair="p4">"My sister Anna is a very outgoing person."</span><br>
-<span class="sentmark"><span class="ctrl-part">My sister Anna is a very outgoing person.</span></span> She loves to be with people, and she loves to talk. She has many friends, and she is on the phone with them all day long. She is happy to meet new people, too. She makes friends easily. She is never shy. She has a warm and friendly <span class="wterm" data-w="nature">nature</span>, and I am happy that she is my sister.</p>
+<div style="text-align:center; margin-bottom:8px;"><span class="blank-ph" style="min-width:280px;">&nbsp;</span><span class="ans-ph" data-pair="p4" data-step="2">My Sociable Sister</span></div>
+<p><span class="sentmark" data-step="1"><span class="ctrl-part">My sister Anna is a very <span class="wterm" data-w="outgoing">outgoing</span> person.</span></span> She loves to be with people, and she loves to talk. She has many friends, and she is on the phone with them all day long. She is happy to meet new people, too. She makes friends easily. She is never shy. She has a warm and friendly <span class="wterm" data-w="nature">nature</span>, and I am happy that she is my sister.</p>
 <ul class="option-list">
   <li><span class="oletter">a.</span> A Very Outgoing Person</li>
   <li><span class="oletter">b.</span> My Sociable Sister <span class="correctmark" data-pair="p4">✓ correct</span></li>
   <li><span class="oletter">c.</span> My Sister and I</li>
 </ul>
-<div class="btnrow"><button class="showbtn" onclick="stepReveal(['ex-prac4-p4'], this)">Show Answer</button></div>
+<div class="btnrow"><button class="showbtn" data-group="p53" onclick="stepReveal(['ex-prac4-p4'], this, 'p53')">Show Answer</button></div>
 </div>
 
 <div class="page-divider"><span>PAGE 54</span></div>
@@ -605,7 +619,7 @@ Possible Title: <span class="blank-ph">&nbsp;</span><span class="ans-ph model-st
 <span class="blank-ph" style="min-width:400px;">&nbsp;</span><span class="ans-ph model-style">Knowing another language can help you get a good job.</span><br>
 Possible Title: <span class="blank-ph">&nbsp;</span><span class="ans-ph model-style">The <span class="wterm" data-w="benefit">Benefits</span> of Learning a New Language</span></div>
 
-<div class="btnrow"><button class="showbtn" onclick="stepReveal(['ex-tryitout'], this)">Show Model Answers</button></div>
+<div class="btnrow"><button class="showbtn" data-group="p54" onclick="stepReveal(['ex-tryitout'], this, 'p54')">Show Model Answers</button></div>
 </div>
 
 </div><!-- /#content -->
@@ -653,6 +667,20 @@ Possible Title: <span class="blank-ph">&nbsp;</span><span class="ans-ph model-st
   </div>
 </div>
 
+<!-- ============ Answer Lock Modal ============ -->
+<div class="modal-overlay" id="lockModal" style="z-index:300;" onclick="if(event.target===this) closeModal('lockModal')">
+  <div class="modal-box" style="max-width:460px;">
+    <span class="close-x" onclick="closeModal('lockModal')">✕</span>
+    <h3 id="lockTitle">🔒 Answers locked</h3>
+    <p style="font-size:.95em; color:#555; margin-top:0;">Enter the class code for this page to see the answers.</p>
+    <div style="display:flex; gap:8px; align-items:center;">
+      <input type="password" id="lockInput" placeholder="class code" autocomplete="off">
+      <button type="button" class="lock-go" id="lockGo">Unlock</button>
+    </div>
+    <p id="lockMsg"></p>
+  </div>
+</div>
+
 <!-- ============ Vocabulary List Modal ============ -->
 <div class="modal-overlay" id="vocabModal" onclick="if(event.target===this) closeModal('vocabModal')">
   <div class="modal-box" style="max-width:560px;">
@@ -664,9 +692,75 @@ Possible Title: <span class="blank-ph">&nbsp;</span><span class="ans-ph model-st
 </div>
 
 <script>
+/* ===== Answer lock: one passcode per page + master override =====
+   To change codes, just edit the values in PAGES below.
+   MASTER_CODE always unlocks every page at once (kept for you, the teacher). */
+const PAGES = {
+  p49: { label:'Page 49', code:'tiger'  },
+  p50: { label:'Page 50', code:'green'  },
+  p51: { label:'Page 51', code:'piano'  },
+  p52: { label:'Page 52', code:'sugar'  },
+  p53: { label:'Page 53', code:'winter' },
+  p54: { label:'Page 54', code:'moon'   }
+};
+const MASTER_CODE = 'robot234';
+const unlockedPages = new Set(); // resets every page load/reload — nothing is remembered between visits
+
+function isUnlocked(page){ return !page || unlockedPages.has(page); }
+
+function tryUnlock(page, code){
+  if(code === MASTER_CODE){
+    Object.keys(PAGES).forEach(p=>{ unlockedPages.add(p); refreshPageUI(p); });
+    return true;
+  }
+  if(PAGES[page] && code === PAGES[page].code){
+    unlockedPages.add(page);
+    refreshPageUI(page);
+    return true;
+  }
+  return false;
+}
+
+function refreshPageUI(page){
+  document.querySelectorAll('.showbtn[data-group="'+page+'"]').forEach(b=>{
+    b.classList.remove('locked');
+  });
+}
+
+/* Lock popup: opens when a locked button is clicked; on success runs the pending reveal */
+let pendingUnlock = null; // { page, onSuccess }
+function openLockModal(page, onSuccess){
+  pendingUnlock = { page: page, onSuccess: onSuccess };
+  document.getElementById('lockTitle').textContent = '🔒 ' + (PAGES[page] ? PAGES[page].label : 'Answers') + ' is locked';
+  document.getElementById('lockMsg').textContent = '';
+  const input = document.getElementById('lockInput');
+  input.value = '';
+  openModal('lockModal');
+  setTimeout(()=>input.focus(), 50);
+}
+function submitLockCode(){
+  if(!pendingUnlock) return;
+  const input = document.getElementById('lockInput');
+  const val = (input.value || '').trim();
+  if(tryUnlock(pendingUnlock.page, val)){
+    const cb = pendingUnlock.onSuccess;
+    pendingUnlock = null;
+    closeModal('lockModal');
+    if(cb) cb();
+  } else {
+    document.getElementById('lockMsg').textContent = 'Incorrect code. Try again.';
+    input.value = '';
+    input.focus();
+  }
+}
+
 /* ===== Reveal answers one at a time; last click hides all and resets ===== */
 const revealState = {};
-function stepReveal(ids, btn){
+function stepReveal(ids, btn, page){
+  if(page && !isUnlocked(page)){
+    openLockModal(page, ()=> stepReveal(ids, btn, page));
+    return;
+  }
   const key = ids.join(',');
   const rawUnits = [];
   ids.forEach(id=>{
@@ -685,6 +779,15 @@ function stepReveal(ids, btn){
       steps.push([u]);
     }
   });
+  // optional explicit ordering: elements with data-step reveal in that numeric order;
+  // steps without data-step keep their DOM position as the order value
+  const ordered = steps.map((g,i)=>{
+    const withStep = g.find(u=>u.hasAttribute('data-step'));
+    return {g, ord: withStep ? parseFloat(withStep.getAttribute('data-step')) - 1000 : i};
+  });
+  ordered.sort((a,b)=>a.ord-b.ord);
+  steps.length = 0;
+  ordered.forEach(o=>steps.push(o.g));
   function toggleUnit(u, on){
     u.classList.toggle('shown', on);
     if(u.classList.contains('ans-ph')){
@@ -818,7 +921,11 @@ const WORD_DEFS = {
   "argue": {title:"argue", pos:"verb", def:"To argue means to talk with someone in an angry way because you disagree, or to give reasons for an opinion.", examples:["My brothers often argue about small things.","She argued that the plan was too risky.","Let's not argue in front of the guests.","They argued for hours about the movie.","“People in my family sometimes argue about music, for example in the car.” (page 53)"]},
   "bicycle": {title:"bicycle", pos:"noun", def:"A bicycle is a two-wheeled vehicle that you ride by pushing pedals with your feet.", examples:["I ride my bicycle to school every day.","She bought a new bicycle for her birthday.","Bicycles are a cheap way to travel short distances.","He fixed the flat tire on his bicycle.","“A bicycle is inexpensive, so everyone can afford to own and ride one.” (page 53)"]},
   "nature": {title:"nature", pos:"noun", def:"A person's nature is their character — the qualities that make up who they are.", examples:["She has a kind and gentle nature.","It's just human nature to make mistakes.","He has a curious nature.","Her calm nature helps her stay relaxed under pressure.","“She has a warm and friendly nature.” (page 53)"]},
-  "benefit": {title:"benefit", pos:"noun & verb", def:"As a noun, a benefit is a good or helpful result that something gives you. As a verb, to benefit (from something) means to get something good or useful from it.", examples:["Regular exercise has many benefits for your health. (noun)","One benefit of living in a city is easy access to public transportation. (noun)","Both companies will benefit from this partnership. (verb)","She benefited a lot from her teacher's advice. (verb)","“The Benefits of City Living” (page 54)"]}
+  "benefit": {title:"benefit", pos:"noun & verb", def:"As a noun, a benefit is a good or helpful result that something gives you. As a verb, to benefit (from something) means to get something good or useful from it.", examples:["Regular exercise has many benefits for your health. (noun)","One benefit of living in a city is easy access to public transportation. (noun)","Both companies will benefit from this partnership. (verb)","She benefited a lot from her teacher's advice. (verb)","“The Benefits of City Living” (page 54)"]},
+  "afford": {title:"afford", pos:"verb", def:"If you can afford something, you have enough money to buy it or pay for it.", examples:["We can't afford a new car right now.","Can you afford to eat out every day?","After saving for a year, she could afford the trip.","They can't afford to rent an apartment in the city center.","“A bicycle is inexpensive, so everyone can afford to own and ride one.” (page 53)"], phrase:"<b>can/can't afford (to do) something</b><span class=\"phrase-def\">To have (or not have) enough money for something.</span>"},
+  "unlike": {title:"unlike", pos:"preposition", def:"Unlike means different from someone or something, or not the same as them.", examples:["Unlike his brother, Tom loves sports.","This winter is warm, unlike last year's.","Unlike most cats, mine enjoys water.","The new phone, unlike the old one, charges quickly.","“Bicycles are quiet and clean, unlike cars or buses.” (page 53)"]},
+  "to-own": {title:"own", pos:"verb", def:"To own something means to have it because it is yours — you bought it or it belongs to you.", examples:["They own a small house near the beach.","Do you own a car, or do you rent one?","She owns three cats.","He dreams of owning his own business one day.","“...everyone can afford to own and ride one.” (page 53)"]},
+  "outgoing": {title:"outgoing", pos:"adjective", def:"An outgoing person is friendly, talkative, and enjoys meeting and being with other people.", examples:["She is very outgoing and makes friends easily.","Outgoing people often enjoy parties.","He became more outgoing after joining the club.","You need an outgoing personality for this job.","“My sister Anna is a very outgoing person.” (page 53)"]}
 };
 
 function showWordDef(key){
@@ -911,6 +1018,15 @@ document.addEventListener('click', (e)=>{
   while(mark.firstChild) parent.insertBefore(mark.firstChild, mark);
   parent.removeChild(mark);
   parent.normalize();
+});
+
+/* ===== Answer lock wiring ===== */
+document.getElementById('lockGo').addEventListener('click', submitLockCode);
+document.getElementById('lockInput').addEventListener('keydown', e=>{ if(e.key === 'Enter') submitLockCode(); });
+
+/* mark every locked showbtn on load so students see the 🔒 before clicking */
+document.querySelectorAll('.showbtn[data-group]').forEach(b=>{
+  if(!isUnlocked(b.getAttribute('data-group'))) b.classList.add('locked');
 });
 </script>
 
