@@ -251,10 +251,10 @@ p{margin:0 0 14px;}
 .word-phrase{background:#eee7f7; border-left:3px solid var(--purple); padding:10px 16px; font-size:.8em; line-height:1.6;}
 .word-phrase b{color:var(--purple);}
 .word-phrase .phrase-def{display:block; margin-top:2px;}
-.word-link{margin-top:14px; font-size:.4em;}
+.word-link{position:absolute; top:16px; right:52px; font-size:29px; white-space:nowrap;}
 .word-link a{color:var(--navy); font-weight:bold; text-decoration:underline;}
 
-#wordModal .modal-box{font-size:32px; max-width:1100px;}
+#wordModal .modal-box{font-size:29px; max-width:1100px;}
 #compqModal .modal-box, #vocabModal .modal-box, #lockModal .modal-box{font-size:16px;}
 
 .cq-list{padding:0; margin:0; list-style:none;}
@@ -578,11 +578,11 @@ Sentences <span class="blank-ph short">&nbsp;</span><span class="ans-ph">a</span
 
 <div class="exwrap" id="ex-prac4-p4">
 <div class="parlabel">Paragraph 4</div>
-<div style="text-align:center; margin-bottom:8px;"><span class="blank-ph" style="min-width:280px;">&nbsp;</span><span class="ans-ph" data-pair="p4" data-step="2">My Sociable Sister</span></div>
+<div style="text-align:center; margin-bottom:8px;"><span class="blank-ph" style="min-width:280px;">&nbsp;</span><span class="ans-ph" data-pair="p4" data-step="2">My <span class="wterm" data-w="sociable">Sociable</span> Sister</span></div>
 <p><span class="sentmark" data-step="1"><span class="ctrl-part">My sister Anna is a very <span class="wterm" data-w="outgoing">outgoing</span> person.</span></span> She loves to be with people, and she loves to talk. She has many friends, and she is on the phone with them all day long. She is happy to meet new people, too. She makes friends easily. She is never shy. She has a warm and friendly <span class="wterm" data-w="nature">nature</span>, and I am happy that she is my sister.</p>
 <ul class="option-list">
   <li><span class="oletter">a.</span> A Very Outgoing Person</li>
-  <li><span class="oletter">b.</span> My Sociable Sister <span class="correctmark" data-pair="p4">✓ correct</span></li>
+  <li><span class="oletter">b.</span> My <span class="wterm" data-w="sociable">Sociable</span> Sister <span class="correctmark" data-pair="p4">✓ correct</span></li>
   <li><span class="oletter">c.</span> My Sister and I</li>
 </ul>
 <div class="btnrow"><button class="showbtn" data-group="p53" onclick="stepReveal(['ex-prac4-p4'], this, 'p53')">Show Answer</button></div>
@@ -932,7 +932,8 @@ const WORD_DEFS = {
   "afford": {ipaUS:"/əˈfɔːrd/", ipaUK:"/əˈfɔːd/", link:"https://www.google.com/search?q=afford+%28verb%29+meaning+%27If+you+can+afford+something%2C+you+have+enough+money+to+buy+it+or+pay+for+it.%27.+define+this+specific+meaning+in+simple+language+suitable+for+A2+level.+make+it+brief+and+to+the+point+with+at+least+5+examples+matching+this+meaning&newwindow=1", title:"afford", pos:"verb", def:"If you can afford something, you have enough money to buy it or pay for it.", examples:["We can't afford a new car right now.","Can you afford to eat out every day?","After saving for a year, she could afford the trip.","They can't afford to rent an apartment in the city center.","“A bicycle is inexpensive, so everyone can afford to own and ride one.” (page 53)"], phrase:"<b>can/can't afford (to do) something</b><span class=\"phrase-def\">To have (or not have) enough money for something.</span>"},
   "unlike": {ipaUS:"/ʌnˈlaɪk/", ipaUK:"/ʌnˈlaɪk/", link:"https://www.google.com/search?q=unlike+%28preposition%29+meaning+%27Unlike+means+different+from+someone+or+something%2C+or+not+the+same+as+them.%27.+define+this+specific+meaning+in+simple+language+suitable+for+A2+level.+make+it+brief+and+to+the+point+with+at+least+5+examples+matching+this+meaning&newwindow=1", title:"unlike", pos:"preposition", def:"Unlike means different from someone or something, or not the same as them.", examples:["Unlike his brother, Tom loves sports.","This winter is warm, unlike last year's.","Unlike most cats, mine enjoys water.","The new phone, unlike the old one, charges quickly.","“Bicycles are quiet and clean, unlike cars or buses.” (page 53)"]},
   "to-own": {ipaUS:"/oʊn/", ipaUK:"/əʊn/", link:"https://www.google.com/search?q=own+%28verb%29+meaning+%27To+own+something+means+to+have+it+because+it+is+yours+%E2%80%94+you+bought+it+or+it+belongs+to+you.%27.+define+this+specific+meaning+in+simple+language+suitable+for+A2+level.+make+it+brief+and+to+the+point+with+at+least+5+examples+matching+this+meaning&newwindow=1", title:"own", pos:"verb", def:"To own something means to have it because it is yours — you bought it or it belongs to you.", examples:["They own a small house near the beach.","Do you own a car, or do you rent one?","She owns three cats.","He dreams of owning his own business one day.","“...everyone can afford to own and ride one.” (page 53)"]},
-  "outgoing": {ipaUS:"/ˈaʊtˌɡoʊ.ɪŋ/", ipaUK:"/ˈaʊtˌɡəʊ.ɪŋ/", link:"https://www.google.com/search?q=outgoing+%28adjective%29+meaning+%27An+outgoing+person+is+friendly%2C+talkative%2C+and+enjoys+meeting+and+being+with+other+people.%27.+define+this+specific+meaning+in+simple+language+suitable+for+A2+level.+make+it+brief+and+to+the+point+with+at+least+5+examples+matching+this+meaning&newwindow=1", title:"outgoing", pos:"adjective", def:"An outgoing person is friendly, talkative, and enjoys meeting and being with other people.", examples:["She is very outgoing and makes friends easily.","Outgoing people often enjoy parties.","He became more outgoing after joining the club.","You need an outgoing personality for this job.","“My sister Anna is a very outgoing person.” (page 53)"]}
+  "outgoing": {ipaUS:"/ˈaʊtˌɡoʊ.ɪŋ/", ipaUK:"/ˈaʊtˌɡəʊ.ɪŋ/", link:"https://www.google.com/search?q=outgoing+%28adjective%29+meaning+%27An+outgoing+person+is+friendly%2C+talkative%2C+and+enjoys+meeting+and+being+with+other+people.%27.+define+this+specific+meaning+in+simple+language+suitable+for+A2+level.+make+it+brief+and+to+the+point+with+at+least+5+examples+matching+this+meaning&newwindow=1", title:"outgoing", pos:"adjective", def:"An outgoing person is friendly, talkative, and enjoys meeting and being with other people.", examples:["She is very outgoing and makes friends easily.","Outgoing people often enjoy parties.","He became more outgoing after joining the club.","You need an outgoing personality for this job.","“My sister Anna is a very outgoing person.” (page 53)"]},
+  "sociable": {ipaUS:"/ˈsoʊ.ʃə.bəl/", ipaUK:"/ˈsəʊ.ʃə.bəl/", link:"https://www.google.com/search?q=sociable+%28adjective%29+meaning+%27Someone+who+is+sociable+enjoys+being+with+other+people+and+is+friendly+and+easy+to+talk+to.%27.+define+this+specific+meaning+in+simple+language+suitable+for+A2+level.+make+it+brief+and+to+the+point+with+at+least+5+examples+matching+this+meaning&newwindow=1", title:"sociable", pos:"adjective", def:"Someone who is sociable enjoys being with other people and is friendly and easy to talk to.", examples:["She's very sociable and loves meeting new people.","Sociable people usually have a lot of friends.","He isn't very sociable — he prefers to spend time alone.","Being sociable helps you make friends quickly in a new place.","“My Sociable Sister” (page 53)"]}
 };
 
 function showWordDef(key){
