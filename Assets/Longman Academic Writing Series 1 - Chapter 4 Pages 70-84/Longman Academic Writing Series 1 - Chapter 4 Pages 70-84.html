@@ -440,6 +440,9 @@ sup.bn{font-size:.62em; color:var(--blue); font-weight:bold; font-family:Arial, 
   .wordbox.grid3{grid-template-columns:repeat(2, auto);}
   .prow .plabel{width:100%;}
 }
+
+/* items beside a floated photo use only the width left next to it (long blanks no longer drop below the photo) */
+.exwrap.clearfix > .qitem{display:flow-root;}
 </style>
 </head>
 <body>
@@ -498,7 +501,7 @@ sup.bn{font-size:.62em; color:var(--blue); font-weight:bold; font-family:Arial, 
     <li><span class="cbox"></span>how he feels about Fridays</li>
   </ul>
 </div>
-<div class="btnrow"><button class="showbtn" data-group="p70" onclick="stepReveal(['ex-model1'], this, 'p70')">Show Answers</button></div>
+<div class="btnrow"><button class="showbtn" data-group="p70" onclick="stepReveal(['ex-model1','ex-model1b'], this, 'p70')">Show Answers</button></div>
 </div>
 
 <!-- ======================= PAGE 71 ======================= -->
@@ -513,7 +516,7 @@ sup.bn{font-size:.62em; color:var(--blue); font-weight:bold; font-family:Arial, 
     <div class="qitem"><span class="num">d.</span> Then he finally <span class="blank-ph">&nbsp;</span><span class="ans-ph">has</span> time to relax.</div>
   </div>
 </div>
-<div class="btnrow"><button class="showbtn" data-group="p71" onclick="stepReveal(['ex-model1b'], this, 'p71')">Show Answers</button></div>
+<div class="btnrow"><button class="showbtn" data-group="p71" onclick="stepReveal(['ex-model1','ex-model1b'], this, 'p71')">Show Answers</button></div>
 </div>
 
 <h4 class="minor-header">✏️ Writing Model 2</h4>
@@ -723,7 +726,7 @@ sup.bn{font-size:.62em; color:var(--blue); font-weight:bold; font-family:Arial, 
 <span class="blank-ph long">&nbsp;</span><span class="ans-ph">The dates of some holidays <i>always</i> change, <span class="wterm" data-w="depend-on">depending on</span> the moon.</span></div>
 <div class="qitem"><span class="num">4.</span> (never) Some people celebrate the new year on January 1.<br>
 <span class="blank-ph long">&nbsp;</span><span class="ans-ph">Some people <i>never</i> celebrate the new year on January 1.</span></div>
-<div class="btnrow"><button class="showbtn" data-group="p76" onclick="stepReveal(['ex-prac5a'], this, 'p76')">Show Answers</button></div>
+<div class="btnrow"><button class="showbtn" data-group="p76" onclick="stepReveal(['ex-prac5a','ex-prac5b'], this, 'p76')">Show Answers</button></div>
 </div>
 
 <!-- ======================= PAGE 77 ======================= -->
@@ -738,7 +741,7 @@ sup.bn{font-size:.62em; color:var(--blue); font-weight:bold; font-family:Arial, 
 <span class="blank-ph long">&nbsp;</span><span class="ans-ph">Workers <i>often</i> have a holiday in their <span class="wterm" data-w="honor">honor</span>.</span></div>
 <div class="qitem"><span class="num">8.</span> (never) Some women work on International Women's Day.<br>
 <span class="blank-ph long">&nbsp;</span><span class="ans-ph">Some women <i>never</i> work on International Women's Day.</span></div>
-<div class="btnrow"><button class="showbtn" data-group="p77" onclick="stepReveal(['ex-prac5b'], this, 'p77')">Show Answers</button></div>
+<div class="btnrow"><button class="showbtn" data-group="p77" onclick="stepReveal(['ex-prac5a','ex-prac5b'], this, 'p77')">Show Answers</button></div>
 </div>
 
 <div class="practice-tag">PRACTICE 6</div><span class="practice-title">Using <i>Sometimes</i></span>
@@ -999,7 +1002,7 @@ sup.bn{font-size:.62em; color:var(--blue); font-weight:bold; font-family:Arial, 
 <div class="qitem"><span class="num">1.</span> When my <span class="wterm" data-w="alarm-clock">alarm clock</span> rings in the morning, it is time for me to <span class="blank-ph">&nbsp;</span><span class="ans-ph">get up</span>.</div>
 <div class="qitem"><span class="num">2.</span> I do not set an alarm when I want to <span class="blank-ph">&nbsp;</span><span class="ans-ph">sleep in</span>.</div>
 <div class="qitem"><span class="num">3.</span> I like to <span class="blank-ph">&nbsp;</span><span class="ans-ph">go out</span> with my friends for a movie or a concert.</div>
-<div class="btnrow"><button class="showbtn" data-group="p83" onclick="stepReveal(['ex-prac12a1'], this, 'p83')">Show Answers</button></div>
+<div class="btnrow"><button class="showbtn" data-group="p83" onclick="stepReveal(['ex-prac12a1','ex-prac12a2'], this, 'p83')">Show Answers</button></div>
 </div>
 
 <!-- ======================= PAGE 84 ======================= -->
@@ -1009,7 +1012,7 @@ sup.bn{font-size:.62em; color:var(--blue); font-weight:bold; font-family:Arial, 
 <div class="qitem"><span class="num">4.</span> I like to eat at home, but I like to <span class="blank-ph">&nbsp;</span><span class="ans-ph">eat out</span>, too. I just like to eat!</div>
 <div class="qitem"><span class="num">5.</span> I <span class="blank-ph">&nbsp;</span><span class="ans-ph">dress up</span> when I go to a wedding or any <span class="wterm" data-w="formal">formal</span> event.</div>
 <div class="qitem"><span class="num">6.</span> On New Year's Eve, I <span class="blank-ph">&nbsp;</span><span class="ans-ph">stay up</span> late.</div>
-<div class="btnrow"><button class="showbtn" data-group="p84" onclick="stepReveal(['ex-prac12a2'], this, 'p84')">Show Answers</button></div>
+<div class="btnrow"><button class="showbtn" data-group="p84" onclick="stepReveal(['ex-prac12a1','ex-prac12a2'], this, 'p84')">Show Answers</button></div>
 </div>
 
 <div class="exwrap" id="ex-prac12b">
@@ -1140,12 +1143,14 @@ function submitLockCode(){
 
 /* ===== Reveal answers one at a time; last click hides all and resets ===== */
 const revealState = {};
+const keyButtons = {};
 function stepReveal(ids, btn, page){
   if(page && !isUnlocked(page)){
     openLockModal(page, ()=> stepReveal(ids, btn, page));
     return;
   }
   const key = ids.join(',');
+  (keyButtons[key] || (keyButtons[key] = new Set())).add(btn);
   const rawUnits = [];
   ids.forEach(id=>{
     const el = document.getElementById(id);
@@ -1191,14 +1196,18 @@ function stepReveal(ids, btn, page){
     if(remote) remote.scrollIntoView({behavior:'smooth', block:'center'});
     count++;
     revealState[key] = count;
-    btn.textContent = (count < steps.length) ? btn.dataset.label + ' (' + count + '/' + steps.length + ')' : 'Hide Answers';
+    keyButtons[key].forEach(kb=>{ kb.textContent = (count < steps.length) ? kb.dataset.label + ' (' + count + '/' + steps.length + ')' : 'Hide Answers'; });
   } else {
     steps.forEach(group=>group.forEach(u=>toggleUnit(u, false)));
     revealState[key] = 0;
-    btn.textContent = btn.dataset.label;
+    keyButtons[key].forEach(kb=>{ kb.textContent = kb.dataset.label; });
   }
 }
-document.querySelectorAll('.showbtn').forEach(b=>{ b.dataset.label = b.textContent; });
+document.querySelectorAll('.showbtn').forEach(b=>{
+  b.dataset.label = b.textContent;
+  const m = (b.getAttribute('onclick')||'').match(/stepReveal\(\[(.*?)\]/);
+  if(m){ const k = m[1].replace(/['\s]/g,''); (keyButtons[k] || (keyButtons[k] = new Set())).add(b); }
+});
 
 /* ===== Modals ===== */
 function openModal(id){ document.getElementById(id).classList.add('open'); }
