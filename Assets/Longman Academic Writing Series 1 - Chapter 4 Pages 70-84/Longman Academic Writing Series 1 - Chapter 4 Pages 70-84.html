@@ -1,0 +1,1399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Longman Academic Writing 1 — Chapter 4: A Good Day (pp. 70–84)</title>
+<style>
+:root{
+  --maroon:#7a1f2b;
+  --gold:#e8c25a;
+  --navy:#1d3557;
+  --purple:#5b2a86;
+  --red:#c0392b;
+  --blue:#1d4f91;
+  --paper:#fffdf8;
+  --ink:#232323;
+}
+*{box-sizing:border-box;}
+html{font-size:16px;}
+body{
+  font-family:Georgia, 'Times New Roman', serif;
+  color:var(--ink);
+  background:#eee9df;
+  width:100%; max-width:calc(50vw + 450px); margin:0 auto;
+  padding:78px 24px 80px;
+  line-height:1.5;
+}
+h1,h2,h3,h4{font-family:Arial, Helvetica, sans-serif;}
+
+/* ===== Top nav (narrow, single row, own scroll) ===== */
+#topnav{
+  position:fixed; top:0; left:0; right:0; z-index:100;
+  background:var(--maroon); color:#fff;
+  display:flex; align-items:center; gap:2px;
+  padding:5px 14px; font-family:Arial, Helvetica, sans-serif;
+  box-shadow:0 2px 6px rgba(0,0,0,.25);
+  height:32px; overflow-x:auto; overflow-y:hidden; white-space:nowrap;
+}
+#topnav .brand{font-weight:bold; margin-right:12px; font-size:12px; white-space:nowrap;}
+#topnav a.navlink{
+  color:#fff; text-decoration:none; font-size:11.5px; padding:4px 8px;
+  border-radius:4px; white-space:nowrap;
+}
+#topnav a.navlink:hover{background:rgba(255,255,255,.18);}
+#pagenav{
+  position:fixed; top:32px; left:0; right:0; z-index:99;
+  background:var(--gold); padding:5px 16px; font-family:Arial, Helvetica, sans-serif;
+  display:flex; flex-wrap:wrap; gap:6px; align-items:center;
+  box-shadow:0 2px 4px rgba(0,0,0,.15);
+}
+#pagenav span.lbl{font-size:11px; font-weight:bold; color:#5a4200; margin-right:4px;}
+#pagenav a{
+  color:#5a4200; text-decoration:none; font-size:12px; font-weight:bold;
+  border:1px solid #b9922a; border-radius:3px; padding:2px 8px; background:#fff8e8;
+}
+#pagenav a:hover{background:#5a4200; color:#fff;}
+#pagenav a.active{background:var(--maroon); color:#fff; border-color:var(--maroon); box-shadow:0 0 0 2px #fff inset;}
+
+/* ===== Zoom + vocab controls ===== */
+#leftctrl{
+  position:fixed; left:10px; top:78px; z-index:98;
+  display:flex; flex-direction:column; gap:6px; align-items:center;
+  font-family:Arial, Helvetica, sans-serif;
+}
+#leftctrl button{
+  width:40px; height:34px; border-radius:6px; border:1px solid var(--maroon);
+  background:#fff; color:var(--maroon); font-weight:bold; font-size:15px; cursor:pointer;
+}
+#leftctrl button:hover{background:var(--maroon); color:#fff;}
+#zoomlabel{font-size:10.5px; background:#fff; border:1px solid #ccc; border-radius:4px; padding:2px 4px; color:#444;}
+#vocabbtn{
+  width:40px; height:36px; border-radius:6px; border:1px solid var(--purple);
+  background:var(--purple); color:#fff; font-weight:bold; font-size:17px; cursor:pointer;
+  line-height:1; padding:4px 2px; margin-top:4px;
+}
+#vocabbtn:hover{background:#40195c;}
+
+/* ===== Highlighter / Eraser controls ===== */
+#markctl{display:flex; flex-direction:column; gap:6px; margin-top:10px; align-items:center;}
+#markctl .divider{height:1px; width:32px; background:rgba(0,0,0,.2);}
+.mark-btn{
+  width:40px; height:36px; border-radius:6px; border:1px solid #b9922a;
+  font-size:16px; font-weight:bold; cursor:pointer;
+  display:flex; align-items:center; justify-content:center;
+}
+#highlightBtn{background:#fff3a0; color:#5a4a00;}
+#highlightBtn:hover{background:#ffe066;}
+#highlightBtn.active{box-shadow:0 0 0 3px var(--maroon);}
+#eraserBtn{background:#e8e8e8; color:#444; border-color:#999;}
+#eraserBtn:hover{background:#d0d0d0;}
+#eraserBtn.active{box-shadow:0 0 0 3px var(--maroon);}
+
+mark.user-highlight{background:#fff59d; padding:0 1px; border-radius:2px;}
+body.erase-mode mark.user-highlight{cursor:pointer;}
+body.highlight-mode{cursor:text;}
+
+/* ===== Zoomable content wrapper ===== */
+#content{transform-origin: top left;}
+#doctitle{font-family:Arial, Helvetica, sans-serif; color:var(--navy); text-align:center; font-weight:bold; font-size:1.4em; line-height:1.45; margin:0 0 22px;}
+
+/* ===== Section headers matching textbook bars ===== */
+.sec-header{
+  background:linear-gradient(180deg, var(--maroon) 0%, var(--maroon) 70%, var(--gold) 70%, var(--gold) 100%);
+  color:#fff; font-family:Arial, Helvetica, sans-serif; font-weight:bold;
+  font-size:1.35em; padding:8px 14px 12px; margin:34px 0 18px; border-radius:2px;
+  clear:both;
+}
+.sub-header{
+  color:var(--maroon); font-family:Arial, Helvetica, sans-serif; font-weight:bold;
+  font-size:1.15em; border-bottom:2px solid var(--gold); padding-bottom:4px; margin:26px 0 12px;
+}
+h4.minor-header{
+  font-family:Arial, Helvetica, sans-serif; color:var(--maroon); font-size:1.02em; margin:20px 0 8px;
+  clear:both;
+}
+.page-anchor{position:relative; top:-92px; visibility:hidden; height:0;}
+.page-divider{border:none; border-top:2px dashed #b9ab7d; margin:36px 0 14px; position:relative; clear:both;}
+.page-divider span{position:absolute; top:-10px; left:50%; transform:translateX(-50%); background:#eee9df; padding:0 14px; font-family:Arial, sans-serif; font-size:11px; color:#8a6d2e; font-weight:bold; letter-spacing:.5px;}
+
+p{margin:0 0 14px;}
+.model-box{
+  border:6px solid #9aa5b1; border-top:22px solid #9aa5b1; background:#fff;
+  padding:20px 26px; margin:14px 0 18px; box-shadow:4px 6px 10px rgba(0,0,0,.18); position:relative;
+  clear:both;
+}
+.model-box::before{
+  content:"1 . . . . . 1 . . . . . 2 . . . . . 3 . . . . . 4 . . . . . 5 . . . . . 6";
+  position:absolute; top:-20px; left:6px; right:6px; font-family:monospace; font-size:11px;
+  color:#e8e2d0; letter-spacing:1px; overflow:hidden; white-space:nowrap;
+}
+.model-title{font-weight:bold; text-align:center; font-size:1.15em; margin-bottom:14px; font-family:Arial, sans-serif;}
+.model-box p{text-align:justify;}
+
+.qmodel{margin:14px 0 22px;}
+.qitem{margin:0 0 12px;}
+.qitem .num{font-weight:bold; margin-right:4px;}
+.blank-ph{display:inline-block; min-width:150px; border-bottom:1px solid #333; vertical-align:-3px; margin:0 3px;}
+.blank-ph.short{min-width:70px;}
+.blank-ph.hidden{display:none;}
+.ans-ph{display:none; color:var(--red); font-weight:bold;}
+.ans-ph.model-style{color:var(--blue);}
+.ans-ph.shown{display:inline;}
+.given-text{color:var(--blue); font-weight:bold;}
+
+.btnrow{display:flex; justify-content:flex-end; margin:6px 0 4px; clear:both;}
+.showbtn{
+  font-family:Arial, sans-serif; background:var(--navy); color:#fff; border:none;
+  padding:7px 16px; border-radius:16px; font-size:12.5px; cursor:pointer; font-weight:bold;
+}
+.showbtn:hover{background:var(--purple);}
+.showbtn.locked{background:#8a8a8a;}
+.showbtn.locked::after{content:" \1F512";}
+
+/* ===== Answer-lock popup ===== */
+#lockInput{
+  font-family:Arial, sans-serif; font-size:16px; padding:8px 12px; flex:1;
+  border:1px solid #bbb; border-radius:8px;
+}
+#lockModal .lock-go{
+  font-family:Arial, sans-serif; background:var(--navy); color:#fff; border:none;
+  padding:9px 18px; border-radius:16px; font-size:14px; cursor:pointer; font-weight:bold;
+}
+#lockModal .lock-go:hover{background:var(--purple);}
+#lockMsg{color:var(--red); font-size:.9em; min-height:1.2em; margin:8px 0 0;}
+
+.pagephoto{max-width:340px; width:60%; display:block; margin:10px auto 16px; border-radius:2px; box-shadow:3px 4px 8px rgba(0,0,0,.25);}
+.pagephoto.right{float:right; margin:0 0 12px 18px; width:40%;}
+.pagephoto.small{width:42%;}
+.clearfix::after{content:""; display:table; clear:both;}
+.photofig{width:220px; margin:0 0 12px 18px;}
+.photofig.right{float:right;}
+.photofig img{width:100%; display:block; border-radius:2px; box-shadow:3px 4px 8px rgba(0,0,0,.25);}
+.photofig p{text-align:center; font-style:italic; font-size:.85em; margin:4px 0 0;}
+
+.practice-tag{
+  display:inline-block; background:var(--purple); color:#fff; font-family:Arial, sans-serif;
+  font-weight:bold; font-size:12px; padding:4px 10px; border-radius:2px; margin:26px 0 8px;
+}
+.practice-title{font-family:Arial, sans-serif; font-weight:bold; color:var(--purple); font-size:1.08em; margin:0 0 10px; display:inline-block; margin-left:8px;}
+.instr{font-weight:bold; margin-bottom:14px;}
+.parlabel{color:var(--maroon); font-weight:bold; font-variant:small-caps; font-size:1.05em; margin:18px 0 6px; clear:both;}
+
+.exwrap{border-left:3px solid #e4dcc4; padding-left:14px; margin:10px 0 22px;}
+.topicdiagram{
+  background:#f4f0e4; border:1px dashed #b9ab7d; padding:14px 18px; margin:10px 0 16px; font-family:Arial, sans-serif;
+}
+.td-labels{font-size:11px; color:var(--navy); font-weight:bold;}
+.td-sentence{font-size:1.05em; margin-top:4px;}
+.td-sentence .topic-part{border-bottom:2px solid var(--purple);}
+.td-sentence .ctrl-part{border-bottom:2px solid var(--maroon);}
+.sentmark.shown .topic-part{border:2px solid var(--red); border-radius:14px; padding:0 6px; color:var(--red); font-weight:bold;}
+.sentmark.shown .ctrl-part{border-bottom:2px solid var(--red); font-weight:bold; color:var(--red);}
+.given-mark .topic-part{border:2px solid var(--blue); border-radius:14px; padding:0 6px;}
+.given-mark .ctrl-part{border-bottom:2px solid var(--blue); font-weight:bold;}
+
+/* ===== Subject / Verb marking (circle subject, underline verb, S/V label above) ===== */
+.svhost{line-height:2.6; padding-top:.6em; display:block;}
+.sentnum{color:var(--blue); font-weight:bold; font-size:.72em; vertical-align:top; margin-right:1px;}
+.svmark.shown .subj-part, .svmark.shown .verb-part, .given-sv .subj-part, .given-sv .verb-part{position:relative; display:inline-block; line-height:1.15; vertical-align:-2px;}
+.svmark.shown .subj-part{border:2px solid var(--red); border-radius:50%; padding:1px 9px;}
+.svmark.shown .subj-part::before{content:"S"; position:absolute; top:-1.3em; left:50%; transform:translateX(-50%); font-size:.62em; font-weight:bold; color:var(--red); font-family:Arial, sans-serif;}
+.svmark.shown .verb-part{border-bottom:2px solid var(--red); font-weight:bold; color:var(--red);}
+.svmark.shown .verb-part::before{content:"V"; position:absolute; top:-1.3em; left:50%; transform:translateX(-50%); font-size:.62em; font-weight:bold; color:var(--red); font-family:Arial, sans-serif;}
+.given-sv .subj-part{border:2px solid var(--blue); border-radius:50%; padding:1px 9px;}
+.given-sv .subj-part::before{content:"S"; position:absolute; top:-1.3em; left:50%; transform:translateX(-50%); font-size:.62em; font-weight:bold; color:var(--blue); font-family:Arial, sans-serif;}
+.given-sv .verb-part{border-bottom:2px solid var(--blue); font-weight:bold; color:var(--blue);}
+.given-sv .verb-part::before{content:"V"; position:absolute; top:-1.3em; left:50%; transform:translateX(-50%); font-size:.62em; font-weight:bold; color:var(--blue); font-family:Arial, sans-serif;}
+
+/* ===== Rules/Examples illustration table (Sentence Structure) ===== */
+.rule-table{width:100%; border-collapse:collapse; margin:14px 0 20px; font-size:.95em;}
+.rule-table th{background:var(--navy); color:#fff; font-family:Arial, sans-serif; font-size:.78em; text-align:left; padding:7px 12px;}
+.rule-table td{border:1px solid #ccc2a3; padding:10px 14px; vertical-align:top;}
+.rule-table td.rule-cell{width:38%; background:#f6f2ea;}
+.rule-table td.ex-cell{line-height:2.6; padding-top:16px;}
+.lblwrap{position:relative; display:inline-block;}
+.lblwrap .toplabel{position:absolute; top:-1.35em; left:50%; transform:translateX(-50%); font-size:.6em; font-weight:bold; color:var(--navy); font-family:Arial, sans-serif; white-space:nowrap;}
+.hl-subj{background:#fff59d; padding:0 3px; border-radius:2px;}
+.hl-verb{background:#c8e6c9; padding:0 3px; border-radius:2px;}
+
+.incor-cor{font-family:Arial, sans-serif; font-size:.95em; margin:8px 0 8px 18px;}
+.incor-cor .lbl{font-weight:bold; letter-spacing:.5px; font-size:.78em; color:var(--blue); margin-right:8px;}
+.incor-cor .txt{font-family:Arial, Helvetica, sans-serif; font-size:1.05em;}
+
+.option-list{margin:8px 0 4px 0; list-style:none; padding:0;}
+.option-list li{margin:4px 0;}
+.option-list .oletter{font-weight:bold; margin-right:6px;}
+.correctmark{display:none; color:var(--red); font-weight:bold; margin-left:6px;}
+.correctmark.shown{display:inline;}
+
+.tip-box{background:#f0e6d2; border:1px solid var(--maroon); margin:16px 0; clear:both;}
+.tip-box .tip-head{background:var(--maroon); color:#fff; font-weight:bold; font-family:Arial, sans-serif; padding:6px 14px; font-size:.95em;}
+.tip-box .tip-body{padding:12px 16px;}
+
+.dodont{display:flex; gap:0; margin:16px 0; border:1px solid var(--navy); font-family:Arial, sans-serif; font-size:.95em; clear:both;}
+.dodont .col{flex:1; padding:12px 16px;}
+.dodont .col.bad{background:#e9e2ce;}
+.dodont .col.good{background:#dde7f2;}
+.dodont .head{background:var(--navy); color:#fff; font-weight:bold; text-align:center; padding:6px 0; margin:-12px -16px 10px;}
+.strike{text-decoration:line-through;}
+.hand{font-family:'Brush Script MT', cursive; color:var(--blue); font-style:italic;}
+
+.compqbtn-row{display:flex; justify-content:center; margin:22px 0 8px; clear:both;}
+#compqbtn{
+  font-family:Arial, sans-serif; background:var(--red); color:#fff; border:none;
+  padding:12px 26px; border-radius:22px; font-size:14px; cursor:pointer; font-weight:bold;
+  box-shadow:2px 3px 6px rgba(0,0,0,.25);
+}
+#compqbtn:hover{background:#96271b;}
+
+/* word popup trigger */
+.wterm{color:var(--purple); font-weight:bold; cursor:pointer; border-bottom:2px dotted var(--purple);}
+.wterm:hover{background:#f1e6ff;}
+
+/* modal */
+.modal-overlay{
+  display:none; position:fixed; inset:0; background:rgba(20,15,10,.55); z-index:200;
+  align-items:center; justify-content:center; padding:20px;
+}
+.modal-overlay.open{display:flex;}
+.modal-box{
+  background:#fff; max-width:640px; width:100%; max-height:82vh; overflow-y:auto;
+  border-radius:8px; padding:26px 30px; box-shadow:0 10px 40px rgba(0,0,0,.4); position:relative;
+  font-family:Arial, Helvetica, sans-serif; font-size:30px;
+}
+.modal-box h3{color:var(--maroon); margin:0 0 10px; font-size:1.3em;}
+.modal-box .close-x{
+  position:absolute; top:14px; right:18px; cursor:pointer; font-size:26px; color:#888; font-weight:bold;
+}
+.modal-box .close-x:hover{color:var(--red);}
+.word-pos{color:#666; font-style:italic; font-size:.8em; margin-bottom:10px;}
+.word-ipa{color:#555; font-size:.45em; margin-bottom:12px; font-family:Arial, sans-serif;}
+.word-ipa span.ipa-label{font-weight:bold; color:var(--purple); margin-right:4px;}
+.word-ipa span.ipa-pair{margin-right:18px;}
+.word-def{margin-bottom:14px; font-size:.85em; line-height:1.5;}
+.word-example-head{font-weight:bold; color:#8a6d2e; font-size:.5em; margin:0 0 6px;}
+.word-examples{background:#f6f2ea; border-left:3px solid var(--gold); padding:10px 16px; margin-bottom:12px;}
+.word-examples ul{margin:0; padding-left:18px;}
+.word-examples li{font-style:italic; font-size:.8em; line-height:1.5; margin-bottom:6px;}
+.word-examples li:last-child{margin-bottom:0;}
+.word-phrase{background:#eee7f7; border-left:3px solid var(--purple); padding:10px 16px; font-size:.8em; line-height:1.6;}
+.word-phrase b{color:var(--purple);}
+.word-phrase .phrase-def{display:block; margin-top:2px;}
+.word-link{position:absolute; top:16px; right:52px; font-size:29px; white-space:nowrap;}
+.word-link a{color:var(--navy); font-weight:bold; text-decoration:underline;}
+
+#wordModal .modal-box{font-size:29px; max-width:1100px;}
+#compqModal .modal-box, #vocabModal .modal-box, #lockModal .modal-box{font-size:16px;}
+
+.cq-list{padding:0; margin:0; list-style:none;}
+.cq-list li{margin:0 0 14px; padding-bottom:12px; border-bottom:1px solid #eee; opacity:.4;}
+.cq-list li.active-q{opacity:1;}
+.cq-num{font-weight:bold; color:var(--maroon); margin-right:4px;}
+.cq-ans{display:none; color:var(--red); margin-top:5px; font-size:.93em;}
+.cq-ans.show{display:block;}
+#cqAnsBtn{
+  margin-top:10px; font-family:Arial, sans-serif; background:var(--navy); color:#fff; border:none;
+  padding:8px 16px; border-radius:14px; font-size:12.5px; cursor:pointer; font-weight:bold;
+}
+
+#vocabgrid{display:flex; flex-wrap:wrap; gap:8px; margin-top:6px;}
+#vocabgrid .vchip{
+  display:inline-block; padding:7px 14px; background:#f6f2ea; border-radius:16px; cursor:pointer;
+  font-size:14px; color:var(--purple); font-weight:bold; border:1px solid #e2d6c2;
+}
+#vocabgrid .vchip:hover{background:var(--purple); color:#fff;}
+
+@media (max-width:640px){
+  #topnav .brand{display:none;}
+  .pagephoto.right{float:none; width:70%; margin:10px auto;}
+  .photofig.right{float:none; width:70%; margin:10px auto;}
+}
+
+/* ===== Chapter 4 additions ===== */
+.sc{font-variant:small-caps;}
+.qhead{font-family:Arial, sans-serif; color:var(--maroon); margin:16px 0 10px; font-size:1.02em;}
+.subitems{margin:8px 0 0 22px;}
+.blank-ph.long{min-width:min(520px,100%);}
+.indent-ex{margin:0 0 10px 34px; font-family:Arial, Helvetica, sans-serif;}
+.photocap{text-align:center; font-style:italic; font-size:.85em; margin-top:-8px; color:#555;}
+.seealso{margin-top:6px;}
+
+/* check boxes (Questions about the Model) */
+.cbox{position:relative; display:inline-block; width:1.05em; height:1.05em; border:1.5px solid #444; margin-right:10px; vertical-align:-3px;}
+.cbox .correctmark.chk{position:absolute; left:1px; top:-.45em; margin:0; font-size:1.3em; line-height:1;}
+.cbox .correctmark.chk.shown{display:block;}
+
+/* circled answer letter / underlined phrasal verbs / underlined time expressions */
+.sentmark.circle.shown{border:2px solid var(--red); border-radius:50%; padding:0 8px; color:var(--red);}
+.sentmark.pv.shown, .sentmark.tmark.shown{
+  text-decoration:underline; text-decoration-color:var(--red); text-decoration-thickness:2px; text-underline-offset:4px;
+  color:var(--red); font-weight:bold;
+}
+.given-under{text-decoration:underline; text-decoration-color:var(--blue); text-decoration-thickness:2px; text-underline-offset:4px;}
+.svhost8{line-height:2.1;}
+
+/* phrasal verb examples (p. 72) */
+.pv-examples{margin:8px 0 14px 30px; font-family:Arial, Helvetica, sans-serif;}
+.pv-row{display:flex; gap:40px; margin:6px 0; flex-wrap:wrap;}
+.pv-row .pv-s{width:270px;}
+
+/* lettered parts (A / B) */
+.abadge{display:inline-flex; align-items:center; justify-content:center; width:1.5em; height:1.5em; border-radius:50%;
+  background:var(--maroon); color:#fff; font-size:.85em; margin-right:8px; vertical-align:1px;}
+
+/* green word boxes */
+.wordbox{display:flex; flex-wrap:wrap; gap:6px 30px; background:#dfe8c6; padding:12px 26px; font-weight:bold;
+  margin:10px 0 18px 26px; width:fit-content; max-width:calc(100% - 26px);}
+.wordbox.grid3{display:grid; grid-template-columns:repeat(3, auto); gap:6px 34px;}
+
+/* numbered sentences (Practice 2) */
+.sline{margin:0 0 14px; line-height:1.45;}
+.nslot{display:inline-block; width:56px; height:1.35em; border-bottom:1px solid #333; text-align:center;
+  margin-right:12px; vertical-align:-3px; line-height:1.3;}
+.nslot .ans-ph.shown{display:inline;}
+.blank-ph.ruledbox{
+  display:block; min-width:0; border-bottom:none; margin:6px 0 10px; height:340px; line-height:34px; vertical-align:top;
+  background:repeating-linear-gradient(to bottom, transparent 0, transparent 33px, #333 33px, #333 34px);
+}
+.blank-ph.ruledbox.hidden{display:none;}
+.ans-ph.para-ans.shown{display:block; margin:6px 0 10px; line-height:1.7;}
+
+/* yellow paragraph card (Practice 3) */
+.paragraph-card{background:#fffbd6; padding:18px 22px; margin:12px 0 18px; clear:both;}
+sup.bn{font-size:.62em; color:var(--blue); font-weight:bold; font-family:Arial, sans-serif; margin-right:2px; vertical-align:super;}
+
+/* simple sentence patterns (p. 74) */
+.pattern-rows{margin:8px 0 16px 30px; font-family:Arial, Helvetica, sans-serif;}
+.prow{display:flex; gap:30px; align-items:flex-start; margin:8px 0; flex-wrap:wrap;}
+.prow .plabel{width:230px; flex-shrink:0;}
+.prow .pex div{margin-bottom:8px;}
+
+/* Practice 4: circle verbs (V), underline subjects (S) */
+.sv4host{line-height:2.8; padding-top:.5em;}
+.given-sv4 .subj-part, .given-sv4 .verb-part,
+.sv4mark.shown .subj-part, .sv4mark.shown .verb-part{position:relative; display:inline-block; line-height:1.15; vertical-align:-2px;}
+.given-sv4 .subj-part{border-bottom:2px solid var(--blue);}
+.given-sv4 .verb-part{border:2px solid var(--blue); border-radius:50%; padding:1px 9px;}
+.sv4mark.shown .subj-part{border-bottom:2px solid var(--red);}
+.sv4mark.shown .verb-part{border:2px solid var(--red); border-radius:50%; padding:1px 9px;}
+.given-sv4 .subj-part::before, .given-sv4 .verb-part::before,
+.sv4mark.shown .subj-part::before, .sv4mark.shown .verb-part::before{
+  position:absolute; top:-1.35em; left:50%; transform:translateX(-50%); font-size:.62em; font-weight:bold;
+  font-family:Arial, sans-serif; font-style:italic;
+}
+.given-sv4 .subj-part::before{content:"S"; color:var(--blue);}
+.given-sv4 .verb-part::before{content:"V"; color:var(--blue);}
+.sv4mark.shown .subj-part::before{content:"S"; color:var(--red);}
+.sv4mark.shown .verb-part::before{content:"V"; color:var(--red);}
+
+/* adverbs of frequency table (p. 75) */
+.freq-table{border-collapse:separate; border-spacing:2px; margin:12px 0 18px 10px; font-size:.95em;}
+.freq-table th{background:var(--maroon); color:#fff; font-family:Arial, sans-serif; font-size:.8em; font-variant:small-caps;
+  padding:8px 8px; text-align:center; min-width:42px;}
+.freq-table th.q{text-align:left; min-width:210px;}
+.freq-table th.blankhead{background:transparent;}
+.freq-table td{background:#fbe9bd; text-align:center; color:var(--blue); font-weight:bold; padding:6px 4px;}
+.freq-table td.name{background:#f2c36f; text-align:left; color:var(--ink); font-weight:normal; padding:6px 10px;}
+.freq-table td.arrowcol{width:76px; vertical-align:middle; padding:0; color:var(--ink); font-weight:normal;}
+.arrowbox{display:flex; flex-direction:column; align-items:center; justify-content:space-between; height:230px; padding:6px 0;}
+.arrowbox .shaft{flex:1; width:2px; background:#222; margin:8px 0; position:relative;}
+.arrowbox .shaft::before{content:""; position:absolute; top:-1px; left:-5px; border-left:6px solid transparent; border-right:6px solid transparent; border-bottom:9px solid #222;}
+.arrowbox .shaft::after{content:""; position:absolute; bottom:-1px; left:-5px; border-left:6px solid transparent; border-right:6px solid transparent; border-top:9px solid #222;}
+
+/* rule tables with nested example grids */
+.rule-table td.ex-cell2{line-height:1.9; padding:10px 14px; background:#e9f0f8;}
+.rule-table td.rule-cell{background:#d9dce8;}
+.ex-grid{border-collapse:separate; border-spacing:3px; width:100%;}
+.ex-grid th{background:#f3c97a; color:#222; font-family:Arial, sans-serif; font-size:.8em; padding:5px 10px; text-align:left;}
+.ex-grid td{background:#dbe8f5; border:none; padding:6px 10px; vertical-align:top; line-height:1.5;}
+.ex-grid td.mid{vertical-align:middle;}
+.nl-cols{display:flex; gap:50px; flex-wrap:wrap;}
+
+/* highlights used in the rule charts */
+.hl-prep{background:#fff59d; padding:0 3px; border-radius:2px;}
+.hl-cap{background:#fff59d; padding:0 2px; border-radius:2px;}
+.hl-pv{background:#fff59d; padding:0 3px; border-radius:2px;}
+.xmark{background:#fff59d; text-decoration:line-through; padding:0 2px; border-radius:2px;}
+
+/* time-expression example labels (p. 79) */
+.prep-ex{margin:20px 0 14px 30px; font-family:Arial, Helvetica, sans-serif;}
+.prep-ex .pe{margin-bottom:26px;}
+.lblwrap2{position:relative; display:inline-block;}
+.pelabel{position:absolute; top:-1.5em; left:0; white-space:nowrap; font-size:.62em; font-weight:bold; color:var(--blue); letter-spacing:.3px;}
+
+.twocol{display:flex; gap:60px; flex-wrap:wrap; margin:6px 0 12px 26px;}
+.twocol ul{list-style:none; margin:0; padding:0;}
+.twocol li{margin-bottom:4px;}
+
+/* Practice 10: capital-letter corrections */
+.capitem{line-height:2.6; padding-top:.35em;}
+.capfix, .given-capfix{position:relative;}
+.sentmark.shown .capfix{text-decoration:line-through; text-decoration-color:var(--red); text-decoration-thickness:2px;}
+.sentmark.shown .capfix::before{content:attr(data-c); position:absolute; top:-1.2em; left:50%; transform:translateX(-50%);
+  color:var(--red); font-weight:bold; font-size:.9em; text-decoration:none; font-family:Arial, sans-serif;}
+.given-capfix{text-decoration:line-through; text-decoration-color:var(--blue); text-decoration-thickness:2px;}
+.given-capfix::before{content:attr(data-c); position:absolute; top:-1.2em; left:50%; transform:translateX(-50%);
+  color:var(--blue); font-weight:bold; font-size:.9em; text-decoration:none; font-family:Arial, sans-serif;}
+
+@media (max-width:640px){
+  .wordbox.grid3{grid-template-columns:repeat(2, auto);}
+  .prow .plabel{width:100%;}
+}
+</style>
+</head>
+<body>
+
+<div id="topnav">
+  <span class="brand">Longman Writing 1 · Ch. 4</span>
+  <a class="navlink" href="#sec-intro">Introduction</a>
+  <a class="navlink" href="#sec-models">Looking at the Models</a>
+  <a class="navlink" href="#sec-org">Organization</a>
+  <a class="navlink" href="#sec-grammar">Sentence Structure and Grammar</a>
+  <a class="navlink" href="#sec-mechanics">Mechanics</a>
+</div>
+<div id="pagenav">
+  <span class="lbl">PAGE:</span>
+  <a href="#p70" data-p="p70">70</a><a href="#p71" data-p="p71">71</a><a href="#p72" data-p="p72">72</a><a href="#p73" data-p="p73">73</a><a href="#p74" data-p="p74">74</a><a href="#p75" data-p="p75">75</a><a href="#p76" data-p="p76">76</a><a href="#p77" data-p="p77">77</a><a href="#p78" data-p="p78">78</a><a href="#p79" data-p="p79">79</a><a href="#p80" data-p="p80">80</a><a href="#p81" data-p="p81">81</a><a href="#p82" data-p="p82">82</a><a href="#p83" data-p="p83">83</a><a href="#p84" data-p="p84">84</a>
+</div>
+<div id="leftctrl">
+  <button id="zin">A+</button>
+  <span id="zoomlabel">100%</span>
+  <button id="zout">A−</button>
+  <button id="vocabbtn" onclick="openVocabList()" title="Vocabulary list">📖</button>
+  <div id="markctl">
+    <div class="divider"></div>
+    <button id="highlightBtn" class="mark-btn" title="Highlighter — select text to highlight it">🖊</button>
+    <button id="eraserBtn" class="mark-btn" title="Eraser — click a highlight to remove it">⌫</button>
+  </div>
+</div>
+
+<div id="content">
+
+<div id="doctitle">Longman Academic Writing 1<br>Chapter 4: A Good Day (pp. 70–84)</div>
+
+<!-- ======================= PAGE 70 ======================= -->
+<div id="p70" class="page-anchor"></div>
+<div id="sec-intro" class="sec-header">INTRODUCTION</div>
+<p>In this chapter, you will write about someone in your class, and someone will write about you. To get the information you need, you will <b><span class="wterm" data-w="interview">interview</span></b> each other. That means you will ask each other questions. Then you will write paragraphs about each other.</p>
+
+<div id="sec-models" class="sec-header">LOOKING AT THE MODELS</div>
+<p>The writing models are about two students, Karl and Tomiko. Tomiko interviewed Karl and wrote about what he usually does on Fridays. Karl interviewed Tomiko and wrote about what she usually does on Saturdays.</p>
+<p><b>Work with a partner or in a small group. Read the models. Then answer the questions.</b></p>
+
+<h4 class="minor-header">✏️ Writing Model 1</h4>
+<div class="exwrap" id="ex-model1">
+<div class="model-box">
+  <div class="model-title">Karl's Fridays</div>
+  <p><span class="sentmark"><span class="topic-part">Karl's Fridays</span> <span class="ctrl-part">are always busy days.</span></span> He gets up early. Then he works from 6:00 <span class="sc">a.m.</span> to 2:30 <span class="sc">p.m.</span> After work, he gets his little boy from <span class="wterm" data-w="daycare">daycare</span>. Sometimes they go shopping or play in the park. Then they go home. Karl's wife gets back from work at 5:30 <span class="sc">p.m.</span> They usually have dinner at home. In the evening, Karl puts his son to bed. Then he finally has time to <span class="wterm" data-w="relax">relax</span>. He and his wife sometimes watch a movie, but they do not <span class="sentmark pv" data-owner="ex-prac1a">stay up</span> late. Karl is tired after his long day.</p>
+</div>
+
+<h5 class="qhead">Questions about the Model</h5>
+<div class="qitem"><span class="num">1.</span> What is the topic sentence of the paragraph? Circle the topic and underline the <span class="wterm" data-w="controlling-idea">controlling idea</span>.</div>
+<div class="qitem"><span class="num">2.</span> What information does the paragraph have about Karl's Fridays? Check (✓) your answers.
+  <ul class="option-list" style="margin-left:26px;">
+    <li><span class="cbox"><span class="correctmark chk">✓</span></span>what Karl does in the morning</li>
+    <li><span class="cbox"><span class="correctmark chk">✓</span></span>what he does in the afternoon</li>
+    <li><span class="cbox"><span class="correctmark chk">✓</span></span>what he does in the evening</li>
+    <li><span class="cbox"></span>how he feels about Fridays</li>
+  </ul>
+</div>
+<div class="btnrow"><button class="showbtn" data-group="p70" onclick="stepReveal(['ex-model1'], this, 'p70')">Show Answers</button></div>
+</div>
+
+<!-- ======================= PAGE 71 ======================= -->
+<div class="page-divider"><span>PAGE 71</span></div>
+<div id="p71" class="page-anchor"></div>
+<div class="exwrap" id="ex-model1b">
+<div class="qitem"><span class="num">3.</span> What simple present verbs did the writer use? Fill in the blanks.
+  <div class="subitems">
+    <div class="qitem"><span class="num">a.</span> Then he <span class="blank-ph">&nbsp;</span><span class="ans-ph">works</span> from 6:00 <span class="sc">a.m.</span> to 2:30 <span class="sc">p.m.</span></div>
+    <div class="qitem"><span class="num">b.</span> Karl's wife <span class="blank-ph">&nbsp;</span><span class="ans-ph">gets</span> back from work at 5:30 <span class="sc">p.m.</span></div>
+    <div class="qitem"><span class="num">c.</span> In the evening, Karl <span class="blank-ph">&nbsp;</span><span class="ans-ph">puts</span> his son to bed.</div>
+    <div class="qitem"><span class="num">d.</span> Then he finally <span class="blank-ph">&nbsp;</span><span class="ans-ph">has</span> time to relax.</div>
+  </div>
+</div>
+<div class="btnrow"><button class="showbtn" data-group="p71" onclick="stepReveal(['ex-model1b'], this, 'p71')">Show Answers</button></div>
+</div>
+
+<h4 class="minor-header">✏️ Writing Model 2</h4>
+<div class="exwrap" id="ex-model2">
+<div class="model-box">
+  <div class="model-title">Tomiko's Favorite Day</div>
+  <p><span class="sentmark"><span class="topic-part">Saturday</span> <span class="ctrl-part">is Tomiko's favorite day of the week.</span></span> In the morning, she always <span class="sentmark pv" data-owner="ex-prac1a">sleeps in</span>. Sometimes she does not get up until noon. Then she usually meets her friends in the <span class="wterm" data-w="dining-hall">dining hall</span>. In the afternoon, they spend time outside or go shopping. It <span class="wterm" data-w="depend-on">depends on</span> the weather. On Saturday evenings, she likes to <span class="sentmark pv" data-owner="ex-prac1a">dress up</span> and <span class="sentmark pv" data-owner="ex-prac1a">go out</span>. She and her friends often <span class="sentmark pv" data-owner="ex-prac1a">eat out</span>, see a movie, or go to a party. Tomiko loves Saturdays.</p>
+</div>
+
+<h5 class="qhead">Questions about the Model</h5>
+<div class="qitem"><span class="num">1.</span> What is the topic sentence of the paragraph? Circle the topic and underline the controlling idea.</div>
+<div class="qitem"><span class="num">2.</span> What information does the paragraph have about Tomiko's Saturdays? Check (✓) your answers.
+  <ul class="option-list" style="margin-left:26px;">
+    <li><span class="cbox"><span class="correctmark chk">✓</span></span>what Tomiko does in the morning</li>
+    <li><span class="cbox"><span class="correctmark chk">✓</span></span>what she does in the afternoon</li>
+    <li><span class="cbox"><span class="correctmark chk">✓</span></span>what she does in the evening</li>
+    <li><span class="cbox"><span class="correctmark chk">✓</span></span>how she feels about Saturdays</li>
+  </ul>
+</div>
+<div class="qitem"><span class="num">3.</span> What does “It depends on the weather” mean? Circle <i>a</i> or <i>b</i>.
+  <div class="subitems">
+    <div class="qitem"><span class="num">a.</span> The weather is not important to them.</div>
+    <div class="qitem"><span class="sentmark circle"><span class="num" style="margin:0;">b.</span></span> In good weather, they go outside; in bad weather, they go shopping.</div>
+  </div>
+</div>
+<div class="qitem"><span class="num">4.</span> What <b><span class="wterm" data-w="adverb">adverbs</span> of <span class="wterm" data-w="frequency">frequency</span></b> did the writer use? Fill in the blanks.
+  <div class="subitems">
+    <div class="qitem"><span class="num">a.</span> In the morning, she <span class="blank-ph">&nbsp;</span><span class="ans-ph">always</span> sleeps in.</div>
+    <div class="qitem"><span class="num">b.</span> <span class="blank-ph">&nbsp;</span><span class="ans-ph">Sometimes</span> she does not get up until noon.</div>
+    <div class="qitem"><span class="num">c.</span> Then she <span class="blank-ph">&nbsp;</span><span class="ans-ph">usually</span> meets her friends in the dining hall.</div>
+    <div class="qitem"><span class="num">d.</span> She and her friends <span class="blank-ph">&nbsp;</span><span class="ans-ph">often</span> eat out, see a movie, or go to a party.</div>
+  </div>
+</div>
+<div class="btnrow"><button class="showbtn" data-group="p71" onclick="stepReveal(['ex-model2'], this, 'p71')">Show Answers</button></div>
+</div>
+
+<!-- ======================= PAGE 72 ======================= -->
+<div class="page-divider"><span>PAGE 72</span></div>
+<div id="p72" class="page-anchor"></div>
+<h4 class="minor-header">✏️ Looking at Vocabulary: Phrasal Verbs</h4>
+<p>A <b>phrasal verb</b> has two parts: a verb (such as <i>go</i> or <i>get</i>) and a particle (such as <i>up</i>, <i>on</i>, or <i>out</i>). The meaning of a phrasal verb is often very different from the meaning of the verb alone.</p>
+<div class="pv-examples">
+  <div class="pv-row"><span class="pv-s">He <b>gets</b> a lot of email.</span><span class="pv-m"><i>gets</i> = receives</span></div>
+  <div class="pv-row"><span class="pv-s">He <b>gets up</b> early.</span><span class="pv-m"><i>gets up</i> = leaves his bed</span></div>
+  <div class="pv-row"><span class="pv-s">His plane <b>gets in</b> at 1:00.</span><span class="pv-m"><i>gets in</i> = arrives</span></div>
+</div>
+
+<div class="practice-tag">PRACTICE 1</div><span class="practice-title">Phrasal Verbs</span>
+
+<div class="exwrap" id="ex-prac1a">
+<p class="instr"><span class="abadge">A</span> Find these phrasal verbs in the writing models and underline them.</p>
+<div class="wordbox"><span>dress up</span><span>sleep in</span><span>eat out</span><span>go out</span><span>stay up</span></div>
+<div class="btnrow"><button class="showbtn" data-group="p72" onclick="stepReveal(['ex-prac1a'], this, 'p72')">Show Answers</button></div>
+</div>
+
+<div class="exwrap" id="ex-prac1b">
+<p class="instr"><span class="abadge">B</span> Match the phrasal verbs from the box with their meanings. Fill in the blanks.</p>
+<div class="qitem"><span class="num">1.</span> <span class="blank-ph">&nbsp;</span><span class="ans-ph">dress up</span> = put on nice clothes</div>
+<div class="qitem"><span class="num">2.</span> <span class="blank-ph">&nbsp;</span><span class="ans-ph">stay up</span> = not go to bed until late</div>
+<div class="qitem"><span class="num">3.</span> <span class="blank-ph">&nbsp;</span><span class="ans-ph">go out</span> = leave home, often to do something for fun</div>
+<div class="qitem"><span class="num">4.</span> <span class="blank-ph">&nbsp;</span><span class="ans-ph">eat out</span> = have a meal in a restaurant instead of at home</div>
+<div class="qitem"><span class="num">5.</span> <span class="blank-ph">&nbsp;</span><span class="ans-ph">sleep in</span> = stay in bed and sleep later than usual in the morning</div>
+<div class="btnrow"><button class="showbtn" data-group="p72" onclick="stepReveal(['ex-prac1b'], this, 'p72')">Show Answers</button></div>
+</div>
+
+<div id="sec-org" class="sec-header">ORGANIZATION</div>
+<div class="sub-header">TIME ORDER</div>
+<p>When you write a paragraph, you must think about <span class="wterm" data-w="organization">organization</span>. You must plan how to present information in a clear order. Writers need to organize information to make it easy for people to read. There are many ways to do this.</p>
+<p>One way to organize information is to put it in <b>time order</b> (also called <i><span class="wterm" data-w="chronological">chronological</span> order</i>). This means writing about events in the order in which they happen. Start with the first or earliest event, and then tell what happens after that.</p>
+<p><b>Time-order words</b> help make information clear to the reader. They go at the beginning of sentences. A comma follows each one except <i>Then</i>. Do not put a comma after <i>Then</i>.</p>
+<div class="wordbox"><span>First,</span><span>Later,</span><span>Then</span><span>After that,</span><span>Next,</span><span>Finally,</span></div>
+
+<!-- ======================= PAGE 73 ======================= -->
+<div class="page-divider"><span>PAGE 73</span></div>
+<div id="p73" class="page-anchor"></div>
+<div class="practice-tag">PRACTICE 2</div><span class="practice-title">Time Order</span>
+
+<div class="exwrap clearfix" id="ex-prac2a">
+<p class="instr"><span class="abadge">A</span> Work alone or with a partner. Read the sentences. Then number them from <i>1</i> to <i>9</i> in time order.</p>
+<div class="photofig right" style="width:290px;">
+  <img src="media/p73_pancakes.jpg" alt="Pancakes cooking on a black griddle, with a red spatula and a plate of pancakes">
+  <p>Pancakes on the griddle</p>
+</div>
+<div class="sline"><span class="nslot"><span class="ans-ph">6</span></span>He turns the pancakes so they cook on both sides.</div>
+<div class="sline"><span class="nslot"><span class="ans-ph">7</span></span>Finally, he calls the children.</div>
+<div class="sline"><span class="nslot"><span class="given-text">1</span></span>Martin likes to make pancakes for his children on Sunday mornings.</div>
+<div class="sline"><span class="nslot"><span class="ans-ph">3</span></span>Next, he gets out the eggs, milk, flour, and other <span class="wterm" data-w="ingredient">ingredients</span>.</div>
+<div class="sline"><span class="nslot"><span class="ans-ph">4</span></span>He mixes the ingredients in a large bowl.</div>
+<div class="sline"><span class="nslot"><span class="ans-ph">2</span></span>First, he puts the <span class="wterm" data-w="griddle">griddle</span> on the stove to heat up.</div>
+<div class="sline"><span class="nslot"><span class="ans-ph">5</span></span>Then he <span class="wterm" data-w="pour">pours</span> <span class="wterm" data-w="spoonful">spoonfuls</span> of pancake <span class="wterm" data-w="batter">batter</span> onto the hot griddle.</div>
+<div class="sline"><span class="nslot"><span class="given-text">9</span></span>Later, everyone will help clean up.</div>
+<div class="sline"><span class="nslot"><span class="ans-ph">8</span></span>They all sit down and enjoy a delicious breakfast.</div>
+<div class="btnrow"><button class="showbtn" data-group="p73" onclick="stepReveal(['ex-prac2a'], this, 'p73')">Show Answers</button></div>
+</div>
+
+<div class="exwrap" id="ex-prac2b">
+<p class="instr"><span class="abadge">B</span> Write the sentences from Part A as a paragraph.</p>
+<span class="blank-ph ruledbox"><span class="given-text hand">Martin likes to make</span></span><span class="ans-ph para-ans"><span class="given-text">Martin likes to make</span> pancakes for his children on Sunday mornings. First, he puts the <span class="wterm" data-w="griddle">griddle</span> on the stove to heat up. Next, he gets out the eggs, milk, flour, and other <span class="wterm" data-w="ingredient">ingredients</span>. He mixes the ingredients in a large bowl. Then he <span class="wterm" data-w="pour">pours</span> <span class="wterm" data-w="spoonful">spoonfuls</span> of pancake <span class="wterm" data-w="batter">batter</span> onto the hot griddle. He turns the pancakes so they cook on both sides. Finally, he calls the children. They all sit down and enjoy a delicious breakfast. Later, everyone will help clean up.</span>
+<div class="btnrow"><button class="showbtn" data-group="p73" onclick="stepReveal(['ex-prac2b'], this, 'p73')">Show Answer</button></div>
+</div>
+
+<!-- ======================= PAGE 74 ======================= -->
+<div class="page-divider"><span>PAGE 74</span></div>
+<div id="p74" class="page-anchor"></div>
+<div class="practice-tag">PRACTICE 3</div><span class="practice-title">Using Time-Order Words</span>
+<p class="instr">Work alone or with a partner. Complete the paragraph with words from the box. For some sentences, there may be more than one possible choice.</p>
+<div class="wordbox"><span>After that</span><span>Finally</span><span>First</span><span>Later</span><span>Next</span><span>Then</span></div>
+
+<div class="exwrap" id="ex-prac3">
+<div class="paragraph-card clearfix">
+  <div class="photofig right" style="width:200px; margin-top:0;">
+    <img src="media/p74_jogger.jpg" alt="A woman jogging on a tree-lined path in autumn">
+  </div>
+  <p style="margin:0; line-height:2.2;">Simone has a <span class="wterm" data-w="regular-routine">regular routine</span> on Saturday mornings. She always gets up around 8:00 <span class="sc">a.m.</span> <sup class="bn">1</sup><span class="blank-ph">&nbsp;</span><span class="ans-ph">First / After that</span>, she <span class="wterm" data-w="stretch">stretches</span> and does some <span class="wterm" data-w="yoga">yoga</span>. <sup class="bn">2</sup><span class="blank-ph">&nbsp;</span><span class="ans-ph">After that / Next</span>, she puts on her running shoes and goes for a run. <sup class="bn">3</sup><span class="blank-ph">&nbsp;</span><span class="ans-ph">After that / Next</span>, she <span class="wterm" data-w="cool-down">cools down</span> by walking to a coffee shop. She orders coffee and drinks it on her way home. At home, she takes a shower and gets dressed. <sup class="bn">4</sup><span class="blank-ph">&nbsp;</span><span class="ans-ph">Then</span> she sits down and makes a list of things she needs to do that day. <sup class="bn">5</sup><span class="blank-ph">&nbsp;</span><span class="ans-ph">Finally / After that</span>, she feels ready to <span class="wterm" data-w="start-the-day">start the day</span>. <sup class="bn">6</sup><span class="blank-ph">&nbsp;</span><span class="ans-ph">Later / Finally</span>, she will call a friend and make plans for the evening.</p>
+</div>
+<div class="btnrow"><button class="showbtn" data-group="p74" onclick="stepReveal(['ex-prac3'], this, 'p74')">Show Answers</button></div>
+</div>
+
+<div id="sec-grammar" class="sec-header">SENTENCE STRUCTURE AND GRAMMAR</div>
+<div class="sub-header">SIMPLE SENTENCE PATTERNS, PART 1</div>
+<p>There are <span class="wterm" data-w="several">several</span> kinds of sentences in English. Understanding sentence patterns will help you write correct sentences.</p>
+<p>First, there are <b>simple sentences</b>. A simple sentence has one subject-verb <span class="wterm" data-w="combination">combination</span>. Look at these two patterns for simple sentences:</p>
+<div class="pattern-rows">
+  <div class="prow"><div class="plabel"><b>1</b> <span class="hl-subj">subject</span> + <b>1</b> <span class="hl-verb">verb</span></div>
+    <div class="pex"><div><span class="hl-subj">I</span> <span class="hl-verb">like</span> watermelon.</div><div><span class="hl-subj">Watermelon</span> <span class="hl-verb">is</span> my favorite fruit.</div></div></div>
+  <div class="prow"><div class="plabel"><b>2</b> <span class="hl-subj">subjects</span> + <b>1</b> <span class="hl-verb">verb</span></div>
+    <div class="pex"><div><span class="hl-subj">Alfredo</span> and <span class="hl-subj">I</span> <span class="hl-verb">like</span> strawberries.</div><div><span class="hl-subj">Watermelon</span> and <span class="hl-subj">strawberries</span> <span class="hl-verb">are</span> both delicious.</div></div></div>
+</div>
+<p>One or more subjects with the same verb means one subject-verb combination.</p>
+
+<!-- ======================= PAGE 75 ======================= -->
+<div class="page-divider"><span>PAGE 75</span></div>
+<div id="p75" class="page-anchor"></div>
+<div class="practice-tag">PRACTICE 4</div><span class="practice-title">Simple Sentence Patterns</span>
+<p class="instr">Circle the verbs and write <i>V</i> above them. Underline the subjects and write <i>S</i> above them.</p>
+
+<div class="exwrap" id="ex-prac4">
+<div class="qitem sv4host"><span class="num">1.</span> <span class="given-sv4">In North America, <span class="subj-part">Saturday</span> and <span class="subj-part">Sunday</span> <span class="verb-part">are</span> weekend days.</span></div>
+<div class="qitem sv4host"><span class="num">2.</span> <span class="sentmark sv4mark">In some other places, <span class="subj-part">Friday</span> and <span class="subj-part">Saturday</span> <span class="verb-part">are</span> the weekend days.</span></div>
+<div class="qitem sv4host"><span class="num">3.</span> <span class="sentmark sv4mark"><span class="subj-part">Saturday</span> <span class="verb-part">gets</span> its name from the Roman god Saturn.</span></div>
+<div class="qitem sv4host"><span class="num">4.</span> <span class="sentmark sv4mark"><span class="subj-part">Monday</span> <span class="verb-part">means</span> “moon day.”</span></div>
+<div class="qitem sv4host"><span class="num">5.</span> <span class="sentmark sv4mark">In the United States, <span class="subj-part"><span class="wterm" data-w="election">elections</span></span> <span class="verb-part">are</span> always on Tuesdays.</span></div>
+<div class="qitem sv4host"><span class="num">6.</span> <span class="sentmark sv4mark">In Thailand, a <span class="subj-part">color</span> <span class="verb-part">goes</span> with each day of the week.</span></div>
+<div class="qitem sv4host"><span class="num">7.</span> <span class="sentmark sv4mark"><span class="subj-part">Green</span> and <span class="subj-part">orange</span> <span class="verb-part">are</span> the colors for Wednesday and Thursday in Thailand.</span></div>
+<div class="qitem sv4host"><span class="num">8.</span> <span class="sentmark sv4mark">In England, <span class="subj-part">Monday</span>, <span class="subj-part">Tuesday</span>, and <span class="subj-part">Wednesday</span> <span class="verb-part">are</span> lucky days for weddings.</span></div>
+<div class="btnrow"><button class="showbtn" data-group="p75" onclick="stepReveal(['ex-prac4'], this, 'p75')">Show Answers</button></div>
+</div>
+
+<div class="sub-header">ADVERBS OF FREQUENCY</div>
+<h4 class="minor-header">Meanings</h4>
+<p>Adverbs of frequency tell how often something happens.</p>
+<table class="freq-table">
+  <tr><th class="q">How often do they eat breakfast?</th><th>Sun</th><th>M</th><th>Tu</th><th>W</th><th>Th</th><th>F</th><th>Sat</th><th class="blankhead"></th></tr>
+  <tr><td class="name">Alex <b>always</b> eats breakfast.</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td>
+      <td class="arrowcol" rowspan="5"><div class="arrowbox"><span>100%</span><span class="shaft"></span><span>0%</span></div></td></tr>
+  <tr><td class="name">Uma <b>usually</b> eats breakfast.</td><td></td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td></tr>
+  <tr><td class="name">Olivia <b>often</b> eats breakfast.</td><td></td><td>✓</td><td></td><td>✓</td><td></td><td>✓</td><td>✓</td></tr>
+  <tr><td class="name">Saeed <b>sometimes</b> eats breakfast.</td><td>✓</td><td></td><td></td><td></td><td></td><td></td><td>✓</td></tr>
+  <tr><td class="name">Norberto <b>never</b> eats breakfast.</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+</table>
+<p>Use <i>almost</i> with <i>always</i> or <i>never</i> to change the meaning to “nearly 100% of the time” or “nearly 0% of the time.”</p>
+<p class="indent-ex">I <b>almost never</b> eat breakfast in a restaurant. I do that about once a year.</p>
+
+<!-- ======================= PAGE 76 ======================= -->
+<div class="page-divider"><span>PAGE 76</span></div>
+<div id="p76" class="page-anchor"></div>
+<div class="tip-box" style="max-width:600px;">
+  <div class="tip-head">Writing Tip</div>
+  <div class="tip-body" style="font-family:Arial, sans-serif; font-size:.92em;">Knowing the parts of speech can help a writer use words correctly. Dictionaries tell what part of speech a word is. They usually use <b><span class="wterm" data-w="abbreviation">abbreviations</span></b>. For example, the abbreviation <i>v.</i> means <i>verb</i>, <i>n.</i> means <i>noun</i>, <i>adj.</i> means <i>adjective</i>, and <i>adv.</i> means <i>adverb</i>.</div>
+</div>
+
+<h4 class="minor-header">Placement in Affirmative Statements</h4>
+<p>The rules in the chart tell where to put an adverb of frequency in an <span class="wterm" data-w="affirmative">affirmative</span> statement.</p>
+<table class="rule-table">
+<tr><th style="width:38%;">Rules</th><th>Examples</th></tr>
+<tr>
+  <td class="rule-cell"><b>1.</b> In most affirmative statements: Put the adverb before the verb.</td>
+  <td class="ex-cell2"><table class="ex-grid">
+    <tr><th></th><th>Adverb</th><th>Verb</th><th></th></tr>
+    <tr><td>I<br>Tanya</td><td><b>usually<br>never</b></td><td>arrive<br>comes</td><td class="mid">on time.</td></tr>
+  </table></td>
+</tr>
+<tr>
+  <td class="rule-cell"><b>2.</b> In affirmative statements with <i>be</i>: Put the adverb after the verb <i>be</i>.</td>
+  <td class="ex-cell2"><table class="ex-grid">
+    <tr><th></th><th><i>Be</i></th><th>Adverb</th><th></th></tr>
+    <tr><td>I<br>Jeremy</td><td>am<br>is</td><td><b>often<br>sometimes</b></td><td class="mid">early.</td></tr>
+  </table></td>
+</tr>
+</table>
+<p>The adverb of frequency <i>sometimes</i> can also come at the beginning or end of an affirmative statement.</p>
+<p class="indent-ex"><b>Sometimes</b> Jeremy is early.</p>
+<p class="indent-ex">Jeremy is early <b>sometimes</b>.</p>
+
+<div class="practice-tag">PRACTICE 5</div><span class="practice-title">Adverbs of Frequency</span>
+<p class="instr">Rewrite each affirmative statement. Add the adverb in parentheses.</p>
+
+<div class="exwrap clearfix" id="ex-prac5a">
+<div class="photofig right" style="width:230px;">
+  <img src="media/p76_cake.jpg" alt="A heart-shaped cake with raspberries and a pink rose">
+</div>
+<div class="qitem"><span class="num">1.</span> (always) Valentine's Day is on February 14.<br>
+<span class="given-text hand">Valentine's Day is always on February 14.</span></div>
+<div class="qitem"><span class="num">2.</span> (usually) People think of Valentine's Day as a holiday for people in love.<br>
+<span class="blank-ph long">&nbsp;</span><span class="ans-ph">People <i>usually</i> think of Valentine's Day as a holiday for people in love.</span></div>
+<div class="qitem"><span class="num">3.</span> (always) The dates of some holidays change, depending on the moon.<br>
+<span class="blank-ph long">&nbsp;</span><span class="ans-ph">The dates of some holidays <i>always</i> change, <span class="wterm" data-w="depend-on">depending on</span> the moon.</span></div>
+<div class="qitem"><span class="num">4.</span> (never) Some people celebrate the new year on January 1.<br>
+<span class="blank-ph long">&nbsp;</span><span class="ans-ph">Some people <i>never</i> celebrate the new year on January 1.</span></div>
+<div class="btnrow"><button class="showbtn" data-group="p76" onclick="stepReveal(['ex-prac5a'], this, 'p76')">Show Answers</button></div>
+</div>
+
+<!-- ======================= PAGE 77 ======================= -->
+<div class="page-divider"><span>PAGE 77</span></div>
+<div id="p77" class="page-anchor"></div>
+<div class="exwrap" id="ex-prac5b">
+<div class="qitem"><span class="num">5.</span> (usually) Mother's Day is a popular holiday.<br>
+<span class="blank-ph long">&nbsp;</span><span class="ans-ph">Mother's Day is <i>usually</i> a popular holiday.</span></div>
+<div class="qitem"><span class="num">6.</span> (often) Schools are closed on holidays.<br>
+<span class="blank-ph long">&nbsp;</span><span class="ans-ph">Schools are <i>often</i> closed on holidays.</span></div>
+<div class="qitem"><span class="num">7.</span> (often) Workers have a holiday in their <span class="wterm" data-w="honor">honor</span>.<br>
+<span class="blank-ph long">&nbsp;</span><span class="ans-ph">Workers <i>often</i> have a holiday in their <span class="wterm" data-w="honor">honor</span>.</span></div>
+<div class="qitem"><span class="num">8.</span> (never) Some women work on International Women's Day.<br>
+<span class="blank-ph long">&nbsp;</span><span class="ans-ph">Some women <i>never</i> work on International Women's Day.</span></div>
+<div class="btnrow"><button class="showbtn" data-group="p77" onclick="stepReveal(['ex-prac5b'], this, 'p77')">Show Answers</button></div>
+</div>
+
+<div class="practice-tag">PRACTICE 6</div><span class="practice-title">Using <i>Sometimes</i></span>
+<p class="instr">Rewrite each statement three times. Add <i>sometimes</i> in three different places.</p>
+
+<div class="exwrap" id="ex-prac6-1">
+<div class="qitem"><span class="num">1.</span> My family has a special holiday meal.<br>
+<span class="blank-ph long">&nbsp;</span><span class="ans-ph">My family <i>sometimes</i> has a special holiday meal.</span><br>
+<span class="blank-ph long">&nbsp;</span><span class="ans-ph"><i>Sometimes</i> my family has a special holiday meal.</span><br>
+<span class="blank-ph long">&nbsp;</span><span class="ans-ph">My family has a special holiday meal <i>sometimes</i>.</span></div>
+<div class="btnrow"><button class="showbtn" data-group="p77" onclick="stepReveal(['ex-prac6-1'], this, 'p77')">Show Answers</button></div>
+</div>
+
+<div class="exwrap" id="ex-prac6-2">
+<div class="qitem"><span class="num">2.</span> Stores are closed on holidays.<br>
+<span class="blank-ph long">&nbsp;</span><span class="ans-ph">Stores are <i>sometimes</i> closed on holidays.</span><br>
+<span class="blank-ph long">&nbsp;</span><span class="ans-ph"><i>Sometimes</i> stores are closed on holidays.</span><br>
+<span class="blank-ph long">&nbsp;</span><span class="ans-ph">Stores are closed on holidays <i>sometimes</i>.</span></div>
+<div class="btnrow"><button class="showbtn" data-group="p77" onclick="stepReveal(['ex-prac6-2'], this, 'p77')">Show Answers</button></div>
+</div>
+
+<h4 class="minor-header">Placement in Negative Statements</h4>
+<p>The rules in this chart tell where to put an adverb of frequency in a <span class="wterm" data-w="negative">negative</span> statement.</p>
+<table class="rule-table">
+<tr><th style="width:38%;">Rules</th><th>Examples</th></tr>
+<tr>
+  <td class="rule-cell"><b>1.</b> Put the adverbs <i>always</i>, <i>usually</i>, and <i>often</i> after <i>not</i>.</td>
+  <td class="ex-cell2"><table class="ex-grid">
+    <tr><th></th><th><i>Not</i></th><th>Adverb</th><th></th></tr>
+    <tr><td>He does<br>They are</td><td><b>not<br>not</b></td><td><b>always<br>often</b></td><td class="mid">sleep well.<br>late.</td></tr>
+  </table></td>
+</tr>
+<tr>
+  <td class="rule-cell"><b>2.</b> Put <i>sometimes</i> at the beginning of a negative statement.</td>
+  <td class="ex-cell2"><b>Sometimes</b> he does not call.</td>
+</tr>
+<tr>
+  <td class="rule-cell"><b>3.</b> Do not use <i>not</i> with <i>never</i>.</td>
+  <td class="ex-cell2">He is <b>never</b> ready on time.<br>NOT: He <span class="strike">isn't</span> never ready on time.</td>
+</tr>
+</table>
+
+<!-- ======================= PAGE 78 ======================= -->
+<div class="page-divider"><span>PAGE 78</span></div>
+<div id="p78" class="page-anchor"></div>
+<div class="practice-tag">PRACTICE 7</div><span class="practice-title">Adverbs of Frequency</span>
+<p class="instr">Rewrite each negative statement. Add the adverb in parentheses.</p>
+
+<div class="exwrap" id="ex-prac7">
+<div class="qitem"><span class="num">1.</span> I am not at home on <span class="wterm" data-w="new-years-eve">New Year's Eve</span>. (never)<br>
+<span class="given-text hand">I am never at home on New Year's Eve.</span></div>
+<div class="qitem"><span class="num">2.</span> People in different countries do not have the same holidays. (always)<br>
+<span class="given-text hand">People in different countries do not always have the same holidays.</span></div>
+<div class="qitem"><span class="num">3.</span> Halloween is not an important holiday outside the United States. (usually)<br>
+<span class="blank-ph long">&nbsp;</span><span class="ans-ph">Halloween is <i>usually</i> not an important holiday outside the United States.</span></div>
+<div class="qitem"><span class="num">4.</span> Father's Day is not on a <span class="wterm" data-w="weekday">weekday</span> in the United States. (never)<br>
+<span class="blank-ph long">&nbsp;</span><span class="ans-ph">Father's Day is <i>never</i> on a <span class="wterm" data-w="weekday">weekday</span> in the United States.</span></div>
+<div class="qitem"><span class="num">5.</span> Some businesses do not close on holidays. (never)<br>
+<span class="blank-ph long">&nbsp;</span><span class="ans-ph">Some businesses <i>never</i> close on holidays.</span></div>
+<div class="qitem"><span class="num">6.</span> For example, airports do not close on holidays. (often)<br>
+<span class="blank-ph long">&nbsp;</span><span class="ans-ph">For example, airports do not <i>often</i> close on holidays.</span></div>
+<div class="qitem"><span class="num">7.</span> People do not celebrate every holiday in the same way. (usually)<br>
+<span class="blank-ph long">&nbsp;</span><span class="ans-ph">People do not <i>usually</i> celebrate every holiday in the same way.</span></div>
+<div class="qitem"><span class="num">8.</span> In some countries, birthdays are not special days. (usually)<br>
+<span class="blank-ph long">&nbsp;</span><span class="ans-ph">In some countries, birthdays are not <i>usually</i> special days.</span></div>
+<div class="btnrow"><button class="showbtn" data-group="p78" onclick="stepReveal(['ex-prac7'], this, 'p78')">Show Answers</button></div>
+</div>
+
+<img class="pagephoto" style="width:80%; max-width:520px;" src="media/p78_dragons.jpg" alt="Two colorful dragon figures at a New Year celebration">
+<p class="photocap">Happy New Year!</p>
+
+<!-- ======================= PAGE 79 ======================= -->
+<div class="page-divider"><span>PAGE 79</span></div>
+<div id="p79" class="page-anchor"></div>
+<div class="practice-tag">TRY IT OUT!</div>
+<p class="instr">Look at the activities in the list. How often do you do these things? Take a sheet of paper, and write a true statement with an adverb of frequency about each activity.</p>
+
+<div class="exwrap" id="ex-try79">
+<div class="twocol">
+  <ul><li>watch the evening news on TV</li><li>drink milk</li><li>get hungry in class</li><li>be tired in class</li></ul>
+  <ul><li>write letters</li><li>go shopping on weekends</li><li><span class="wterm" data-w="bad-mood">be in a bad mood</span></li></ul>
+</div>
+<div class="qitem"><span class="given-text hand">I almost never watch the evening news on TV.</span></div>
+<div class="qitem"><span class="blank-ph long">&nbsp;</span><span class="ans-ph model-style">I usually drink milk with my breakfast.</span></div>
+<div class="qitem"><span class="blank-ph long">&nbsp;</span><span class="ans-ph model-style">I often get hungry in class.</span></div>
+<div class="qitem"><span class="blank-ph long">&nbsp;</span><span class="ans-ph model-style">I am sometimes tired in class.</span></div>
+<div class="qitem"><span class="blank-ph long">&nbsp;</span><span class="ans-ph model-style">I never write letters.</span></div>
+<div class="qitem"><span class="blank-ph long">&nbsp;</span><span class="ans-ph model-style">I often go shopping on weekends.</span></div>
+<div class="qitem"><span class="blank-ph long">&nbsp;</span><span class="ans-ph model-style">I am almost never <span class="wterm" data-w="bad-mood">in a bad mood</span>.</span></div>
+<div class="btnrow"><button class="showbtn" data-group="p79" onclick="stepReveal(['ex-try79'], this, 'p79')">Show Model Answer</button></div>
+</div>
+
+<div class="sub-header">USING PREPOSITIONS TO SHOW TIME</div>
+<p>A <b>preposition</b>, such as <i>in</i>, <i>at</i>, <i>by</i>, or <i>with</i>, goes in front of a noun. The preposition and noun form a <b>prepositional phrase</b>. Prepositional phrases have many uses. For example, they can <span class="wterm" data-w="identify">identify</span> a place (<i>at home, in South America</i>) or a direction (<i>to school, up the stairs</i>).</p>
+<p>Prepositional phrases can also be <b>time expressions</b>. Time expressions tell when something happens.</p>
+<p>A time expression can go at the beginning or at the end of a sentence. Put a comma after a time expression at the beginning of a sentence.</p>
+<div class="prep-ex">
+  <div class="pe"><span class="lblwrap2"><span class="pelabel">PREPOSITION + NOUN</span><span class="hl-prep">On</span> <b>Saturdays<span class="hl-prep">,</span></b></span> I like to sleep late.</div>
+  <div class="pe">I sometimes get up <span class="lblwrap2"><span class="pelabel">PREPOSITION + NOUN</span><span class="hl-prep">in</span> <b>the afternoon</b></span>.</div>
+</div>
+<p>Here are five rules you need to know for using prepositions to show time.</p>
+<table class="rule-table">
+<tr><th style="width:44%;">Rules</th><th>Examples</th></tr>
+<tr><td class="rule-cell"><b>1.</b> Use <i>on</i> + a day or days.</td>
+  <td class="ex-cell2">Do we have class <span class="hl-prep">on</span> <b>Friday</b>?<br>They see each other <span class="hl-prep">on</span> <b>weekends</b>.</td></tr>
+<tr><td class="rule-cell"><b>2.</b> Use <i>in</i> + a part of the day.<br><span class="wterm" data-w="exception">Exception</span>: Use <i>at</i> + <i>night</i>.</td>
+  <td class="ex-cell2">Call me <span class="hl-prep">in</span> <b>the morning</b>.<br>He gets home late <span class="hl-prep">at</span> <b>night</b>.</td></tr>
+<tr><td class="rule-cell"><b>3.</b> Use <i>at</i> + a time.</td>
+  <td class="ex-cell2">He starts work <span class="hl-prep">at</span> <b>8:30 <span class="sc">a.m.</span></b><br>Lunch is <span class="hl-prep">at</span> <b>noon</b>.</td></tr>
+<tr><td class="rule-cell"><b>4.</b> Use <i>from</i> + a starting point + <i>to</i> + the end point.</td>
+  <td class="ex-cell2"><span class="hl-prep">From</span> <b>7:00</b> <span class="hl-prep">to</span> <b>10:00 <span class="sc">p.m.</span></b>, he studies.<br>The course runs <span class="hl-prep">from</span> <b>January</b> <span class="hl-prep">to</span> <b>May</b>.</td></tr>
+<tr><td class="rule-cell"><b>5.</b> Use <i>for</i> + an amount of time.</td>
+  <td class="ex-cell2">They will be on vacation <span class="hl-prep">for</span> <b>a week</b>.</td></tr>
+</table>
+<p class="seealso"><i>See pages 99–100 and 160–162 for more information on prepositions.</i></p>
+
+<!-- ======================= PAGE 80 ======================= -->
+<div class="page-divider"><span>PAGE 80</span></div>
+<div id="p80" class="page-anchor"></div>
+<div class="practice-tag">PRACTICE 8</div><span class="practice-title">Prepositions in Time Expressions</span>
+<p class="instr">Underline six more time expressions with prepositions.</p>
+
+<div class="exwrap" id="ex-prac8">
+<p class="svhost8">The Music of Fame in Cleveland, Ohio, welcomes music fans 363 days a year. The hall is closed only <span class="given-under">on Thanksgiving and Christmas</span>. It is usually open <span class="sentmark tmark">from 10:00 <span class="sc">a.m.</span> to 5:30 <span class="sc">p.m.</span></span> <span class="sentmark tmark">On Wednesdays</span>, it is also open <span class="sentmark tmark">in the evening</span>. <span class="sentmark tmark">In the summer</span> (<span class="sentmark tmark">from Memorial Day to Labor Day</span>), it stays open late <span class="sentmark tmark">on Saturdays</span>, too. There are <span class="wterm" data-w="exhibit">exhibits</span>, films, concerts, and a museum store. Each year, <span class="wterm" data-w="half">half</span> a million people visit the Rock and Roll Hall of Fame. It is great fun for music fans.</p>
+<div class="btnrow"><button class="showbtn" data-group="p80" onclick="stepReveal(['ex-prac8'], this, 'p80')">Show Answers</button></div>
+</div>
+
+<img class="pagephoto" style="width:76%; max-width:500px;" src="media/p80_band.jpg" alt="A band playing guitars and drums on a stage">
+
+<div class="practice-tag">PRACTICE 9</div><span class="practice-title">Prepositions in Time Expressions</span>
+<p class="instr">Complete the time expressions in the sentences. Use the prepositions <i>at</i>, <i>for</i>, <i>from</i>, <i>in</i>, <i>on</i>, and <i>to</i>.</p>
+
+<div class="exwrap" id="ex-prac9">
+<div class="qitem"><span class="num">1.</span> Gary's music band always plays at a club <span class="blank-ph">&nbsp;</span><span class="ans-ph">on</span> Saturdays.</div>
+<div class="qitem"><span class="num">2.</span> The show starts <span class="blank-ph">&nbsp;</span><span class="ans-ph">at</span> 9:00 <span class="blank-ph">&nbsp;</span><span class="ans-ph">in</span> the evening.</div>
+<div class="qitem"><span class="num">3.</span> The band usually plays <span class="blank-ph">&nbsp;</span><span class="ans-ph">from</span> 9:00 <span class="blank-ph">&nbsp;</span><span class="ans-ph">to</span> midnight.</div>
+<div class="qitem"><span class="num">4.</span> <span class="wterm" data-w="in-the-middle-of">In the middle of</span> the show, they take a break <span class="blank-ph">&nbsp;</span><span class="ans-ph">for</span> 10 minutes.</div>
+<div class="qitem"><span class="num">5.</span> After the show, Gary stays at the club <span class="blank-ph">&nbsp;</span><span class="ans-ph">for</span> a while.</div>
+<div class="qitem"><span class="num">6.</span> He goes home <span class="blank-ph">&nbsp;</span><span class="ans-ph">in</span> the early morning.</div>
+<div class="qitem"><span class="num">7.</span> He usually goes to sleep <span class="blank-ph">&nbsp;</span><span class="ans-ph">at</span> about 4:00 <span class="sc">a.m.</span></div>
+<div class="qitem"><span class="num">8.</span> He sleeps <span class="blank-ph">&nbsp;</span><span class="ans-ph">from</span> 4:00 <span class="blank-ph">&nbsp;</span><span class="ans-ph">to</span> noon.</div>
+<div class="btnrow"><button class="showbtn" data-group="p80" onclick="stepReveal(['ex-prac9'], this, 'p80')">Show Answers</button></div>
+</div>
+
+<!-- ======================= PAGE 81 ======================= -->
+<div class="page-divider"><span>PAGE 81</span></div>
+<div id="p81" class="page-anchor"></div>
+<div id="sec-mechanics" class="sec-header">MECHANICS</div>
+<div class="sub-header">USING CAPITAL LETTERS</div>
+<p>Some words in English must begin with a capital letter. Here are five rules for capital letters that writers need to know.</p>
+<table class="rule-table">
+<tr><th style="width:44%;">Rules</th><th>Examples</th></tr>
+<tr><td class="rule-cell"><b>1.</b> <span class="wterm" data-w="capitalize">Capitalize</span> the subject pronoun <i>I</i>.</td>
+  <td class="ex-cell2">Rosa and <span class="hl-cap">I</span> are in the same class.</td></tr>
+<tr><td class="rule-cell"><b>2.</b> Capitalize the first letter of a sentence.</td>
+  <td class="ex-cell2"><span class="hl-cap">H</span>is first name is David.</td></tr>
+<tr><td class="rule-cell"><b>3.</b> Capitalize people's names and titles.</td>
+  <td class="ex-cell2">My dentist's name is <span class="hl-cap">D</span>r. <span class="hl-cap">P</span>arker.</td></tr>
+<tr><td class="rule-cell"><b>4.</b> Capitalize words for <span class="wterm" data-w="nationality">nationalities</span> and languages.</td>
+  <td class="ex-cell2"><div class="nl-cols">
+    <div><b>Nationalities</b><br><span class="hl-cap">A</span>ustralian<br><span class="hl-cap">C</span>olombian<br><span class="hl-cap">K</span>uwaiti</div>
+    <div><b>Languages</b><br><span class="hl-cap">E</span>nglish<br><span class="hl-cap">S</span>panish<br><span class="hl-cap">A</span>rabic</div>
+  </div></td></tr>
+<tr><td class="rule-cell"><b>5.</b> Capitalize place names.</td>
+  <td class="ex-cell2">She lives in the <span class="hl-cap">D</span>ominican <span class="hl-cap">R</span>epublic.</td></tr>
+</table>
+
+<div class="practice-tag">PRACTICE 10</div><span class="practice-title">Correcting Capitalization Errors</span>
+<p class="instr">Find one or more capitalization errors in each sentence. Make corrections.</p>
+
+<div class="exwrap" id="ex-prac10">
+<div class="qitem capitem"><span class="num">1.</span> <span class="given-cap"><span class="given-capfix" data-c="T">t</span>he name of the song is “<span class="given-capfix" data-c="M">m</span>ichelle.”</span></div>
+<div class="qitem capitem"><span class="num">2.</span> <span class="sentmark">I have an appointment with <span class="capfix" data-c="D">d</span>octor Patel.</span></div>
+<div class="qitem capitem"><span class="num">3.</span> <span class="sentmark">Our teacher speaks <span class="capfix" data-c="S">s</span>panish.</span></div>
+<div class="qitem capitem"><span class="num">4.</span> <span class="sentmark"><span class="capfix" data-c="C">c</span>arlo is from <span class="capfix" data-c="N">n</span>ew <span class="capfix" data-c="Y">y</span>ork.</span></div>
+<div class="qitem capitem"><span class="num">5.</span> <span class="sentmark"><span class="capfix" data-c="M">m</span>y roommate drives a <span class="capfix" data-c="K">k</span>orean car.</span></div>
+<div class="qitem capitem"><span class="num">6.</span> <span class="sentmark"><span class="capfix" data-c="S">s</span>usan's first language is <span class="capfix" data-c="E">e</span>nglish.</span></div>
+<div class="qitem capitem"><span class="num">7.</span> <span class="sentmark">People speak <span class="capfix" data-c="T">t</span>agalog in the <span class="capfix" data-c="P">p</span>hilippines.</span></div>
+<div class="qitem capitem"><span class="num">8.</span> <span class="sentmark"><span class="capfix" data-c="T">t</span>he man's <span class="wterm" data-w="nickname">nickname</span> is <span class="capfix" data-c="R">r</span>ed because of his red hair.</span></div>
+<div class="btnrow"><button class="showbtn" data-group="p81" onclick="stepReveal(['ex-prac10'], this, 'p81')">Show Answers</button></div>
+</div>
+
+<!-- ======================= PAGE 82 ======================= -->
+<div class="page-divider"><span>PAGE 82</span></div>
+<div id="p82" class="page-anchor"></div>
+<div class="practice-tag">TRY IT OUT!</div>
+<p class="instr">Work alone or with a partner. Look at the five rules for capitalization in the chart on page 81. Write two sample sentences for each rule.</p>
+
+<div class="exwrap" id="ex-try82">
+<div class="qitem">Rule 4: <span class="given-text hand">Maurício speaks Portuguese and English.</span></div>
+<div class="qitem"><span class="num">1.</span> Rule 1<br>
+<span class="blank-ph long">&nbsp;</span><span class="ans-ph model-style">My brother and I play soccer on Sundays.</span><br>
+<span class="blank-ph long">&nbsp;</span><span class="ans-ph model-style">I am a student at this school.</span></div>
+<div class="qitem"><span class="num">2.</span> Rule 2<br>
+<span class="blank-ph long">&nbsp;</span><span class="ans-ph model-style">Today is a sunny day.</span><br>
+<span class="blank-ph long">&nbsp;</span><span class="ans-ph model-style">My class starts at nine o'clock.</span></div>
+<div class="qitem"><span class="num">3.</span> Rule 3<br>
+<span class="blank-ph long">&nbsp;</span><span class="ans-ph model-style">My teacher's name is Ms. Rivera.</span><br>
+<span class="blank-ph long">&nbsp;</span><span class="ans-ph model-style">Dr. Lee is my family doctor.</span></div>
+<div class="qitem"><span class="num">4.</span> Rule 4<br>
+<span class="blank-ph long">&nbsp;</span><span class="ans-ph model-style">My neighbor is Japanese.</span><br>
+<span class="blank-ph long">&nbsp;</span><span class="ans-ph model-style">Many people in Canada speak French.</span></div>
+<div class="qitem"><span class="num">5.</span> Rule 5<br>
+<span class="blank-ph long">&nbsp;</span><span class="ans-ph model-style">My cousin lives in Toronto, Canada.</span><br>
+<span class="blank-ph long">&nbsp;</span><span class="ans-ph model-style">Lake Michigan is near Chicago.</span></div>
+<div class="btnrow"><button class="showbtn" data-group="p82" onclick="stepReveal(['ex-try82'], this, 'p82')">Show Model Answer</button></div>
+</div>
+
+<div class="sub-header">CAPITAL LETTERS FOR TITLES</div>
+<p>Follow these rules for using capital letters in the titles of your paragraphs.</p>
+<table class="rule-table">
+<tr><th style="width:44%;">Rules</th><th>Examples</th></tr>
+<tr><td class="rule-cell"><b>1.</b> Capitalize the first letter of the first word of a title.</td>
+  <td class="ex-cell2"><span class="hl-cap">M</span>y Life<br><span class="hl-cap">T</span>he Best Day of My Life</td></tr>
+<tr><td class="rule-cell"><b>2.</b> Capitalize every noun, verb, pronoun, adjective, and adverb in a title. Do not capitalize <i>a</i>, <i>an</i>, <i>the</i>, or prepositions.</td>
+  <td class="ex-cell2">A <span class="hl-cap">D</span>ay at the <span class="hl-cap">R</span>aces<br>Take <span class="hl-cap">M</span>e <span class="hl-cap">O</span>ut to the <span class="hl-cap">B</span>all <span class="hl-cap">G</span>ame</td></tr>
+<tr><td class="rule-cell"><b>3.</b> Do not put a period (.) after the title of a paragraph.</td>
+  <td class="ex-cell2">Getting Ready for the Day<span class="xmark">.</span></td></tr>
+<tr><td class="rule-cell"><b>4.</b> Do not put quotation marks (“ ”) around the title of a paragraph.</td>
+  <td class="ex-cell2"><span class="xmark">“</span>Jae Yoon's Favorite Day<span class="xmark">”</span></td></tr>
+</table>
+
+<!-- ======================= PAGE 83 ======================= -->
+<div class="page-divider"><span>PAGE 83</span></div>
+<div id="p83" class="page-anchor"></div>
+<div class="practice-tag">PRACTICE 11</div><span class="practice-title">Capital Letters in Titles</span>
+<p class="instr">Rewrite each title with the capital letters needed.</p>
+
+<div class="exwrap clearfix" id="ex-prac11">
+<div class="photofig right" style="width:240px; margin-top:0;">
+  <img src="media/p83_twain.jpg" alt="Mark Twain seated in a chair">
+  <p>Mark Twain, <span class="wterm" data-w="author">author</span> of The Adventures of Tom Sawyer</p>
+</div>
+<div class="qitem"><span class="num">1.</span> the adventures of Tom Sawyer<br>
+<span class="given-text hand">The Adventures of Tom Sawyer</span></div>
+<div class="qitem"><span class="num">2.</span> Harry Potter and the chamber of secrets<br>
+<span class="blank-ph long">&nbsp;</span><span class="ans-ph">Harry Potter and the <b>C</b>hamber of <b>S</b>ecrets</span></div>
+<div class="qitem"><span class="num">3.</span> a tale of two cities<br>
+<span class="blank-ph long">&nbsp;</span><span class="ans-ph"><b>A</b> <b>T</b>ale of <b>T</b>wo <b>C</b>ities</span></div>
+<div class="qitem"><span class="num">4.</span> around the world in eighty days<br>
+<span class="blank-ph long">&nbsp;</span><span class="ans-ph"><b>A</b>round the <b>W</b>orld in <b>E</b>ighty <b>D</b>ays</span></div>
+<div class="qitem"><span class="num">5.</span> the good, the bad, and the ugly<br>
+<span class="blank-ph long">&nbsp;</span><span class="ans-ph"><b>T</b>he <b>G</b>ood, the <b>B</b>ad, and the <b>U</b>gly</span></div>
+<div class="qitem"><span class="num">6.</span> a journey to the center of the earth<br>
+<span class="blank-ph long">&nbsp;</span><span class="ans-ph"><b>A</b> <b>J</b>ourney to the <b>C</b>enter of the <b>E</b>arth</span></div>
+<div class="btnrow"><button class="showbtn" data-group="p83" onclick="stepReveal(['ex-prac11'], this, 'p83')">Show Answers</button></div>
+</div>
+
+<h4 class="minor-header">✏️ Applying Vocabulary: Using Phrasal Verbs</h4>
+<p>You saw some common phrasal verbs used in the writing models on pages 70 and 71:</p>
+<div class="wordbox grid3"><span>dress up</span><span>get up</span><span>sleep in</span><span>eat out</span><span>go out</span><span>stay up</span></div>
+<p>You may want to use some of those phrasal verbs when you do the Writing Assignment on page 84, writing about one day in a classmate's week.</p>
+
+<div class="practice-tag">PRACTICE 12</div><span class="practice-title">Using Phrasal Verbs</span>
+
+<div class="exwrap" id="ex-prac12a1">
+<p class="instr"><span class="abadge">A</span> Complete the sentences with phrasal verbs from the box above.</p>
+<div class="qitem"><span class="num">1.</span> When my <span class="wterm" data-w="alarm-clock">alarm clock</span> rings in the morning, it is time for me to <span class="blank-ph">&nbsp;</span><span class="ans-ph">get up</span>.</div>
+<div class="qitem"><span class="num">2.</span> I do not set an alarm when I want to <span class="blank-ph">&nbsp;</span><span class="ans-ph">sleep in</span>.</div>
+<div class="qitem"><span class="num">3.</span> I like to <span class="blank-ph">&nbsp;</span><span class="ans-ph">go out</span> with my friends for a movie or a concert.</div>
+<div class="btnrow"><button class="showbtn" data-group="p83" onclick="stepReveal(['ex-prac12a1'], this, 'p83')">Show Answers</button></div>
+</div>
+
+<!-- ======================= PAGE 84 ======================= -->
+<div class="page-divider"><span>PAGE 84</span></div>
+<div id="p84" class="page-anchor"></div>
+<div class="exwrap" id="ex-prac12a2">
+<div class="qitem"><span class="num">4.</span> I like to eat at home, but I like to <span class="blank-ph">&nbsp;</span><span class="ans-ph">eat out</span>, too. I just like to eat!</div>
+<div class="qitem"><span class="num">5.</span> I <span class="blank-ph">&nbsp;</span><span class="ans-ph">dress up</span> when I go to a wedding or any <span class="wterm" data-w="formal">formal</span> event.</div>
+<div class="qitem"><span class="num">6.</span> On New Year's Eve, I <span class="blank-ph">&nbsp;</span><span class="ans-ph">stay up</span> late.</div>
+<div class="btnrow"><button class="showbtn" data-group="p84" onclick="stepReveal(['ex-prac12a2'], this, 'p84')">Show Answers</button></div>
+</div>
+
+<div class="exwrap" id="ex-prac12b">
+<p class="instr"><span class="abadge">B</span> Take a sheet of paper. Write six or more true sentences about what you do on Saturdays. In each sentence, use a phrasal verb from the box on page 83 and an adverb of frequency.</p>
+<p class="indent-ex">On Saturdays, I <b>never</b> <span class="hl-pv">sleep in</span>.</p>
+<p class="indent-ex">I do not <b>usually</b> <span class="hl-pv">eat out</span> on Saturdays.</p>
+<div class="qitem"><span class="blank-ph long">&nbsp;</span><span class="ans-ph model-style">I usually get up at 9:00 on Saturdays.</span></div>
+<div class="qitem"><span class="blank-ph long">&nbsp;</span><span class="ans-ph model-style">I often go out with my friends on Saturday evenings.</span></div>
+<div class="qitem"><span class="blank-ph long">&nbsp;</span><span class="ans-ph model-style">I sometimes stay up late on Saturday nights.</span></div>
+<div class="qitem"><span class="blank-ph long">&nbsp;</span><span class="ans-ph model-style">I always dress up when I go to a party.</span></div>
+<div class="qitem"><span class="blank-ph long">&nbsp;</span><span class="ans-ph model-style">On Saturdays, I sometimes eat out with my family.</span></div>
+<div class="qitem"><span class="blank-ph long">&nbsp;</span><span class="ans-ph model-style">On Saturdays, I usually sleep in until 8:30.</span></div>
+<div class="btnrow"><button class="showbtn" data-group="p84" onclick="stepReveal(['ex-prac12b'], this, 'p84')">Show Model Answer</button></div>
+</div>
+
+</div><!-- /#content -->
+
+<!-- ============ Word Definition Modal ============ -->
+<div class="modal-overlay" id="wordModal" onclick="if(event.target===this) closeModal('wordModal')">
+  <div class="modal-box">
+    <span class="close-x" onclick="closeModal('wordModal')">✕</span>
+    <h3 id="wTitle">word</h3>
+    <div class="word-pos" id="wPos"></div>
+    <div class="word-ipa" id="wIPA" style="display:none;"></div>
+    <div class="word-def" id="wDef"></div>
+    <div class="word-example-head">Examples:</div>
+    <div class="word-examples" id="wExample"></div>
+    <div class="word-phrase" id="wPhrase" style="display:none;"></div>
+    <div class="word-link" id="wLink" style="display:none;"></div>
+  </div>
+</div>
+
+<!-- ============ Answer Lock Modal ============ -->
+<div class="modal-overlay" id="lockModal" style="z-index:300;" onclick="if(event.target===this) closeModal('lockModal')">
+  <div class="modal-box" style="max-width:460px;">
+    <span class="close-x" onclick="closeModal('lockModal')">✕</span>
+    <h3 id="lockTitle">🔒 Answers locked</h3>
+    <p style="font-size:.95em; color:#555; margin-top:0;">Enter the class code for this page to see the answers.</p>
+    <div style="display:flex; gap:8px; align-items:center;">
+      <input type="password" id="lockInput" placeholder="class code" autocomplete="off">
+      <button type="button" class="lock-go" id="lockGo">Unlock</button>
+    </div>
+    <p id="lockMsg"></p>
+  </div>
+</div>
+
+<!-- ============ Vocabulary List Modal ============ -->
+<div class="modal-overlay" id="vocabModal" onclick="if(event.target===this) closeModal('vocabModal')">
+  <div class="modal-box" style="max-width:560px;">
+    <span class="close-x" onclick="closeModal('vocabModal')">✕</span>
+    <h3>Vocabulary — Chapter 4 (pp. 70–84)</h3>
+    <p style="font-size:.85em; color:#777; margin-top:0;">Click any word to see its definition and example.</p>
+    <div id="vocabgrid"></div>
+  </div>
+</div>
+
+<script>
+/* ===== Answer lock: one passcode per page + master override =====
+   To change codes, just edit the values in PAGES below.
+   MASTER_CODE always unlocks every page at once (kept for you, the teacher). */
+const PAGES = {
+  p70: { label:'Page 70', code:'morning' },
+  p71: { label:'Page 71', code:'coffee' },
+  p72: { label:'Page 72', code:'clock' },
+  p73: { label:'Page 73', code:'syrup' },
+  p74: { label:'Page 74', code:'sunrise' },
+  p75: { label:'Page 75', code:'weekend' },
+  p76: { label:'Page 76', code:'heart' },
+  p77: { label:'Page 77', code:'holiday' },
+  p78: { label:'Page 78', code:'dragon' },
+  p79: { label:'Page 79', code:'music' },
+  p80: { label:'Page 80', code:'guitar' },
+  p81: { label:'Page 81', code:'capital' },
+  p82: { label:'Page 82', code:'title' },
+  p83: { label:'Page 83', code:'author' },
+  p84: { label:'Page 84', code:'sleep' }
+};
+const MASTER_CODE = 'robot234';
+const unlockedPages = new Set(); // resets every page load/reload — nothing is remembered between visits
+
+function isUnlocked(page){ return !page || unlockedPages.has(page); }
+
+function tryUnlock(page, code){
+  if(code === MASTER_CODE){
+    Object.keys(PAGES).forEach(p=>{ unlockedPages.add(p); refreshPageUI(p); });
+    return true;
+  }
+  if(PAGES[page] && code === PAGES[page].code){
+    unlockedPages.add(page);
+    refreshPageUI(page);
+    return true;
+  }
+  return false;
+}
+
+function refreshPageUI(page){
+  document.querySelectorAll('.showbtn[data-group="'+page+'"]').forEach(b=>{
+    b.classList.remove('locked');
+  });
+}
+
+/* Lock popup: opens when a locked button is clicked; on success runs the pending reveal */
+let pendingUnlock = null; // { page, onSuccess }
+function openLockModal(page, onSuccess){
+  pendingUnlock = { page: page, onSuccess: onSuccess };
+  document.getElementById('lockTitle').textContent = '🔒 ' + (PAGES[page] ? PAGES[page].label : 'Answers') + ' is locked';
+  document.getElementById('lockMsg').textContent = '';
+  const input = document.getElementById('lockInput');
+  input.value = '';
+  openModal('lockModal');
+  setTimeout(()=>input.focus(), 50);
+}
+function submitLockCode(){
+  if(!pendingUnlock) return;
+  const input = document.getElementById('lockInput');
+  const val = (input.value || '').trim();
+  if(tryUnlock(pendingUnlock.page, val)){
+    const cb = pendingUnlock.onSuccess;
+    pendingUnlock = null;
+    closeModal('lockModal');
+    if(cb) cb();
+  } else {
+    document.getElementById('lockMsg').textContent = 'Incorrect code. Try again.';
+    input.value = '';
+    input.focus();
+  }
+}
+
+/* ===== Reveal answers one at a time; last click hides all and resets ===== */
+const revealState = {};
+function stepReveal(ids, btn, page){
+  if(page && !isUnlocked(page)){
+    openLockModal(page, ()=> stepReveal(ids, btn, page));
+    return;
+  }
+  const key = ids.join(',');
+  const rawUnits = [];
+  ids.forEach(id=>{
+    const el = document.getElementById(id);
+    if(el) el.querySelectorAll('.ans-ph, .correctmark, .sentmark').forEach(u=>{
+      const ow = u.getAttribute('data-owner');
+      if(!ow || ids.includes(ow)) rawUnits.push(u);
+    });
+    // marks that belong to this exercise but sit in another part of the page (e.g. the writing models)
+    document.querySelectorAll('[data-owner="'+id+'"]').forEach(u=>{ if(!rawUnits.includes(u)) rawUnits.push(u); });
+  });
+  // group elements that share a data-pair value into one reveal step
+  const steps = [];
+  const pairIndex = {};
+  rawUnits.forEach(u=>{
+    const pair = u.getAttribute('data-pair');
+    if(pair){
+      if(pairIndex[pair] === undefined){ pairIndex[pair] = steps.length; steps.push([u]); }
+      else { steps[pairIndex[pair]].push(u); }
+    } else {
+      steps.push([u]);
+    }
+  });
+  // optional explicit ordering: elements with data-step reveal in that numeric order;
+  // steps without data-step keep their DOM position as the order value
+  const ordered = steps.map((g,i)=>{
+    const withStep = g.find(u=>u.hasAttribute('data-step'));
+    return {g, ord: withStep ? parseFloat(withStep.getAttribute('data-step')) - 1000 : i};
+  });
+  ordered.sort((a,b)=>a.ord-b.ord);
+  steps.length = 0;
+  ordered.forEach(o=>steps.push(o.g));
+  function toggleUnit(u, on){
+    u.classList.toggle('shown', on);
+    if(u.classList.contains('ans-ph')){
+      const prev = u.previousElementSibling;
+      if(prev && prev.classList.contains('blank-ph')) prev.classList.toggle('hidden', on);
+    }
+  }
+  let count = revealState[key] || 0;
+  if(count < steps.length){
+    steps[count].forEach(u=>toggleUnit(u, true));
+    const remote = steps[count].find(u=>u.hasAttribute('data-owner'));
+    if(remote) remote.scrollIntoView({behavior:'smooth', block:'center'});
+    count++;
+    revealState[key] = count;
+    btn.textContent = (count < steps.length) ? btn.dataset.label + ' (' + count + '/' + steps.length + ')' : 'Hide Answers';
+  } else {
+    steps.forEach(group=>group.forEach(u=>toggleUnit(u, false)));
+    revealState[key] = 0;
+    btn.textContent = btn.dataset.label;
+  }
+}
+document.querySelectorAll('.showbtn').forEach(b=>{ b.dataset.label = b.textContent; });
+
+/* ===== Modals ===== */
+function openModal(id){ document.getElementById(id).classList.add('open'); }
+function closeModal(id){ document.getElementById(id).classList.remove('open'); }
+document.addEventListener('keydown', e=>{
+  if(e.key==='Escape'){ document.querySelectorAll('.modal-overlay.open').forEach(m=>m.classList.remove('open')); }
+});
+
+/* ===== Zoom control ===== */
+const BASE_ZOOM = 1.2;
+let relScale = 1.0;
+const content = document.getElementById('content');
+function applyZoom(){
+  content.style.transform = 'scale(' + (relScale*BASE_ZOOM) + ')';
+  content.style.width = (100/(relScale*BASE_ZOOM)) + '%';
+  document.getElementById('zoomlabel').textContent = Math.round(relScale*100) + '%';
+}
+document.getElementById('zin').onclick = ()=>{ relScale = Math.min(relScale+0.1, 1.8); applyZoom(); };
+document.getElementById('zout').onclick = ()=>{ relScale = Math.max(relScale-0.1, 0.6); applyZoom(); };
+applyZoom();
+
+/* ===== Active page-nav highlighting ===== */
+const pageAnchors = ['p70','p71','p72','p73','p74','p75','p76','p77','p78','p79','p80','p81','p82','p83','p84'].map(id=>document.getElementById(id)).filter(Boolean);
+const pagenavLinks = {};
+document.querySelectorAll('#pagenav a').forEach(a=> pagenavLinks[a.getAttribute('data-p')] = a);
+function updateActivePage(){
+  let current = pageAnchors[0];
+  const refY = 100;
+  for(const a of pageAnchors){
+    const rect = a.getBoundingClientRect();
+    if(rect.top - refY <= 0) current = a; else break;
+  }
+  Object.values(pagenavLinks).forEach(a=>a.classList.remove('active'));
+  if(current && pagenavLinks[current.id]) pagenavLinks[current.id].classList.add('active');
+}
+window.addEventListener('scroll', updateActivePage, {passive:true});
+window.addEventListener('resize', updateActivePage);
+setTimeout(updateActivePage, 300);
+
+/* ===== Word definitions (deduplicated: one entry per word) ===== */
+const WORD_DEFS = {
+  "interview": {"ipaUS":"/ˈɪn.t̬ɚ.vjuː/","ipaUK":"/ˈɪn.tə.vjuː/","link":"https://www.google.com/search?q=interview+%28verb%29+meaning+%27To+interview+someone+means+to+ask+them+questions+to+get+information+from+them.%27.+define+this+specific+meaning+in+simple+language+suitable+for+A2+level.+make+it+brief+and+to+the+point+with+at+least+5+examples+matching+this+meaning&newwindow=1","title":"interview","pos":"verb","def":"To interview someone means to ask them questions to get information from them.","examples":["The reporter will interview the mayor tomorrow.","I interviewed my grandmother about her childhood.","The company interviews ten people for each job.","She interviewed a classmate about his weekend.","“To get the information you need, you will interview each other.” (page 70)"],"phrase":"<b>interview someone about something</b><span class=\"phrase-def\">To ask someone questions about a topic.</span>"},
+  "daycare": {"ipaUS":"/ˈdeɪ.ker/","ipaUK":"/ˈdeɪ.keər/","link":"https://www.google.com/search?q=daycare+%28noun%29+meaning+%27Daycare+is+a+place+where+young+children+are+looked+after+during+the+day+while+their+parents+are+at+work.%27.+define+this+specific+meaning+in+simple+language+suitable+for+A2+level.+make+it+brief+and+to+the+point+with+at+least+5+examples+matching+this+meaning&newwindow=1","title":"daycare","pos":"noun","def":"Daycare is a place where young children are looked after during the day while their parents are at work.","examples":["Her daughter goes to daycare from 8:00 to 5:00.","We found a good daycare near our house.","He picks up his son from daycare every afternoon.","Daycare can be expensive for families.","“After work, he gets his little boy from daycare.” (page 70)"]},
+  "relax": {"ipaUS":"/rɪˈlæks/","ipaUK":"/rɪˈlæks/","link":"https://www.google.com/search?q=relax+%28verb%29+meaning+%27To+relax+means+to+rest+and+feel+calm%2C+without+work+or+worry.%27.+define+this+specific+meaning+in+simple+language+suitable+for+A2+level.+make+it+brief+and+to+the+point+with+at+least+5+examples+matching+this+meaning&newwindow=1","title":"relax","pos":"verb","def":"To relax means to rest and feel calm, without work or worry.","examples":["I like to relax on the sofa after a long day.","She relaxes by listening to quiet music.","Take a deep breath and relax.","We relaxed on the beach all afternoon.","“Then he finally has time to relax.” (page 70)"]},
+  "controlling-idea": {"ipaUS":"/kənˈtroʊ.lɪŋ aɪˈdiː.ə/","ipaUK":"/kənˈtrəʊ.lɪŋ aɪˈdɪə/","link":"https://www.google.com/search?q=controlling+idea+%28noun+phrase%29+meaning+%27The+controlling+idea+is+the+main+thing+a+writer+says+about+the+topic+of+a+paragraph.%27.+define+this+specific+meaning+in+simple+language+suitable+for+A2+level.+make+it+brief+and+to+the+point+with+at+least+5+examples+matching+this+meaning&newwindow=1","title":"controlling idea","pos":"noun phrase","def":"The controlling idea is the main thing a writer says about the topic of a paragraph.","examples":["In “My brother is funny,” the topic is my brother, and the controlling idea is “is funny.”","The controlling idea tells the reader what the paragraph will be about.","A good topic sentence has a topic and a controlling idea.","In “Winter is my favorite season,” the controlling idea is “is my favorite season.”","“Circle the topic and underline the controlling idea.” (page 70)"]},
+  "dining-hall": {"ipaUS":"/ˈdaɪ.nɪŋ ˌhɑːl/","ipaUK":"/ˈdaɪ.nɪŋ ˌhɔːl/","link":"https://www.google.com/search?q=dining+hall+%28noun+phrase%29+meaning+%27A+dining+hall+is+a+large+room%2C+often+at+a+school+or+college%2C+where+many+people+eat+their+meals.%27.+define+this+specific+meaning+in+simple+language+suitable+for+A2+level.+make+it+brief+and+to+the+point+with+at+least+5+examples+matching+this+meaning&newwindow=1","title":"dining hall","pos":"noun phrase","def":"A dining hall is a large room, often at a school or college, where many people eat their meals.","examples":["Students eat lunch in the dining hall.","The dining hall opens at 7:00 for breakfast.","We met our friends in the college dining hall.","The dining hall is very busy at noon.","“Then she usually meets her friends in the dining hall.” (page 71)"]},
+  "depend-on": {"ipaUS":"/dɪˈpend ɑːn/","ipaUK":"/dɪˈpend ɒn/","link":"https://www.google.com/search?q=depend+on+%28phrasal+verb%29+meaning+%27If+one+thing+depends+on+another+thing%2C+it+is+decided+or+changed+by+that+other+thing.%27.+define+this+specific+meaning+in+simple+language+suitable+for+A2+level.+make+it+brief+and+to+the+point+with+at+least+5+examples+matching+this+meaning&newwindow=1","title":"depend on","pos":"phrasal verb","def":"If one thing depends on another thing, it is decided or changed by that other thing.","examples":["What we do tomorrow depends on the weather.","The price of the ticket depends on the day you travel.","“Will you come to the party?” “It depends on my schedule.”","Your grade depends on how much you practice.","“It depends on the weather.” (page 71)"],"phrase":"<b>depend on something</b><span class=\"phrase-def\">To be decided or changed by something. It is also used with other words: <i>It depends on</i> + noun, <i>depending on</i> + noun.</span>"},
+  "adverb": {"ipaUS":"/ˈæd.vɝːb/","ipaUK":"/ˈæd.vɜːb/","link":"https://www.google.com/search?q=adverb+%28noun%29+meaning+%27An+adverb+is+a+word+that+tells+more+about+an+action%2C+for+example+how%2C+when%2C+or+how+often+it+happens.%27.+define+this+specific+meaning+in+simple+language+suitable+for+A2+level.+make+it+brief+and+to+the+point+with+at+least+5+examples+matching+this+meaning&newwindow=1","title":"adverb","pos":"noun","def":"An adverb is a word that tells more about an action, for example how, when, or how often it happens.","examples":["In “She walks slowly,” the word “slowly” is an adverb.","“Always” and “never” are adverbs that tell how often.","In “We will leave tomorrow,” the adverb “tomorrow” tells when.","Many adverbs end in -ly, like “quickly” and “carefully.”","“What adverbs of frequency did the writer use?” (page 71)"],"phrase":"<b>adverb of frequency</b><span class=\"phrase-def\">An adverb that tells how often something happens, such as <i>always</i>, <i>usually</i>, <i>often</i>, <i>sometimes</i>, or <i>never</i>.</span>"},
+  "frequency": {"ipaUS":"/ˈfriː.kwən.si/","ipaUK":"/ˈfriː.kwən.si/","link":"https://www.google.com/search?q=frequency+%28noun%29+meaning+%27Frequency+is+how+often+something+happens.%27.+define+this+specific+meaning+in+simple+language+suitable+for+A2+level.+make+it+brief+and+to+the+point+with+at+least+5+examples+matching+this+meaning&newwindow=1","title":"frequency","pos":"noun","def":"Frequency is how often something happens.","examples":["The frequency of buses on this road is every ten minutes.","Doctors ask about the frequency of your headaches.","The frequency of my English class is three times a week.","Words like always and never tell the frequency of an action.","“What adverbs of frequency did the writer use?” (page 71)"],"phrase":"<b>adverb of frequency</b><span class=\"phrase-def\">A word that tells how often something happens, such as <i>always</i>, <i>usually</i>, <i>often</i>, <i>sometimes</i>, or <i>never</i>.</span>"},
+  "organization": {"ipaUS":"/ˌɔːr.ɡən.əˈzeɪ.ʃən/","ipaUK":"/ˌɔː.ɡən.aɪˈzeɪ.ʃən/","link":"https://www.google.com/search?q=organization+%28noun%29+meaning+%27Organization+is+the+way+that+information+is+arranged+in+a+clear+order.%27.+define+this+specific+meaning+in+simple+language+suitable+for+A2+level.+make+it+brief+and+to+the+point+with+at+least+5+examples+matching+this+meaning&newwindow=1","title":"organization","pos":"noun","def":"Organization is the way that information is arranged in a clear order.","examples":["Good organization makes a paragraph easy to read.","The organization of the report is simple: first, next, last.","She got a high grade for her organization.","Poor organization makes writing hard to follow.","“When you write a paragraph, you must think about organization.” (page 72)"]},
+  "chronological": {"ipaUS":"/ˌkrɑː.nəˈlɑː.dʒɪ.kəl/","ipaUK":"/ˌkrɒn.əˈlɒdʒ.ɪ.kəl/","link":"https://www.google.com/search?q=chronological+%28adjective%29+meaning+%27Chronological+describes+things+that+are+in+the+order+in+which+they+happened%2C+from+first+to+last.%27.+define+this+specific+meaning+in+simple+language+suitable+for+A2+level.+make+it+brief+and+to+the+point+with+at+least+5+examples+matching+this+meaning&newwindow=1","title":"chronological","pos":"adjective","def":"Chronological describes things that are in the order in which they happened, from first to last.","examples":["The museum shows the artist's paintings in chronological order.","Put the photos in chronological order, from oldest to newest.","Her story is told in chronological order.","A chronological list starts with the earliest event.","“...time order (also called chronological order).” (page 72)"],"phrase":"<b>chronological order</b><span class=\"phrase-def\">The order in which events happen in time; the same as time order.</span>"},
+  "ingredient": {"ipaUS":"/ɪnˈɡriː.di.ənt/","ipaUK":"/ɪnˈɡriː.di.ənt/","link":"https://www.google.com/search?q=ingredient+%28noun%29+meaning+%27An+ingredient+is+one+of+the+foods+that+you+use+together+to+make+a+dish.%27.+define+this+specific+meaning+in+simple+language+suitable+for+A2+level.+make+it+brief+and+to+the+point+with+at+least+5+examples+matching+this+meaning&newwindow=1","title":"ingredient","pos":"noun","def":"An ingredient is one of the foods that you use together to make a dish.","examples":["Flour and eggs are the main ingredients in pancakes.","Check that you have all the ingredients before you cook.","Fresh ingredients make food taste better.","What ingredients do we need for the soup?","“Next, he gets out the eggs, milk, flour, and other ingredients.” (page 73)"]},
+  "griddle": {"ipaUS":"/ˈɡrɪd.əl/","ipaUK":"/ˈɡrɪd.əl/","link":"https://www.google.com/search?q=griddle+%28noun%29+meaning+%27A+griddle+is+a+flat+metal+pan+or+surface+that+is+used+for+cooking+food+such+as+pancakes.%27.+define+this+specific+meaning+in+simple+language+suitable+for+A2+level.+make+it+brief+and+to+the+point+with+at+least+5+examples+matching+this+meaning&newwindow=1","title":"griddle","pos":"noun","def":"A griddle is a flat metal pan or surface that is used for cooking food such as pancakes.","examples":["He cooked the pancakes on a hot griddle.","Heat the griddle before you add the batter.","Our stove has a griddle in the middle.","She cleaned the griddle after breakfast.","“First, he puts the griddle on the stove to heat up.” (page 73)"]},
+  "pour": {"ipaUS":"/pɔːr/","ipaUK":"/pɔː/","link":"https://www.google.com/search?q=pour+%28verb%29+meaning+%27To+pour+a+liquid+means+to+make+it+flow+out+of+a+container%2C+such+as+a+bottle%2C+a+cup%2C+or+a+bowl.%27.+define+this+specific+meaning+in+simple+language+suitable+for+A2+level.+make+it+brief+and+to+the+point+with+at+least+5+examples+matching+this+meaning&newwindow=1","title":"pour","pos":"verb","def":"To pour a liquid means to make it flow out of a container, such as a bottle, a cup, or a bowl.","examples":["She poured milk into my glass.","Pour the water slowly so it does not spill.","He pours coffee for everyone at breakfast.","Please pour some juice for the children.","“Then he pours spoonfuls of pancake batter onto the hot griddle.” (page 73)"]},
+  "spoonful": {"ipaUS":"/ˈspuːn.fʊl/","ipaUK":"/ˈspuːn.fʊl/","link":"https://www.google.com/search?q=spoonful+%28noun%29+meaning+%27A+spoonful+is+the+amount+that+one+spoon+can+hold.%27.+define+this+specific+meaning+in+simple+language+suitable+for+A2+level.+make+it+brief+and+to+the+point+with+at+least+5+examples+matching+this+meaning&newwindow=1","title":"spoonful","pos":"noun","def":"A spoonful is the amount that one spoon can hold.","examples":["Add one spoonful of sugar to your tea.","The baby ate a spoonful of rice.","She put three spoonfuls of coffee in the pot.","Take a spoonful of this medicine after dinner.","“Then he pours spoonfuls of pancake batter onto the hot griddle.” (page 73)"],"phrase":"<b>a spoonful of something</b><span class=\"phrase-def\">The amount of something that fits on one spoon.</span>"},
+  "batter": {"ipaUS":"/ˈbæt̬.ɚ/","ipaUK":"/ˈbæt.ər/","link":"https://www.google.com/search?q=batter+%28noun%29+meaning+%27Batter+is+a+thick+liquid+made+from+flour%2C+eggs%2C+and+milk.+It+is+used+to+make+pancakes+and+some+cakes.%27.+define+this+specific+meaning+in+simple+language+suitable+for+A2+level.+make+it+brief+and+to+the+point+with+at+least+5+examples+matching+this+meaning&newwindow=1","title":"batter","pos":"noun","def":"Batter is a thick liquid made from flour, eggs, and milk. It is used to make pancakes and some cakes.","examples":["Mix the batter until it is smooth.","She poured the cake batter into a pan.","The batter for pancakes should not be too thick.","Let the batter rest for ten minutes.","“Then he pours spoonfuls of pancake batter onto the hot griddle.” (page 73)"]},
+  "regular-routine": {"ipaUS":"/ˈreɡ.jə.lɚ ruːˈtiːn/","ipaUK":"/ˈreɡ.jə.lə ruːˈtiːn/","link":"https://www.google.com/search?q=regular+routine+%28noun+phrase%29+meaning+%27A+routine+is+the+things+that+you+usually+do%2C+in+the+same+order.+A+regular+routine+stays+the+same+from+day+to+day+or+from+week+to+week.%27.+define+this+specific+meaning+in+simple+language+suitable+for+A2+level.+make+it+brief+and+to+the+point+with+at+least+5+examples+matching+this+meaning&newwindow=1","title":"regular routine","pos":"noun phrase","def":"A routine is the things that you usually do, in the same order. A regular routine stays the same from day to day or from week to week.","examples":["I have a regular routine on weekdays: gym, work, dinner.","A regular routine helps children feel safe.","His regular routine begins with a cup of coffee.","She changed her regular routine when she started a new job.","“Simone has a regular routine on Saturday mornings.” (page 74)"]},
+  "stretch": {"ipaUS":"/stretʃ/","ipaUK":"/stretʃ/","link":"https://www.google.com/search?q=stretch+%28verb%29+meaning+%27To+stretch+means+to+pull+your+arms%2C+legs%2C+or+body+out+straight+so+that+your+muscles+feel+longer+and+looser.%27.+define+this+specific+meaning+in+simple+language+suitable+for+A2+level.+make+it+brief+and+to+the+point+with+at+least+5+examples+matching+this+meaning&newwindow=1","title":"stretch","pos":"verb","def":"To stretch means to pull your arms, legs, or body out straight so that your muscles feel longer and looser.","examples":["I stretch my arms when I wake up.","The dog stretched and then lay down.","Runners stretch before and after a race.","Stretch your legs if you sit for a long time.","“...she stretches and does some yoga.” (page 74)"]},
+  "yoga": {"ipaUS":"/ˈjoʊ.ɡə/","ipaUK":"/ˈjəʊ.ɡə/","link":"https://www.google.com/search?q=yoga+%28noun%29+meaning+%27Yoga+is+a+kind+of+exercise+in+which+you+slowly+move+and+hold+your+body+in+special+positions+to+feel+strong+and+calm.%27.+define+this+specific+meaning+in+simple+language+suitable+for+A2+level.+make+it+brief+and+to+the+point+with+at+least+5+examples+matching+this+meaning&newwindow=1","title":"yoga","pos":"noun","def":"Yoga is a kind of exercise in which you slowly move and hold your body in special positions to feel strong and calm.","examples":["My sister does yoga every morning.","There is a yoga class at the gym on Tuesdays.","Yoga helps many people relax.","He bought a mat for yoga.","“...she stretches and does some yoga.” (page 74)"]},
+  "cool-down": {"ipaUS":"/ˌkuːl ˈdaʊn/","ipaUK":"/ˌkuːl ˈdaʊn/","link":"https://www.google.com/search?q=cool+down+%28phrasal+verb%29+meaning+%27To+cool+down+means+to+do+slow%2C+easy+exercise+after+hard+exercise%2C+so+that+your+body+goes+back+to+normal.%27.+define+this+specific+meaning+in+simple+language+suitable+for+A2+level.+make+it+brief+and+to+the+point+with+at+least+5+examples+matching+this+meaning&newwindow=1","title":"cool down","pos":"phrasal verb","def":"To cool down means to do slow, easy exercise after hard exercise, so that your body goes back to normal.","examples":["After the race, the runners walked to cool down.","I cool down by stretching after I run.","The coach asked the team to cool down for five minutes.","It is important to cool down after exercise.","“...she cools down by walking to a coffee shop.” (page 74)"]},
+  "start-the-day": {"ipaUS":"/stɑːrt ðə deɪ/","ipaUK":"/stɑːt ðə deɪ/","link":"https://www.google.com/search?q=start+the+day+%28verb+phrase%29+meaning+%27To+start+the+day+means+to+begin+the+things+you+do+each+day%2C+usually+in+the+morning.%27.+define+this+specific+meaning+in+simple+language+suitable+for+A2+level.+make+it+brief+and+to+the+point+with+at+least+5+examples+matching+this+meaning&newwindow=1","title":"start the day","pos":"verb phrase","def":"To start the day means to begin the things you do each day, usually in the morning.","examples":["I start the day with a cup of tea.","Many people start the day by checking their phones.","A good breakfast helps you start the day well.","She likes to start the day with a walk.","“...she feels ready to start the day.” (page 74)"],"phrase":"<b>start the day with something</b><span class=\"phrase-def\">To do something first in the morning.</span>"},
+  "several": {"ipaUS":"/ˈsev.ɚ.əl/","ipaUK":"/ˈsev.ər.əl/","link":"https://www.google.com/search?q=several+%28determiner%29+meaning+%27Several+means+more+than+two+or+three%2C+but+not+a+very+large+number.%27.+define+this+specific+meaning+in+simple+language+suitable+for+A2+level.+make+it+brief+and+to+the+point+with+at+least+5+examples+matching+this+meaning&newwindow=1","title":"several","pos":"determiner","def":"Several means more than two or three, but not a very large number.","examples":["I have read several books by that author.","She has visited several countries in Europe.","There are several reasons to be careful.","He called me several times yesterday.","“There are several kinds of sentences in English.” (page 74)"]},
+  "combination": {"ipaUS":"/ˌkɑːm.bɪˈneɪ.ʃən/","ipaUK":"/ˌkɒm.bɪˈneɪ.ʃən/","link":"https://www.google.com/search?q=combination+%28noun%29+meaning+%27A+combination+is+two+or+more+things+that+are+put+or+used+together.%27.+define+this+specific+meaning+in+simple+language+suitable+for+A2+level.+make+it+brief+and+to+the+point+with+at+least+5+examples+matching+this+meaning&newwindow=1","title":"combination","pos":"noun","def":"A combination is two or more things that are put or used together.","examples":["Red and white is a nice color combination.","This soup is a combination of vegetables and rice.","Her job is a combination of writing and teaching.","The lock opens with a combination of four numbers.","“A simple sentence has one subject-verb combination.” (page 74)"],"phrase":"<b>subject-verb combination</b><span class=\"phrase-def\">A subject and its verb together.</span>"},
+  "election": {"ipaUS":"/ɪˈlek.ʃən/","ipaUK":"/ɪˈlek.ʃən/","link":"https://www.google.com/search?q=election+%28noun%29+meaning+%27An+election+is+a+time+when+people+vote+to+choose+a+leader+or+a+government.%27.+define+this+specific+meaning+in+simple+language+suitable+for+A2+level.+make+it+brief+and+to+the+point+with+at+least+5+examples+matching+this+meaning&newwindow=1","title":"election","pos":"noun","def":"An election is a time when people vote to choose a leader or a government.","examples":["The election is next Tuesday.","Many people vote in the national election.","She won the election for class president.","Elections happen every four years in some countries.","“In the United States, elections are always on Tuesdays.” (page 75)"]},
+  "abbreviation": {"ipaUS":"/əˌbriː.viˈeɪ.ʃən/","ipaUK":"/əˌbriː.viˈeɪ.ʃən/","link":"https://www.google.com/search?q=abbreviation+%28noun%29+meaning+%27An+abbreviation+is+a+shorter+way+of+writing+a+word.%27.+define+this+specific+meaning+in+simple+language+suitable+for+A2+level.+make+it+brief+and+to+the+point+with+at+least+5+examples+matching+this+meaning&newwindow=1","title":"abbreviation","pos":"noun","def":"An abbreviation is a shorter way of writing a word.","examples":["“Dr.” is the abbreviation for “Doctor.”","The abbreviation for “Street” is “St.”","A dictionary uses “n.” as the abbreviation for “noun.”","“Mon.” is an abbreviation for “Monday.”","“They usually use abbreviations.” (page 76)"]},
+  "affirmative": {"ipaUS":"/əˈfɝː.mə.t̬ɪv/","ipaUK":"/əˈfɜː.mə.tɪv/","link":"https://www.google.com/search?q=affirmative+%28adjective%29+meaning+%27An+affirmative+statement+says+that+something+is+true+or+that+it+happens.+It+does+not+use+not+or+never.%27.+define+this+specific+meaning+in+simple+language+suitable+for+A2+level.+make+it+brief+and+to+the+point+with+at+least+5+examples+matching+this+meaning&newwindow=1","title":"affirmative","pos":"adjective","def":"An affirmative statement says that something is true or that it happens. It does not use not or never.","examples":["“She always arrives early” is an affirmative statement.","“I like pizza” is affirmative. “I do not like pizza” is not.","An affirmative answer means “yes.”","Change the affirmative sentence into a negative one.","“...where to put an adverb of frequency in an affirmative statement.” (page 76)"]},
+  "honor": {"ipaUS":"/ˈɑː.nɚ/","ipaUK":"/ˈɒn.ər/","link":"https://www.google.com/search?q=honor+%28noun%29+meaning+%27Honor+is+a+feeling+of+great+respect.+When+something+is+done+in+your+honor%2C+it+is+done+to+show+respect+for+you.%27.+define+this+specific+meaning+in+simple+language+suitable+for+A2+level.+make+it+brief+and+to+the+point+with+at+least+5+examples+matching+this+meaning&newwindow=1","title":"honor","pos":"noun","def":"Honor is a feeling of great respect. When something is done in your honor, it is done to show respect for you.","examples":["The school held a party in honor of the new principal.","There is a statue in honor of the soldiers.","They named the park in his honor.","It is an honor to meet you.","“Workers often have a holiday in their honor.” (page 77)"],"phrase":"<b>in someone's honor</b><span class=\"phrase-def\">To show respect for that person.</span>"},
+  "negative": {"ipaUS":"/ˈneɡ.ə.t̬ɪv/","ipaUK":"/ˈneɡ.ə.tɪv/","link":"https://www.google.com/search?q=negative+%28adjective%29+meaning+%27A+negative+statement+says+that+something+is+not+true+or+that+it+does+not+happen.+It+uses+not+or+never.%27.+define+this+specific+meaning+in+simple+language+suitable+for+A2+level.+make+it+brief+and+to+the+point+with+at+least+5+examples+matching+this+meaning&newwindow=1","title":"negative","pos":"adjective","def":"A negative statement says that something is not true or that it does not happen. It uses not or never.","examples":["“He does not like coffee” is a negative statement.","“We never eat meat” is negative.","Make this sentence negative by adding “not.”","A negative answer means “no.”","“...where to put an adverb of frequency in a negative statement.” (page 77)"]},
+  "new-years-eve": {"ipaUS":"/ˌnuː jɪrz ˈiːv/","ipaUK":"/ˌnjuː jɪəz ˈiːv/","link":"https://www.google.com/search?q=New+Year%27s+Eve+%28noun+phrase%29+meaning+%27New+Year%27s+Eve+is+December+31%2C+the+last+day+of+the+year.+Many+people+have+parties+and+wait+for+midnight.%27.+define+this+specific+meaning+in+simple+language+suitable+for+A2+level.+make+it+brief+and+to+the+point+with+at+least+5+examples+matching+this+meaning&newwindow=1","title":"New Year's Eve","pos":"noun phrase","def":"New Year's Eve is December 31, the last day of the year. Many people have parties and wait for midnight.","examples":["We watch fireworks on New Year's Eve.","She stays up until midnight on New Year's Eve.","Many restaurants are full on New Year's Eve.","They have a party at home every New Year's Eve.","“I am not at home on New Year's Eve.” (page 78)"]},
+  "weekday": {"ipaUS":"/ˈwiːk.deɪ/","ipaUK":"/ˈwiːk.deɪ/","link":"https://www.google.com/search?q=weekday+%28noun%29+meaning+%27A+weekday+is+a+day+of+the+week+that+is+not+part+of+the+weekend.+In+most+countries%2C+weekdays+are+Monday+to+Friday.%27.+define+this+specific+meaning+in+simple+language+suitable+for+A2+level.+make+it+brief+and+to+the+point+with+at+least+5+examples+matching+this+meaning&newwindow=1","title":"weekday","pos":"noun","def":"A weekday is a day of the week that is not part of the weekend. In most countries, weekdays are Monday to Friday.","examples":["I work on weekdays and rest on weekends.","Buses come more often on weekdays.","The store is open on weekdays from 9:00 to 5:00.","Weekday mornings are very busy in my house.","“Father's Day is not on a weekday in the United States.” (page 78)"]},
+  "bad-mood": {"ipaUS":"/bi ɪn ə ˌbæd ˈmuːd/","ipaUK":"/bi ɪn ə ˌbæd ˈmuːd/","link":"https://www.google.com/search?q=be+in+a+bad+mood+%28phrase%29+meaning+%27If+you+are+in+a+bad+mood%2C+you+feel+unhappy%2C+angry%2C+or+not+friendly+for+a+short+time.%27.+define+this+specific+meaning+in+simple+language+suitable+for+A2+level.+make+it+brief+and+to+the+point+with+at+least+5+examples+matching+this+meaning&newwindow=1","title":"be in a bad mood","pos":"phrase","def":"If you are in a bad mood, you feel unhappy, angry, or not friendly for a short time.","examples":["He is in a bad mood because he did not sleep well.","Do not talk to her now — she is in a bad mood.","Heavy traffic puts me in a bad mood.","My brother is often in a bad mood in the morning.","“be in a bad mood” (page 79, list of activities)"],"phrase":"<b>be in a good / bad mood</b><span class=\"phrase-def\">To feel happy (good mood) or unhappy (bad mood) at a certain time.</span>"},
+  "identify": {"ipaUS":"/aɪˈden.tə.faɪ/","ipaUK":"/aɪˈden.tɪ.faɪ/","link":"https://www.google.com/search?q=identify+%28verb%29+meaning+%27To+identify+something+means+to+show+or+say+exactly+what+it+is+or+where+it+is.%27.+define+this+specific+meaning+in+simple+language+suitable+for+A2+level.+make+it+brief+and+to+the+point+with+at+least+5+examples+matching+this+meaning&newwindow=1","title":"identify","pos":"verb","def":"To identify something means to show or say exactly what it is or where it is.","examples":["Can you identify the man in this photo?","The sign identifies the building as a library.","Scientists identified a new kind of frog.","Students must identify the main idea of each paragraph.","“...they can identify a place (at home, in South America) or a direction (to school, up the stairs).” (page 79)"]},
+  "exception": {"ipaUS":"/ɪkˈsep.ʃən/","ipaUK":"/ɪkˈsep.ʃən/","link":"https://www.google.com/search?q=exception+%28noun%29+meaning+%27An+exception+is+something+that+does+not+follow+the+rule.%27.+define+this+specific+meaning+in+simple+language+suitable+for+A2+level.+make+it+brief+and+to+the+point+with+at+least+5+examples+matching+this+meaning&newwindow=1","title":"exception","pos":"noun","def":"An exception is something that does not follow the rule.","examples":["Most words follow this rule, but there is one exception.","Everyone must wear a uniform, with no exceptions.","I eat fish, but meat is an exception — I never eat it.","This is the only exception to the rule.","“Exception: Use at + night.” (page 79)"],"phrase":"<b>an exception to a rule</b><span class=\"phrase-def\">Something that does not follow the rule.</span>"},
+  "exhibit": {"ipaUS":"/ɪɡˈzɪb.ɪt/","ipaUK":"/ɪɡˈzɪb.ɪt/","link":"https://www.google.com/search?q=exhibit+%28noun%29+meaning+%27An+exhibit+is+something%2C+such+as+a+painting+or+an+old+object%2C+that+is+put+in+a+public+place+so+that+people+can+look+at+it.%27.+define+this+specific+meaning+in+simple+language+suitable+for+A2+level.+make+it+brief+and+to+the+point+with+at+least+5+examples+matching+this+meaning&newwindow=1","title":"exhibit","pos":"noun","def":"An exhibit is something, such as a painting or an old object, that is put in a public place so that people can look at it.","examples":["The museum has a new exhibit about dinosaurs.","We saw an art exhibit last weekend.","The exhibit is open from Tuesday to Sunday.","Children love the animal exhibits at the zoo.","“There are exhibits, films, concerts, and a museum store.” (page 80)"]},
+  "half": {"ipaUS":"/hæf/","ipaUK":"/hɑːf/","link":"https://www.google.com/search?q=half+%28noun+%26+determiner%29+meaning+%27Half+is+one+of+two+equal+parts+of+something.+It+is+50+percent+of+the+whole+thing.%27.+define+this+specific+meaning+in+simple+language+suitable+for+A2+level.+make+it+brief+and+to+the+point+with+at+least+5+examples+matching+this+meaning&newwindow=1","title":"half","pos":"noun & determiner","def":"Half is one of two equal parts of something. It is 50 percent of the whole thing.","examples":["Half of the class is absent today.","I ate half a sandwich for lunch.","Cut the apple in half.","It is half past two.","“Each year, half a million people visit the Rock and Roll Hall of Fame.” (page 80)"],"phrase":"<b>half a million</b><span class=\"phrase-def\">500,000 — one half of one million.</span>"},
+  "in-the-middle-of": {"ipaUS":"/ɪn ðə ˈmɪd.əl əv/","ipaUK":"/ɪn ðə ˈmɪd.əl əv/","link":"https://www.google.com/search?q=in+the+middle+of+%28phrase%29+meaning+%27In+the+middle+of+something+means+at+the+center+of+it%2C+or+at+a+point+between+the+start+and+the+end+of+it.%27.+define+this+specific+meaning+in+simple+language+suitable+for+A2+level.+make+it+brief+and+to+the+point+with+at+least+5+examples+matching+this+meaning&newwindow=1","title":"in the middle of","pos":"phrase","def":"In the middle of something means at the center of it, or at a point between the start and the end of it.","examples":["The table is in the middle of the room.","She woke up in the middle of the night.","He called me in the middle of dinner.","There is a small park in the middle of the town.","“In the middle of the show, they take a break...” (page 80)"],"phrase":"<b>in the middle of + noun</b><span class=\"phrase-def\">At the center of a place, or halfway through an event or a period of time.</span>"},
+  "capitalize": {"ipaUS":"/ˈkæp.ə.t̬əl.aɪz/","ipaUK":"/ˈkæp.ɪ.təl.aɪz/","link":"https://www.google.com/search?q=capitalize+%28verb%29+meaning+%27To+capitalize+a+letter+means+to+write+it+as+a+big+letter+%28A%2C+B%2C+C%29+instead+of+a+small+letter+%28a%2C+b%2C+c%29.%27.+define+this+specific+meaning+in+simple+language+suitable+for+A2+level.+make+it+brief+and+to+the+point+with+at+least+5+examples+matching+this+meaning&newwindow=1","title":"capitalize","pos":"verb","def":"To capitalize a letter means to write it as a big letter (A, B, C) instead of a small letter (a, b, c).","examples":["Always capitalize the first word of a sentence.","We capitalize names like Maria and Tokyo.","Did you capitalize the title of your paragraph?","In English, we capitalize the word “I.”","“Capitalize the subject pronoun I.” (page 81)"]},
+  "nationality": {"ipaUS":"/ˌnæʃ.əˈnæl.ə.t̬i/","ipaUK":"/ˌnæʃ.əˈnæl.ə.ti/","link":"https://www.google.com/search?q=nationality+%28noun%29+meaning+%27Your+nationality+is+the+country+that+you+belong+to.%27.+define+this+specific+meaning+in+simple+language+suitable+for+A2+level.+make+it+brief+and+to+the+point+with+at+least+5+examples+matching+this+meaning&newwindow=1","title":"nationality","pos":"noun","def":"Your nationality is the country that you belong to.","examples":["My nationality is Mexican.","There are students of many nationalities in our class.","What is your nationality?","She has two nationalities because her parents are from different countries.","“Capitalize words for nationalities and languages.” (page 81)"]},
+  "nickname": {"ipaUS":"/ˈnɪk.neɪm/","ipaUK":"/ˈnɪk.neɪm/","link":"https://www.google.com/search?q=nickname+%28noun%29+meaning+%27A+nickname+is+a+short+or+funny+name+that+friends+or+family+use+instead+of+a+person%27s+real+name.%27.+define+this+specific+meaning+in+simple+language+suitable+for+A2+level.+make+it+brief+and+to+the+point+with+at+least+5+examples+matching+this+meaning&newwindow=1","title":"nickname","pos":"noun","def":"A nickname is a short or funny name that friends or family use instead of a person's real name.","examples":["His real name is Robert, but his nickname is Bobby.","My friends gave me a nickname in high school.","“Red” is a good nickname for a person with red hair.","Many people have a nickname at home.","“The man's nickname is Red because of his red hair.” (page 81)"]},
+  "author": {"ipaUS":"/ˈɑː.θɚ/","ipaUK":"/ˈɔː.θər/","link":"https://www.google.com/search?q=author+%28noun%29+meaning+%27An+author+is+a+person+who+writes+a+book%2C+a+story%2C+or+an+article.%27.+define+this+specific+meaning+in+simple+language+suitable+for+A2+level.+make+it+brief+and+to+the+point+with+at+least+5+examples+matching+this+meaning&newwindow=1","title":"author","pos":"noun","def":"An author is a person who writes a book, a story, or an article.","examples":["The author of this book lives in Canada.","She is my favorite author.","The author signed my copy of the book.","Many authors write in the morning.","“Mark Twain, author of The Adventures of Tom Sawyer.” (page 83)"]},
+  "alarm-clock": {"ipaUS":"/əˈlɑːrm ˌklɑːk/","ipaUK":"/əˈlɑːm ˌklɒk/","link":"https://www.google.com/search?q=alarm+clock+%28noun+phrase%29+meaning+%27An+alarm+clock+is+a+clock+that+makes+a+loud+sound+at+a+time+you+choose%2C+to+wake+you+up.%27.+define+this+specific+meaning+in+simple+language+suitable+for+A2+level.+make+it+brief+and+to+the+point+with+at+least+5+examples+matching+this+meaning&newwindow=1","title":"alarm clock","pos":"noun phrase","def":"An alarm clock is a clock that makes a loud sound at a time you choose, to wake you up.","examples":["My alarm clock rings at 6:30 every morning.","I set my alarm clock for seven o'clock.","He turned off the alarm clock and went back to sleep.","She bought a new alarm clock for her bedroom.","“When my alarm clock rings in the morning, it is time for me to...” (page 83)"]},
+  "formal": {"ipaUS":"/ˈfɔːr.məl/","ipaUK":"/ˈfɔː.məl/","link":"https://www.google.com/search?q=formal+%28adjective%29+meaning+%27Formal+describes+events%2C+clothes%2C+or+language+that+are+serious+and+proper%2C+not+relaxed+or+casual.%27.+define+this+specific+meaning+in+simple+language+suitable+for+A2+level.+make+it+brief+and+to+the+point+with+at+least+5+examples+matching+this+meaning&newwindow=1","title":"formal","pos":"adjective","def":"Formal describes events, clothes, or language that are serious and proper, not relaxed or casual.","examples":["A wedding is a formal event.","He wore a suit and tie to the formal dinner.","Use formal language in a business email.","Jeans are not formal clothes.","“...when I go to a wedding or any formal event.” (page 84)"]}
+};
+
+function showWordDef(key){
+  const d = WORD_DEFS[key];
+  if(!d) return;
+  document.getElementById('wTitle').textContent = d.title;
+  document.getElementById('wPos').textContent = d.pos || '';
+  const ipa = document.getElementById('wIPA');
+  if(d.ipaUS || d.ipaUK){
+    let ipaHtml = '';
+    if(d.ipaUS) ipaHtml += '<span class="ipa-pair"><span class="ipa-label">US</span>'+d.ipaUS+'</span>';
+    if(d.ipaUK) ipaHtml += '<span class="ipa-pair"><span class="ipa-label">UK</span>'+d.ipaUK+'</span>';
+    ipa.innerHTML = ipaHtml;
+    ipa.style.display='block';
+  } else { ipa.style.display='none'; }
+  document.getElementById('wDef').textContent = d.def || '';
+  const ex = document.getElementById('wExample');
+  if(d.examples && d.examples.length){
+    ex.innerHTML = '<ul>' + d.examples.map(s=>'<li>'+s+'</li>').join('') + '</ul>';
+    ex.style.display='block';
+  } else { ex.style.display='none'; }
+  const ph = document.getElementById('wPhrase');
+  if(d.phrase){ ph.innerHTML = d.phrase; ph.style.display='block'; } else { ph.style.display='none'; }
+  const lk = document.getElementById('wLink');
+  if(d.link){ lk.innerHTML = '<a href="'+d.link+'" target="_blank" rel="noopener">Look up definition ↗</a>'; lk.style.display='block'; } else { lk.style.display='none'; }
+  openModal('wordModal');
+}
+document.querySelectorAll('.wterm').forEach(el=>{
+  el.addEventListener('click', ()=> showWordDef(el.getAttribute('data-w')) );
+});
+
+/* ===== Vocabulary list modal ===== */
+function openVocabList(){
+  const grid = document.getElementById('vocabgrid');
+  grid.innerHTML = '';
+  Object.keys(WORD_DEFS).forEach(key=>{
+    const chip = document.createElement('span');
+    chip.className = 'vchip';
+    chip.textContent = WORD_DEFS[key].title;
+    chip.addEventListener('click', ()=>{ closeModal('vocabModal'); showWordDef(key); });
+    grid.appendChild(chip);
+  });
+  openModal('vocabModal');
+}
+
+/* ===== Highlighter / Eraser ===== */
+let highlightMode = false;
+let eraseMode = false;
+const highlightBtn = document.getElementById('highlightBtn');
+const eraserBtn = document.getElementById('eraserBtn');
+
+function setHighlightMode(on){
+  highlightMode = on;
+  if(on) eraseMode = false;
+  highlightBtn.classList.toggle('active', highlightMode);
+  eraserBtn.classList.toggle('active', eraseMode);
+  document.body.classList.toggle('highlight-mode', highlightMode);
+  document.body.classList.toggle('erase-mode', eraseMode);
+}
+function setEraseMode(on){
+  eraseMode = on;
+  if(on) highlightMode = false;
+  eraserBtn.classList.toggle('active', eraseMode);
+  highlightBtn.classList.toggle('active', highlightMode);
+  document.body.classList.toggle('erase-mode', eraseMode);
+  document.body.classList.toggle('highlight-mode', highlightMode);
+}
+highlightBtn.addEventListener('click', ()=> setHighlightMode(!highlightMode));
+eraserBtn.addEventListener('click', ()=> setEraseMode(!eraseMode));
+
+function wrapRangeInHighlight(range){
+  const mark = document.createElement('mark');
+  mark.className = 'user-highlight';
+  try{
+    range.surroundContents(mark);
+  }catch(e){
+    const contents = range.extractContents();
+    mark.appendChild(contents);
+    range.insertNode(mark);
+  }
+}
+
+document.addEventListener('mouseup', ()=>{
+  if(!highlightMode) return;
+  const sel = window.getSelection();
+  if(!sel || sel.rangeCount === 0 || sel.isCollapsed) return;
+  const anchorEl = sel.anchorNode && sel.anchorNode.nodeType === 1 ? sel.anchorNode : sel.anchorNode.parentElement;
+  if(anchorEl && (anchorEl.closest('#topnav') || anchorEl.closest('#pagenav') || anchorEl.closest('#leftctrl') || anchorEl.closest('.modal-overlay'))) return;
+  const range = sel.getRangeAt(0);
+  if(range.collapsed) return;
+  wrapRangeInHighlight(range);
+  sel.removeAllRanges();
+});
+
+document.addEventListener('click', (e)=>{
+  if(!eraseMode) return;
+  const mark = e.target.closest('mark.user-highlight');
+  if(!mark) return;
+  const parent = mark.parentNode;
+  while(mark.firstChild) parent.insertBefore(mark.firstChild, mark);
+  parent.removeChild(mark);
+  parent.normalize();
+});
+
+/* ===== Answer lock wiring ===== */
+document.getElementById('lockGo').addEventListener('click', submitLockCode);
+document.getElementById('lockInput').addEventListener('keydown', e=>{ if(e.key === 'Enter') submitLockCode(); });
+
+/* mark every locked showbtn on load so students see the 🔒 before clicking */
+document.querySelectorAll('.showbtn[data-group]').forEach(b=>{
+  if(!isUnlocked(b.getAttribute('data-group'))) b.classList.add('locked');
+});
+</script>
+
+</body>
+</html>
